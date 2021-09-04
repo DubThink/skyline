@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://croshar.png" type="Texture" id=1]
+
+[sub_resource type="VisualShaderNodeColorConstant" id=2]
+constant = Color( 0.816406, 0.363556, 0.363556, 1 )
+
+[sub_resource type="VisualShader" id=3]
+code = "shader_type particles;
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Output:0
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( 44, -398 )
+mode = 2
+flags/disable_force = false
+flags/disable_velocity = false
+flags/keep_data = false
+nodes/fragment/0/position = Vector2( 880, -100 )
+nodes/fragment/2/node = SubResource( 2 )
+nodes/fragment/2/position = Vector2( 520, -80 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=1]
+next_pass = SubResource( 4 )
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 479.04
+initial_velocity_random = 0.51
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/normal_mapping_normal_map.png-cff3a176eb32c20bc6b9b55f6180e7f7.stex"
+
+[node name="Particles2D" type="Particles2D"]
+position = Vector2( 27.5003, -66.7865 )
+explosiveness = 0.19
+randomness = 1.0
+process_material = SubResource( 1 )
+texture = ExtResource( 1 )
+normal_map = SubResource( 5 )
