@@ -5,16 +5,22 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
+class_name SkyRenderManager
+
 var last_viewport_rect;
 var sky_viewport;
 
 export var buildingMaterial: ShaderMaterial;
+
+
 
 var buildingShader = preload("res://arttest/building_shader.gdshader")
 var skyEastMat: ShaderMaterial = preload("res://arttest/sky.material")
 var skyWestMat: ShaderMaterial = preload("res://arttest/sky_west.tres")
 
 var world_time: float;
+
+var building_shaders_to_update: Array;
 
 export var SECONDS_PER_DAY=30.0;
 
@@ -39,6 +45,9 @@ func notify_resized(new_size: Rect2):
 	print("Resizing viewport to size ", new_size.size)
 	sky_viewport.set_size(new_size.size)
 
+func register_building_shader(var mat: ShaderMaterial):
+	building_shaders_to_update.append(mat)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var viewport_rect = get_viewport_rect();
@@ -47,7 +56,9 @@ func _process(delta):
 	world_time+=delta/SECONDS_PER_DAY
 	skyEastMat.set_shader_param("FIXED_TIME_OF_DAY",world_time)
 	skyWestMat.set_shader_param("FIXED_TIME_OF_DAY",world_time)
-
-
-
+	for building_shader in building_shaders_to_update:
+		assert(building_shader is ShaderMaterial)
+		building_shader.set_shader_param("FIXED_TIME_OF_DAY",world_time)
+		
+		
 	
