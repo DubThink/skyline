@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://procedural/LDR_RGB1_0.png" type="Texture" id=1]
+[ext_resource path="res://arttest/sky.gdshader" type="Shader" id=2]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+octaves = 5
+period = 33.4
+
+[sub_resource type="NoiseTexture" id=2]
+width = 1024
+height = 1024
+as_normalmap = true
+noise = SubResource( 1 )
+
+[resource]
+shader = ExtResource( 2 )
+shader_param/FIXED_TIME_OF_DAY = 0.777
+shader_param/MORNING = -1.0
+shader_param/GAMMA = 2.2
+shader_param/NOISE_PATTERN = SubResource( 2 )
+shader_param/BLUE_NOISE = ExtResource( 1 )

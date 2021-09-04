@@ -1,0 +1,236 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://arttest/sky.material" type="Material" id=1]
+[ext_resource path="res://arttest/sky_west.tres" type="Material" id=2]
+[ext_resource path="res://arttest/building_shader.gdshader" type="Shader" id=3]
+[ext_resource path="res://arttest/SkyRenderManager.gd" type="Script" id=4]
+[ext_resource path="res://arttest/Building.gd" type="Script" id=5]
+
+[sub_resource type="ViewportTexture" id=3]
+viewport_path = NodePath("SkyRenderManager/Viewport")
+
+[sub_resource type="ShaderMaterial" id=4]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/test = null
+shader_param/sky_target = SubResource( 3 )
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("SkyRenderManager/Viewport")
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+resource_name = "BuildingMaterial"
+shader = ExtResource( 3 )
+shader_param/test = 0.497
+shader_param/sky_target = SubResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="SkyRenderManager" type="Node2D" parent="."]
+script = ExtResource( 4 )
+buildingMaterial = SubResource( 4 )
+
+[node name="Viewport" type="Viewport" parent="SkyRenderManager"]
+size = Vector2( 2048, 1024 )
+transparent_bg = true
+handle_input_locally = false
+hdr = false
+disable_3d = true
+usage = 0
+render_target_v_flip = true
+render_target_update_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="SkyRenderManager/Viewport"]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 512.0
+margin_bottom = 512.0
+
+[node name="Background" type="ColorRect" parent="SkyRenderManager"]
+material = ExtResource( 2 )
+margin_left = -5000.0
+margin_top = -1000.0
+margin_right = 5000.0
+margin_bottom = 1000.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 2 )
+margin_left = -78.0
+margin_top = -42.0
+margin_right = 474.0
+margin_bottom = 447.0
+rect_pivot_offset = Vector2( -132, 78 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuildingDefinition" type="Polygon2D" parent="."]
+position = Vector2( 487, 367 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 32, -40, 64, -56, 96, -40, 88, -40, 88, -24, 120, -8, 112, -8, 112, 56, 40, 56, 40, -40 )
+script = ExtResource( 5 )
+
+[node name="ColorRect5" type="ColorRect" parent="BuildingDefinition"]
+margin_left = 56.0
+margin_right = 64.0
+margin_bottom = 8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="BuildingDefinition"]
+margin_left = 80.0
+margin_right = 104.0
+margin_bottom = 16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="BuildingDefinition"]
+margin_left = 56.0
+margin_top = -40.0
+margin_right = 72.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuildingDefinition2" type="Polygon2D" parent="."]
+position = Vector2( 282, 396 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 32, -40, 64, -56, 96, -40, 88, -40, 88, -24, 120, -8, 112, -8, 112, 56, 40, 56, 40, -40 )
+script = ExtResource( 5 )
+
+[node name="ColorRect5" type="ColorRect" parent="BuildingDefinition2"]
+margin_left = 56.0
+margin_right = 64.0
+margin_bottom = 8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="BuildingDefinition2"]
+margin_left = 80.0
+margin_right = 104.0
+margin_bottom = 16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="BuildingDefinition2"]
+margin_left = 56.0
+margin_top = -40.0
+margin_right = 72.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuildingDefinition3" type="Polygon2D" parent="."]
+position = Vector2( 41, 406 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 32, -40, 64, -56, 96, -40, 88, -40, 88, -24, 120, -8, 112, -8, 112, 56, 40, 56, 40, -40 )
+script = ExtResource( 5 )
+
+[node name="ColorRect5" type="ColorRect" parent="BuildingDefinition3"]
+margin_left = 56.0
+margin_right = 64.0
+margin_bottom = 8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="BuildingDefinition3"]
+margin_left = 80.0
+margin_right = 104.0
+margin_bottom = 16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="BuildingDefinition3"]
+margin_left = 56.0
+margin_top = -40.0
+margin_right = 72.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuildingDefinition4" type="Polygon2D" parent="."]
+position = Vector2( 827, 329 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 32, -40, 64, -56, 96, -40, 88, -40, 88, -24, 120, -8, 112, -8, 112, 56, 40, 56, 40, -40 )
+script = ExtResource( 5 )
+
+[node name="ColorRect5" type="ColorRect" parent="BuildingDefinition4"]
+margin_left = 56.0
+margin_right = 64.0
+margin_bottom = 8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="BuildingDefinition4"]
+margin_left = 80.0
+margin_right = 104.0
+margin_bottom = 16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="BuildingDefinition4"]
+margin_left = 56.0
+margin_top = -40.0
+margin_right = 72.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuildingDefinition5" type="Polygon2D" parent="."]
+position = Vector2( 651, 349 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 32, -40, 64, -56, 96, -40, 88, -40, 88, -24, 120, -8, 112, -8, 112, 56, 40, 56, 40, -40 )
+script = ExtResource( 5 )
+
+[node name="ColorRect5" type="ColorRect" parent="BuildingDefinition5"]
+margin_left = 56.0
+margin_right = 64.0
+margin_bottom = 8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="BuildingDefinition5"]
+margin_left = 80.0
+margin_right = 104.0
+margin_bottom = 16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="BuildingDefinition5"]
+margin_left = 56.0
+margin_top = -40.0
+margin_right = 72.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -168, 487, -46, 468, 56, 459, 202, 446, 346, 440, 447, 422, 567, 418, 669, 403, 783, 381, 986, 354, 1174, 340, 1258, 367, 1280, 734, 1124, 773, -152, 762 )

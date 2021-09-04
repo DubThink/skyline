@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Polygon2D",
+"class": "BuildingDefinition",
+"language": "GDScript",
+"path": "res://arttest/Building.gd"
+} ]
+_global_script_class_icons={
+"BuildingDefinition": ""
+}
+
 [application]
 
 config/name="Smpl"
