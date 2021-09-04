@@ -6,42 +6,46 @@ extends Node2D
 # var b = "text"
 var layers = []
 var height_allowance = 100
-
-var selected_building_type = load("res://FakeBuilding.tscn")
-
+var selected_building = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	layers.append(get_node("LayerArray"))
 	layers.append(get_node("LayerArray2"))
 	layers.append(get_node("LayerArray3"))
+	# this stuff should actually happen in whatever "buttons" we make for 
+	# selection, as well as in the place where the "buttons" are instantiated.
+	selected_building = load("res://FakeBuilding.tscn").instance()
+	add_child(selected_building)
+#	selected_building.hide()
 
 func _process(delta):
+	var mouse_pos = get_node("Camera2D").get_global_mouse_position()
+	var mouse_in_allowance = abs(layers[0].get_y_value() - mouse_pos.y) < height_allowance
+	if mouse_in_allowance and not selected_building == null:
+		layers[0].display_preview(selected_building, mouse_pos.x)
+	elif not selected_building == null:
+		selected_building.position = mouse_pos
+#		selected_building.hide()
 	if Input.is_action_just_pressed("ui_click"):
-		var mouse_pos = get_node("Camera2D").get_global_mouse_position()
-		if abs(layers[0].get_y_value() - mouse_pos.y) < height_allowance:
+		if mouse_in_allowance and not selected_building == null:
 			# TODO replace with actual building stuff
-	#		var building_scene = load("res://FakeBuilding.tscn")
-			var building = selected_building_type.instance()
-	#		add_child(building)
-	#		building.position = Vector2(mouse_pos.x, 100)
-			layers[0].add_building(selected_building_type, mouse_pos.x, building.get_footprint())
-			# do place a house if we've got one selected
+			layers[0].add_building(selected_building, mouse_pos.x, selected_building.get_footprint())
 	#TODO smooth these out and make it nice :)
 	if Input.is_action_just_released("ui_zoom_in"):
 		# zoom in
-		var mouse_pos = get_node("Camera2D").get_global_mouse_position()
 		var cam = get_node("Camera2D")
 		cam.zoom -= Vector2(0.1, 0.1)
 		cam.position = lerp(cam.position, Vector2(mouse_pos.x, cam.position.y), 0.1)
-		print("zoom in")
-		pass
 	if Input.is_action_just_released("ui_zoom_out"):
 		# zoom out
-		var mouse_pos = get_node("Camera2D").get_global_mouse_position()
 		var cam = get_node("Camera2D")
 		cam.zoom += Vector2(0.1, 0.1)
 		cam.position = lerp(cam.position, Vector2(mouse_pos.x, cam.position.y), 0.1)
-		print("zoom out")
+	if Input.is_action_just_pressed("ui_right_click"):
+		# get rid of current thing
+		# actually just put it back at the bottom?
 		pass
-	pass
+
+func select_building(inst):
+	selected_building = inst
