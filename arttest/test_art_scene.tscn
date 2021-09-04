@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://arttest/sky.material" type="Material" id=1]
-[ext_resource path="res://arttest/sky_west.tres" type="Material" id=2]
+[ext_resource path="res://arttest/SkyRenderManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://arttest/building_shader.gdshader" type="Shader" id=3]
-[ext_resource path="res://arttest/SkyRenderManager.gd" type="Script" id=4]
 [ext_resource path="res://arttest/Building.gd" type="Script" id=5]
 
 [sub_resource type="ViewportTexture" id=3]
@@ -27,37 +25,8 @@ shader_param/sky_target = SubResource( 1 )
 
 [node name="Node2D" type="Node2D"]
 
-[node name="SkyRenderManager" type="Node2D" parent="."]
-script = ExtResource( 4 )
+[node name="SkyRenderManager" parent="." instance=ExtResource( 1 )]
 buildingMaterial = SubResource( 4 )
-
-[node name="Viewport" type="Viewport" parent="SkyRenderManager"]
-size = Vector2( 2048, 1024 )
-transparent_bg = true
-handle_input_locally = false
-hdr = false
-disable_3d = true
-usage = 0
-render_target_v_flip = true
-render_target_update_mode = 3
-
-[node name="ColorRect" type="ColorRect" parent="SkyRenderManager/Viewport"]
-material = ExtResource( 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 512.0
-margin_bottom = 512.0
-
-[node name="Background" type="ColorRect" parent="SkyRenderManager"]
-material = ExtResource( 2 )
-margin_left = -5000.0
-margin_top = -1000.0
-margin_right = 5000.0
-margin_bottom = 1000.0
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
