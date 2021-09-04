@@ -7,6 +7,9 @@ var y_value = 270 # TODO; actually probably get curve height at position
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+	
+func get_y_value():
+	return y_value
 
 func add_building(building_scene, x_position, footprint):
 	# Check if there is anything blocking the footprint, return false if so
@@ -14,6 +17,7 @@ func add_building(building_scene, x_position, footprint):
 	var before_idx = find_building_before(x_position)
 	var after_idx = before_idx + 1# find_building_after(x_position)#before_idx + 1
 	print("before idx %d, after idx %d" % [before_idx, after_idx])
+	# TODO Rejig this so it doesn't assume that we're dealing with the bottom left corner
 	var new_l = x_position
 	var new_r = x_position + footprint
 	if before_idx >= 0 and before_idx < building_list.size(): # validity check
