@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SkylineLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skyline.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://BuildingFactory.tscn" type="PackedScene" id=4]
 [ext_resource path="res://arttest/SkyRenderManager.tscn" type="PackedScene" id=5]
 [ext_resource path="res://arttest/building_shader.gdshader" type="Shader" id=6]
+[ext_resource path="res://MenuDock.gd" type="Script" id=7]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -22,7 +23,7 @@ script = ExtResource( 2 )
 [node name="BuildingFactory" parent="." instance=ExtResource( 4 )]
 
 [node name="SkyRenderManager" parent="." instance=ExtResource( 5 )]
-position = Vector2( 109.26, -43.2599 )
+position = Vector2( 113.633, -19.7165 )
 buildingMaterial = SubResource( 1 )
 SECONDS_PER_DAY = 15.0
 
@@ -35,6 +36,7 @@ SECONDS_PER_DAY = 15.0
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 511.143, 301.606 )
 current = true
+smoothing_enabled = true
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 511.937, 304.781 )
@@ -52,3 +54,90 @@ position = Vector2( 1022.59, 474.693 )
 scale = Vector2( 0.355118, 2.73622 )
 texture = ExtResource( 3 )
 offset = Vector2( -32, -21.4873 )
+
+[node name="GuiLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuDock" type="Panel" parent="GuiLayer"]
+modulate = Color( 1, 1, 1, 0.537255 )
+self_modulate = Color( 1, 1, 1, 0.505882 )
+anchor_top = 1.00174
+anchor_right = 1.0
+anchor_bottom = 1.00174
+margin_top = -101.0
+margin_right = 3.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="GuiLayer/MenuDock"]
+self_modulate = Color( 1, 1, 1, 0.403922 )
+anchor_top = 0.495
+anchor_bottom = 0.495
+margin_left = 82.158
+margin_top = -44.995
+margin_right = 168.158
+margin_bottom = 45.005
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="GuiLayer/MenuDock"]
+self_modulate = Color( 1, 1, 1, 0.403922 )
+anchor_top = 0.495
+anchor_bottom = 0.495
+margin_left = 247.316
+margin_top = -44.995
+margin_right = 333.316
+margin_bottom = 45.005
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="GuiLayer/MenuDock"]
+self_modulate = Color( 1, 1, 1, 0.403922 )
+anchor_top = 0.495
+anchor_bottom = 0.495
+margin_left = 398.52
+margin_top = -44.995
+margin_right = 484.52
+margin_bottom = 45.005
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="GuiLayer/MenuDock"]
+self_modulate = Color( 1, 1, 1, 0.403922 )
+anchor_top = 0.495
+anchor_bottom = 0.495
+margin_left = 573.268
+margin_top = -44.995
+margin_right = 659.268
+margin_bottom = 45.005
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="GuiLayer/MenuDock"]
+self_modulate = Color( 1, 1, 1, 0.403922 )
+anchor_top = 0.495
+anchor_bottom = 0.495
+margin_left = 715.729
+margin_top = -44.995
+margin_right = 801.729
+margin_bottom = 45.005
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button6" type="Button" parent="GuiLayer/MenuDock"]
+self_modulate = Color( 1, 1, 1, 0.403922 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 867.808
+margin_top = -45.5
+margin_right = 953.808
+margin_bottom = 44.5
+__meta__ = {
+"_edit_use_anchors_": false
+}

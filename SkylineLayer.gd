@@ -8,7 +8,7 @@ var y_value = 270 # TODO; actually probably get curve height at position
 func _ready():
 	pass # Replace with function body.
 	
-func get_y_value():
+func get_y_value_at(x_pos):
 	return y_value
 
 func add_building(building_inst: BuildingInstance, x_position):
@@ -66,8 +66,9 @@ func instance_building(inst, x_pos):
 #	var building_inst = scene.instance()
 	# TODO $AWELSH I hacked this it needs to be fixed !!
 #	var building_inst = inst.duplicate()
+	inst.get_parent().remove_child(inst)
 	add_child(inst)
-	inst.position = Vector2(x_pos, y_value)
+	inst.set_position(Vector2(x_pos, get_y_value_at(x_pos)))
 	return inst
 	
 func display_preview(inst, x_position):
@@ -89,6 +90,5 @@ func display_preview(inst, x_position):
 			# overlap with after building
 #			print("overlap with after building")
 			inst.set_tint(Color(1,0,0))
-	inst.position.x = x_position
-	inst.position.y = y_value
+	inst.set_position(Vector2(x_position, get_y_value_at(x_position)))
 	inst.show()
