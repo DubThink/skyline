@@ -8,13 +8,13 @@ var layers = []
 var height_allowance = 100
 var selected_building: BuildingInstance
 
-
 var target_cam_zoom
 var target_cam_pos
 var pct_zoom = 0.2 # maybe change to 0.3
 onready var building_factory: BuildingFactory = get_node("BuildingFactory")
 onready var cam : Camera2D = get_node("Camera2D")
 onready var dock = get_node("GuiLayer/MenuDock")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	layers.append(get_node("LayerArray"))
@@ -37,7 +37,7 @@ func update_cam():
 
 func _process(delta):
 	var mouse_pos = get_node("Camera2D").get_global_mouse_position()
-	var mouse_in_allowance = abs(layers[0].get_y_value_at(0) - mouse_pos.y) < height_allowance
+	var mouse_in_allowance = abs(layers[0].get_approx_y_value(0) - mouse_pos.y) < height_allowance
 	if mouse_in_allowance and not selected_building == null:
 		layers[0].display_preview(selected_building, mouse_pos.x)
 	elif not selected_building == null:
