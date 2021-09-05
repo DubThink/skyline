@@ -35,18 +35,20 @@ func _ready():
 	
 	print(buildingMaterial)
 	
-	for child in get_parent().get_children():
-		print(child)
-		if child is BuildingDefinition:
-			child.initialize(buildingMaterial)
+#	for child in get_parent().get_children():
+#		print(child)
+#		if child is BuildingDefinition:
+#			child.initialize(buildingMaterial)
 
 func notify_resized(new_size: Rect2):
 	last_viewport_rect = new_size
 	print("Resizing viewport to size ", new_size.size)
 	sky_viewport.set_size(new_size.size)
 
-func register_building_shader(var mat: ShaderMaterial):
+func instance_and_track_building_shader():
+	var mat = buildingMaterial.duplicate()
 	building_shaders_to_update.append(mat)
+	return mat
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

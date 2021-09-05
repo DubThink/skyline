@@ -30,7 +30,9 @@ func create_building(definition: BuildingDefinition):
 var hasRun = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if not hasRun:
-		# TODO instead call BuildingManager or whatever David writes
-		add_child(create_building(building_defs[0]))
-	hasRun = true
+	pass
+#	if not hasRun:
+#		# TODO instead call BuildingManager or whatever David writes
+#		create_building(building_defs[0])
+#		add_child(null)
+#	hasRun = true

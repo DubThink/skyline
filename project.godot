@@ -24,7 +24,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://arttest/BuildingFactory.gd"
 }, {
-"base": "ColorRect",
+"base": "Sprite",
 "class": "BuildingInstance",
 "language": "GDScript",
 "path": "res://arttest/BuildingInstance.gd"
