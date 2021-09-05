@@ -6,18 +6,13 @@ extends Node
 # var b = "text"
 
 class_name BuildingFactory
-var building_defs: Array
+var rid: RuntimeImportData = preload("res://rid1.tres")
 
 var sky_render_manager: SkyRenderManager
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sky_render_manager = get_parent().get_node("SkyRenderManager")
 	pass # Replace with function body.
-
-
-func add_building_definition(definition: BuildingDefinition):
-	assert(not definition in building_defs)
-	building_defs.append(definition)
 	
 
 func create_building(definition: BuildingDefinition):

@@ -4,15 +4,15 @@
 [ext_resource path="res://arttest/sky.material" type="Material" id=2]
 [ext_resource path="res://arttest/window_gen.gdshader" type="Shader" id=3]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
 shader_param/bchannel = 0.1
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 3 )
 shader_param/bchannel = 0.3
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 3 )
 shader_param/bchannel = 0.2
 
@@ -31,13 +31,15 @@ __meta__ = {
 }
 
 [node name="BuildingDefinition" type="Polygon2D" parent="."]
-position = Vector2( 24, -56 )
+position = Vector2( 87, 74 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 32, -40, 64, -56, 96, -40, 88, -40, 88, -24, 120, -8, 112, -8, 112, 56, 40, 56, 40, -40 )
 script = ExtResource( 1 )
+building_name = "Testboi"
+building_type = 1
 
 [node name="ColorRect4" type="ColorRect" parent="BuildingDefinition"]
-material = SubResource( 2 )
+material = SubResource( 1 )
 margin_left = 56.0
 margin_top = -40.0
 margin_right = 72.0
@@ -48,7 +50,7 @@ __meta__ = {
 }
 
 [node name="ColorRect6" type="ColorRect" parent="BuildingDefinition"]
-material = SubResource( 3 )
+material = SubResource( 2 )
 margin_left = 80.0
 margin_right = 88.0
 margin_bottom = 16.0
@@ -58,7 +60,7 @@ __meta__ = {
 }
 
 [node name="ColorRect7" type="ColorRect" parent="BuildingDefinition"]
-material = SubResource( 3 )
+material = SubResource( 2 )
 margin_left = 96.0
 margin_right = 104.0
 margin_bottom = 16.0
@@ -68,7 +70,56 @@ __meta__ = {
 }
 
 [node name="ColorRect5" type="ColorRect" parent="BuildingDefinition"]
-material = SubResource( 4 )
+material = SubResource( 3 )
+margin_left = 56.0
+margin_right = 64.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuildingDefinition2" type="Polygon2D" parent="."]
+position = Vector2( -19, 63 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 32, -40, 64, -56, 96, -40, 88, -40, 88, -24, 120, -8, 112, -8, 112, 56, 40, 56, 40, -40 )
+script = ExtResource( 1 )
+building_name = "Testboi"
+building_type = 1
+
+[node name="ColorRect4" type="ColorRect" parent="BuildingDefinition2"]
+material = SubResource( 1 )
+margin_left = 56.0
+margin_top = -40.0
+margin_right = 72.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="BuildingDefinition2"]
+material = SubResource( 2 )
+margin_left = 80.0
+margin_right = 88.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="BuildingDefinition2"]
+material = SubResource( 2 )
+margin_left = 96.0
+margin_right = 104.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="BuildingDefinition2"]
+material = SubResource( 3 )
 margin_left = 56.0
 margin_right = 64.0
 margin_bottom = 8.0
