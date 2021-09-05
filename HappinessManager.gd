@@ -7,15 +7,18 @@ var conductivity = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(name)
 	pass # Replace with function body.
 
 func evolve_happiness(h, dt):
 	var o = []
 	for i in h:
 		o.append(0)
+	if len(h) < 3:
+		return h
 	for i in range(len(h)):
 		if i == 0:
-			o[i] = conductivity * (h[1] - h[0] ) * dt + h[0]
+			o[i] = conductivity * (h[1] - h[0]) * dt + h[0]
 		elif i == len(h)-1:
 			o[i] = conductivity * (h[i - 1] - h[i]) * dt + h[i]
 		else:
