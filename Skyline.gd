@@ -52,22 +52,12 @@ func _process(delta):
 				add_child(selected_building)
 	#TODO smooth these out and make it nice :)
 	if Input.is_action_just_released("ui_zoom_in"):
-#		cam.zoom -= Vector2(0.1, 0.1)
-#		cam.position = lerp(cam.position, Vector2(mouse_pos.x, cam.position.y), 0.1)
-#		var mouse_pos_local = get_node("Camera2D").get_local_mouse_position()
-#		var inverse_mouse_xpos = cam.get_viewport_rect().size.x - mouse_pos.x
 		target_cam_zoom = (cam.zoom - Vector2(pct_zoom, pct_zoom))
-		print("mouse xpos %f, cam xpos %f" % [mouse_pos.x, cam.position.x])
-#		target_cam_pos = lerp(cam.position, Vector2(inverse_mouse_xpos, cam.position.y), 0.2)
 		var move_vec = (Vector2(mouse_pos.x, cam.position.y) - cam.position) * pct_zoom
 		target_cam_pos = cam.position + move_vec
 	if Input.is_action_just_released("ui_zoom_out"):
 		var inverse_mouse_xpos = cam.get_viewport_rect().size.x - mouse_pos.x
-#		cam.zoom += Vector2(0.1, 0.1)
-#		cam.position = lerp(cam.position, Vector2(inverse_mouse_xpos, cam.position.y), 0.1)
 		target_cam_zoom = (cam.zoom + Vector2(pct_zoom, pct_zoom))
-		print("mouse xpos %f, cam xpos %f" % [mouse_pos.x, cam.position.x])
-#		target_cam_pos = lerp(cam.position, Vector2(inverse_mouse_xpos, cam.position.y), 0.2)
 		var move_vec = (Vector2(mouse_pos.x, cam.position.y) - cam.position) * pct_zoom
 		target_cam_pos = cam.position - move_vec
 	if Input.is_action_just_pressed("ui_right_click"):
