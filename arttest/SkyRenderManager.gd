@@ -32,9 +32,8 @@ func _ready():
 			sky_viewport = child
 			break
 	assert(sky_viewport)
-	
-	print(buildingMaterial)
-	
+	print("Setting up building material...")
+	buildingMaterial.set_shader_param("sky_target", get_node("Viewport").get_texture())
 #	for child in get_parent().get_children():
 #		print(child)
 #		if child is BuildingDefinition:

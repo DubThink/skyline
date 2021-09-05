@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Smpl"
-run/main_scene="res://test1.tscn"
+run/main_scene="res://Skyline.tscn"
 config/icon="res://icon.png"
 
 [input]
