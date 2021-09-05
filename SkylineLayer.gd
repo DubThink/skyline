@@ -4,12 +4,19 @@ extends Node2D
 
 var building_list = [] # array of tuples of [building_instance, x_pos, footprint]
 var y_value = 270 # TODO; actually probably get curve height at position
+onready var terrain : Path2D = get_parent().get_node("Terrain")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 	
-func get_y_value_at(x_pos):
+func get_approx_y_value(x_pos):
 	return y_value
+	
+func get_y_value_at(x_pos):
+	var curve = terrain.get_curve()
+	var est_point = curve.interpolate_baked(curve.get_closest_offset(Vector2(x_pos, y_value)))
+	return est_point.y
 
 func add_building(building_inst: BuildingInstance, x_position):
 	var footprint = building_inst.get_footprint()
