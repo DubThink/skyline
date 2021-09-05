@@ -7,12 +7,13 @@ extends Polygon2D
 
 
 class_name BuildingDefinition
-export (String) var building_name;
 export (BUILDING.TYPE, FLAGS ) var building_type;
 export (BUILDING.LAYER) var layer;
 export (int, 0, 50) var person_capacity;
+export (bool) var no_export;
 
 #var sr_manager = preload("res://arttest/SkyRenderManager.gd")
+var bounds: Rect2;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,3 +34,14 @@ func initialize(var building_mat: ShaderMaterial):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func calculate_bounds(var offset):
+	var pg = get_polygon()
+	bounds = Rect2(pg[0].x,pg[0].y,0,0)
+	for p in pg:
+		bounds = bounds.expand(p)
+	print("Bounds pre offset:",bounds)
+	print("offset:",offset)
+	bounds.position+=offset;
+	print("Bounds post offset:",bounds)	
+	return bounds

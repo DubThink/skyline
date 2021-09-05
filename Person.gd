@@ -24,6 +24,6 @@ export (float, 1, 400) var walkspeed_pps
 
 func walk_step(delta):
 	var dist = dir*walkspeed_pps*delta
-	print(offset)
+	#print(offset)
 	set_offset(offset+dist)
 	

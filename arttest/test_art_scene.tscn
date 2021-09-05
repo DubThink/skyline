@@ -235,7 +235,7 @@ polygon = PoolVector2Array( -168, 487, -46, 468, 56, 459, 202, 446, 346, 440, 44
 
 [node name="BuildingInstance" type="Sprite" parent="."]
 material = SubResource( 6 )
-position = Vector2( 110, 454 )
+position = Vector2( 112, 430 )
 texture = ExtResource( 8 )
 script = ExtResource( 6 )
 

@@ -22,8 +22,12 @@ func _ready():
 	
 
 func save_out():
-	ResourceSaver.save("res://rid1.tres",rid)
-
+	ResourceSaver.save("res://rid1.tres",rid,ResourceSaver.FLAG_CHANGE_PATH)
+	#rid.take_over_path(rid.resource_path)
+	
+	var bw = BuildingBakedDefinition.new()
+	bw.building_name = "bake3"
+	ResourceSaver.save("res://testbw.tres",bw,ResourceSaver.FLAG_CHANGE_PATH)
 
 
 var bake_target_idx=-1
@@ -36,7 +40,7 @@ func get_next_bake_target():
 		bake_target = data_instance.get_child(bake_target_idx)
 		print("checking ", bake_target)
 	
-	while not bake_target is BuildingDefinition:
+	while not bake_target is BuildingDefinition or bake_target.no_export:
 		bake_target_idx+=1
 		if bake_target_idx<=child_count:
 			bake_target = data_instance.get_child(bake_target_idx)
@@ -47,13 +51,21 @@ func get_next_bake_target():
 	if bake_target_idx > child_count:
 		bake_target = null
 
+
 func setup_building_bake(target: BuildingDefinition):
 	assert(target)
 	print("Setting up bake for ",target)
+	var offset = target.get_position()
+	offset.y*=-1
 	target.get_parent().remove_child(target)
 	bake_target_idx-=1
 	viewport.add_child(target)
-	target.set_pos(0,0)
+	target.visible=true
+	var bounds = target.calculate_bounds(offset)
+	print(offset, bounds)
+	# todo figure out why we render out of position on some buildings
+	target.set_position(Vector2(8,504)+(bounds.position-offset)*Vector2(-1,1))
+
 
 func finish_building_bake(target: BuildingDefinition):
 	print("Finishing up bake for ",target)
@@ -63,17 +75,23 @@ func finish_building_bake(target: BuildingDefinition):
 	tex.create_from_image(vtex.get_data())
 	get_node("Preview2").set_texture(tex)
 	
-	bbd.set_tex(tex,20,20)
+	bbd.set_tex(tex)
 	rid.add_building_definition(bbd)
+
+	target.visible=false
 
 var baking = true
 var fc = 0
+
+
 func _process(delta):
 	if not baking:
 		return
 	
 	print("### FRAME ",fc," ###")
 	fc +=1
+	if fc%2==1:
+		return
 	if bake_target:
 		finish_building_bake(bake_target)
 	get_next_bake_target()

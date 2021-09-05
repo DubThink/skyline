@@ -30,15 +30,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BuildingDefinition" type="Polygon2D" parent="."]
-position = Vector2( 87, 74 )
+[node name="FOR SCALE" type="Polygon2D" parent="."]
+position = Vector2( 84, -28 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 32, -40, 64, -56, 96, -40, 88, -40, 88, -24, 120, -8, 112, -8, 112, 56, 40, 56, 40, -40 )
 script = ExtResource( 1 )
-building_name = "Testboi"
 building_type = 1
+no_export = true
 
-[node name="ColorRect4" type="ColorRect" parent="BuildingDefinition"]
+[node name="ColorRect4" type="ColorRect" parent="FOR SCALE"]
 material = SubResource( 1 )
 margin_left = 56.0
 margin_top = -40.0
@@ -49,7 +49,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect6" type="ColorRect" parent="BuildingDefinition"]
+[node name="ColorRect6" type="ColorRect" parent="FOR SCALE"]
 material = SubResource( 2 )
 margin_left = 80.0
 margin_right = 88.0
@@ -59,7 +59,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect7" type="ColorRect" parent="BuildingDefinition"]
+[node name="ColorRect7" type="ColorRect" parent="FOR SCALE"]
 material = SubResource( 2 )
 margin_left = 96.0
 margin_right = 104.0
@@ -69,7 +69,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect5" type="ColorRect" parent="BuildingDefinition"]
+[node name="ColorRect5" type="ColorRect" parent="FOR SCALE"]
 material = SubResource( 3 )
 margin_left = 56.0
 margin_right = 64.0
@@ -79,15 +79,192 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BuildingDefinition2" type="Polygon2D" parent="."]
-position = Vector2( -19, 63 )
+[node name="Cozy Family Home" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -64, -24 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 16, 48, 16, -64, 9, -62, 8, -64, 64, -96, 120, -64, 119, -62, 112, -64, 112, -32, 160, -32, 160, -13, 156, -13, 156, 16, 168, 16, 168, 48 )
+script = ExtResource( 1 )
+building_type = 1
+person_capacity = 3
+
+[node name="ColorRect6" type="ColorRect" parent="Cozy Family Home"]
+material = SubResource( 2 )
+margin_left = 132.0
+margin_top = -8.0
+margin_right = 144.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Cozy Family Home/ColorRect6"]
+material = SubResource( 2 )
+margin_left = -20.0
+margin_right = -8.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Cozy Family Home"]
+material = SubResource( 2 )
+margin_left = 132.0
+margin_top = -8.0
+margin_right = 144.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Cozy Family Home/ColorRect7"]
+material = SubResource( 2 )
+margin_left = -20.0
+margin_right = -8.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Cozy Family Home"]
+material = SubResource( 2 )
+margin_left = 84.0
+margin_top = -56.0
+margin_right = 96.0
+margin_bottom = -40.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="Cozy Family Home"]
+material = SubResource( 2 )
+margin_left = 84.0
+margin_top = -12.0
+margin_right = 96.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="Cozy Family Home"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_top = -12.0
+margin_right = 44.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Cozy Family Home"]
+material = SubResource( 2 )
+margin_left = 60.0
+margin_top = -52.0
+margin_right = 68.0
+margin_bottom = -40.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Cozy Family Home"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_top = -56.0
+margin_right = 44.0
+margin_bottom = -40.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pizza Place" type="Polygon2D" parent="."]
+position = Vector2( -56, -40 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 204, 72, 184, 36, 152, 36, 152, 0, 160, 0, 164, -4, 116, -20, 108, -40, 4, -40, -4, -20, -52, -4, -48, 0, -40, 0, -40, 35.75, -72, 36, -92, 72 )
+script = ExtResource( 1 )
+building_type = 2
+person_capacity = 3
+
+[node name="ColorRect5" type="ColorRect" parent="Pizza Place"]
+material = SubResource( 3 )
+margin_left = 120.0
+margin_top = 6.0
+margin_right = 140.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( -136, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Pizza Place/ColorRect5"]
+material = SubResource( 3 )
+margin_left = -96.0
+margin_top = -2.0
+margin_right = -84.0
+margin_bottom = 26.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Pizza Place/ColorRect5"]
+material = SubResource( 3 )
+margin_left = -24.0
+margin_right = -4.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Pizza Place/ColorRect5"]
+material = SubResource( 3 )
+margin_left = -48.0
+margin_right = -28.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Pizza Place/ColorRect5"]
+material = SubResource( 3 )
+margin_left = -72.0
+margin_right = -52.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Pizza Place"]
+material = SubResource( 3 )
+margin_left = -20.0
+margin_top = 6.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Simple Home" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -64, -24 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 32, -40, 64, -56, 96, -40, 88, -40, 88, -24, 120, -8, 112, -8, 112, 56, 40, 56, 40, -40 )
 script = ExtResource( 1 )
-building_name = "Testboi"
 building_type = 1
+person_capacity = 2
 
-[node name="ColorRect4" type="ColorRect" parent="BuildingDefinition2"]
+[node name="ColorRect4" type="ColorRect" parent="Simple Home"]
 material = SubResource( 1 )
 margin_left = 56.0
 margin_top = -40.0
@@ -98,7 +275,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect6" type="ColorRect" parent="BuildingDefinition2"]
+[node name="ColorRect6" type="ColorRect" parent="Simple Home"]
 material = SubResource( 2 )
 margin_left = 80.0
 margin_right = 88.0
@@ -108,7 +285,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect7" type="ColorRect" parent="BuildingDefinition2"]
+[node name="ColorRect7" type="ColorRect" parent="Simple Home"]
 material = SubResource( 2 )
 margin_left = 96.0
 margin_right = 104.0
@@ -118,12 +295,322 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect5" type="ColorRect" parent="BuildingDefinition2"]
+[node name="ColorRect5" type="ColorRect" parent="Simple Home"]
 material = SubResource( 3 )
 margin_left = 56.0
 margin_right = 64.0
 margin_bottom = 8.0
 rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ranch with Garage" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -16, -24 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 116, 56, 116, -8, 120, -8, 120, -24, -28, -24, -28, -8, -24, -8, -24, 28, -40, 28, -40, -8, -36, -8, -64, -20, -92, -8, -88, -8, -88, 28, -88, 56 )
+script = ExtResource( 1 )
+building_type = 1
+person_capacity = 2
+
+[node name="ColorRect4" type="ColorRect" parent="Ranch with Garage"]
+material = SubResource( 1 )
+margin_left = -82.0
+margin_right = -78.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="Ranch with Garage/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 8.0
+margin_right = 12.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Ranch with Garage/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 32.0
+margin_right = 36.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Ranch with Garage/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 24.0
+margin_right = 28.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Ranch with Garage/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 16.0
+margin_right = 20.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Ranch with Garage"]
+material = SubResource( 2 )
+margin_left = 88.0
+margin_right = 96.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Ranch with Garage/ColorRect6"]
+material = SubResource( 2 )
+margin_left = 12.0
+margin_right = 16.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Ranch with Garage/ColorRect6"]
+material = SubResource( 2 )
+margin_left = -8.0
+margin_right = -4.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Ranch with Garage"]
+material = SubResource( 3 )
+margin_left = -16.0
+margin_right = -8.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Ranch with Garage"]
+material = SubResource( 3 )
+margin_left = 56.0
+margin_right = 64.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Ranch with Garage"]
+material = SubResource( 3 )
+margin_left = 32.0
+margin_right = 40.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Ranch with Garage/ColorRect8"]
+material = SubResource( 3 )
+margin_left = -20.0
+margin_right = -12.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stilt House" type="Polygon2D" parent="."]
+position = Vector2( -24, -24 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 92, 56, 92, 0, 112, 0, 112, -8, 96, -8, 96, -44, 100, -44, 100, -80, -52, -80, -52, -44, -48, -44, -48, -8, -64, -8, -64, 0, -64, 32, -48, 32, -48, 0, -44, 0, -44, 56, -36, 56, -36, 0, -12, 0, -12, 56, -4, 56, -4, 0, 20, 0, 20, 56, 28, 56, 28, 0, 52, 0, 52, 56, 60, 56, 60, 0, 84, 0, 84, 56 )
+script = ExtResource( 1 )
+building_type = 1
+person_capacity = 4
+
+[node name="ColorRect4" type="ColorRect" parent="Stilt House"]
+material = SubResource( 1 )
+margin_left = -38.0
+margin_top = -76.0
+margin_right = -26.0
+margin_bottom = -68.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Stilt House/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 16.0
+margin_right = 28.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Stilt House/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 32.0
+margin_right = 44.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="Stilt House/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 48.0
+margin_right = 60.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="Stilt House/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 64.0
+margin_right = 76.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect13" type="ColorRect" parent="Stilt House/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 92.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect14" type="ColorRect" parent="Stilt House/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 96.0
+margin_right = 108.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect15" type="ColorRect" parent="Stilt House/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 112.0
+margin_right = 124.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Stilt House"]
+material = SubResource( 3 )
+margin_left = 44.0
+margin_top = -36.0
+margin_right = 52.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Stilt House/ColorRect5"]
+material = SubResource( 3 )
+margin_left = -16.0
+margin_right = -8.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Stilt House"]
+material = SubResource( 3 )
+margin_left = 80.0
+margin_top = -36.0
+margin_right = 88.0
+margin_bottom = -28.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Stilt House/ColorRect9"]
+material = SubResource( 3 )
+margin_left = -16.0
+margin_right = -8.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Stilt House"]
+material = SubResource( 3 )
+margin_left = 8.0
+margin_top = -44.0
+margin_right = 20.0
+margin_bottom = -16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Stilt House/ColorRect8"]
+material = SubResource( 3 )
+margin_left = -16.0
+margin_right = -4.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Stilt House/ColorRect8"]
+material = SubResource( 3 )
+margin_left = -32.0
+margin_right = -20.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="Stilt House/ColorRect8"]
+material = SubResource( 3 )
+margin_left = -48.0
+margin_right = -36.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -188.0
+margin_top = -80.0
+margin_right = -148.0
+margin_bottom = 32.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

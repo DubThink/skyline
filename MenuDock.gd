@@ -22,7 +22,8 @@ func _ready():
 
 #TODO build a wrapper for this for sim API
 func add_available_building(index):
-	var inst = building_factory.create_building(null)
+	print("adding new building")
+	var inst = building_factory.create_building(building_factory.get_building_def())
 	available_buildings.append(inst)
 	visualize_building_on_button(index)
 
@@ -44,6 +45,7 @@ func on_click(index):
 		skyline.select_building(building)
 		available_buildings[index] = null
 		last_removed = index
+		add_specific_building(building_factory.create_building(building_factory.get_building_def()))
 	elif available_buildings.size() <= index:
 		print("empty")
 	pass

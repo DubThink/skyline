@@ -29,7 +29,7 @@ script = ExtResource( 2 )
 [node name="BuildingFactory" parent="." instance=ExtResource( 4 )]
 
 [node name="SkyRenderManager" parent="." instance=ExtResource( 5 )]
-position = Vector2( -13, -62 )
+position = Vector2( -15, -60 )
 buildingMaterial = SubResource( 1 )
 SECONDS_PER_DAY = 15.0
 
@@ -51,8 +51,9 @@ current = true
 smoothing_enabled = true
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 511.937, 304.781 )
-scale = Vector2( 15.9563, 1 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 584.5, 462.891 )
+scale = Vector2( 50.7031, 5.94092 )
 z_index = 11
 texture = ExtResource( 3 )
 
@@ -156,6 +157,7 @@ __meta__ = {
 }
 
 [node name="Terrain" type="Path2D" parent="."]
+visible = false
 position = Vector2( -5, -20 )
 z_index = 10
 curve = SubResource( 2 )

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://arttest/BuildingBakedDefinition.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+building_name = "bake3"
+building_type = 0
+layer = 0
+person_capacity = 0
+bounds = Rect2( 0, 0, 0, 0 )
+strings = [  ]

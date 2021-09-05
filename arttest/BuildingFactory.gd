@@ -6,21 +6,23 @@ extends Node
 # var b = "text"
 
 class_name BuildingFactory
-var rid: RuntimeImportData = preload("res://rid1.tres")
+var rid: RuntimeImportData
 
 var sky_render_manager: SkyRenderManager
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	rid = ResourceLoader.load("res://rid1.tres","",true)
 	sky_render_manager = get_parent().get_node("SkyRenderManager")
 	pass # Replace with function body.
 	
 
-func create_building(definition: BuildingDefinition):
+func create_building(definition: BuildingBakedDefinition):
 	var testInstance = BuildingInstance.new(definition, sky_render_manager)
 	return testInstance
 	# todo more binding here
 	
-	
+func get_building_def():
+	return rid.building_definitions[randi()%len(rid.building_definitions)]
 
 var hasRun = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -60,7 +60,7 @@ void fragment() {
 	time=mod(time,1f);
 		
 		
-	COLOR.a = ts.a;
+	COLOR.a = ts.a+0.5f;
 	
 	vec2 sky_uv = SCREEN_UV;
 	vec3 sky_color = argb(texture(sky_target,sky_uv).rgb);
@@ -88,7 +88,7 @@ void fragment() {
 	//surface_color = vec3(window);
 	COLOR.rgb=mix(surface_color, window, is_window);
 	//COLOR.rgb = vec3(vec3(tex.rg),0f);
-	
+	//COLOR.rgb=mix(vec3(UV,1),COLOR.rgb, ts.a);
 	// gamma correction	
 	COLOR.rgb = pow(COLOR.rgb, vec3(GAMMA));
 }
