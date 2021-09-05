@@ -36,8 +36,7 @@ func validate():
 	assert(src_tex)
 
 func get_residentialness():
-	print(building_name)
-	print(building_type)
-	print(1<<BUILDING.TYPE.HOUSE & building_type)
-	print(1<<BUILDING.TYPE.FOOD & building_type)
+	pass
 	
+func has_type(var type):
+	return (1<<type & building_type) != 0

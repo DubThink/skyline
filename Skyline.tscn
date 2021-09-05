@@ -29,7 +29,7 @@ script = ExtResource( 2 )
 [node name="BuildingFactory" parent="." instance=ExtResource( 4 )]
 
 [node name="SkyRenderManager" parent="." instance=ExtResource( 5 )]
-position = Vector2( -15, -60 )
+position = Vector2( -19, -58 )
 buildingMaterial = SubResource( 1 )
 SECONDS_PER_DAY = 15.0
 

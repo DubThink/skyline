@@ -49,10 +49,9 @@ vec3 define_color(float time, float alt, float hpos){
 }
 
 void fragment() {
-	ivec2 tex = ivec2(UV*TEXTURE_PIXEL_SIZE);
 	vec4 ts = texture(TEXTURE,UV);
 	if(ts.a<EPSILON){
-		//discard;
+		discard;
 	}
 	float time = FIXED_TIME_OF_DAY;
 	//time = UV.x;
@@ -60,12 +59,12 @@ void fragment() {
 	time=mod(time,1f);
 		
 		
-	COLOR.a = ts.a+0.5f;
+	COLOR.a = ts.a;
 	
 	vec2 sky_uv = SCREEN_UV;
 	vec3 sky_color = argb(texture(sky_target,sky_uv).rgb);
 	
-	float is_window = 1f-step(ts.b,EPSILON);
+	float is_window = 1f-step(ts.b,0.5f);
 	
 	
 	// window calc
@@ -79,6 +78,8 @@ void fragment() {
 		COLOR.rgb = vec3(light_amt);
 	else COLOR.rgb = define_color(UV.x,0.2,.5);
 	
+	// correct for texture filtering
+	ts.b/=ts.r;
 	float window_val = mod(ts.b+WINDOW_OFFSET,.8f)+.2f;
 	//window_val = WINDOW_OFFSET;
 	//COLOR.rgb = step(vec3(1f-UV.y),COLOR.rgb);
