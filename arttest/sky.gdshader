@@ -13,7 +13,7 @@ float mt2u(float val_neg_1_to_1){
 	return val_neg_1_to_1*0.5f + 0.5f;
 }
 
-uniform float GAMMA = 1f;
+uniform float GAMMA = 2.2f;
 
 const vec3 argb(vec3 color){
 	return pow(color,vec3(1f/GAMMA));

@@ -11,7 +11,8 @@ func _ready():
 func get_y_value():
 	return y_value
 
-func add_building(building_inst, x_position, footprint):
+func add_building(building_inst: BuildingInstance, x_position):
+	var footprint = building_inst.get_footprint()
 	# Check if there is anything blocking the footprint, return false if so
 	var placement_index = 0
 	var before_idx = find_building_before(x_position)
@@ -63,30 +64,31 @@ func find_building_after(position):
 	
 func instance_building(inst, x_pos):
 #	var building_inst = scene.instance()
-	var building_inst = inst.duplicate()
-	add_child(building_inst)
-	building_inst.position = Vector2(x_pos, y_value)
-	return building_inst
+	# TODO $AWELSH I hacked this it needs to be fixed !!
+#	var building_inst = inst.duplicate()
+	add_child(inst)
+	inst.position = Vector2(x_pos, y_value)
+	return inst
 	
 func display_preview(inst, x_position):
 	var before_idx = find_building_before(x_position)
 	var after_idx = before_idx + 1# find_building_after(x_position)#before_idx + 1
 	var new_l = x_position
 	var new_r = x_position + inst.get_footprint()
-	var sprite : Sprite = inst.get_node("Sprite")
-	sprite.modulate = Color(1,1,1)
+	
+	inst.clear_tint()
 	if before_idx >= 0 and before_idx < building_list.size(): # validity check
 		var before_r = building_list[before_idx][1] + building_list[before_idx][2]
 		if new_l < before_r:
 			# overlap with before building
 #			print("overlap with before building")
-			sprite.modulate = Color(1,0,0)
+			inst.set_tint(Color(1,0,0))
 	if after_idx >= 0 and after_idx < building_list.size(): # validity check
 		var after_l = building_list[after_idx][1]
 		if new_l < after_l and new_r > after_l:
 			# overlap with after building
 #			print("overlap with after building")
-			sprite.modulate = Color(1,0,0)
+			inst.set_tint(Color(1,0,0))
 	inst.position.x = x_position
 	inst.position.y = y_value
 	inst.show()

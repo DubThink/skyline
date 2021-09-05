@@ -1,8 +1,26 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://arttest/SkyRenderManager.tscn" type="PackedScene" id=1]
+[ext_resource path="res://BuildingFactory.tscn" type="PackedScene" id=2]
 [ext_resource path="res://arttest/building_shader.gdshader" type="Shader" id=3]
+[ext_resource path="res://arttest/test_art_scene.gd" type="Script" id=4]
 [ext_resource path="res://arttest/Building.gd" type="Script" id=5]
+[ext_resource path="res://arttest/BuildingInstance.gd" type="Script" id=6]
+[ext_resource path="res://arttest/sky.material" type="Material" id=7]
+[ext_resource path="res://placeholder_building.png" type="Texture" id=8]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("SkyRenderManager/Viewport")
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
+shader_param/FIXED_TIME_OF_DAY = null
+shader_param/residentialness = 1.0
+shader_param/WINDOW_OFFSET = null
+shader_param/override_tint_color = Color( 0, 0, 0, 0 )
+shader_param/sky_target = SubResource( 1 )
 
 [sub_resource type="ViewportTexture" id=3]
 viewport_path = NodePath("SkyRenderManager/Viewport")
@@ -10,27 +28,38 @@ viewport_path = NodePath("SkyRenderManager/Viewport")
 [sub_resource type="ShaderMaterial" id=4]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
-shader_param/test = null
+shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
+shader_param/FIXED_TIME_OF_DAY = null
+shader_param/residentialness = 1.0
+shader_param/WINDOW_OFFSET = null
+shader_param/override_tint_color = Color( 0, 0, 0, 0 )
 shader_param/sky_target = SubResource( 3 )
 
-[sub_resource type="ViewportTexture" id=1]
-viewport_path = NodePath("SkyRenderManager/Viewport")
+[sub_resource type="ViewportTexture" id=5]
+viewport_path = NodePath("Viewport")
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=6]
 resource_local_to_scene = true
-resource_name = "BuildingMaterial"
 shader = ExtResource( 3 )
-shader_param/test = 0.497
-shader_param/sky_target = SubResource( 1 )
+shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
+shader_param/FIXED_TIME_OF_DAY = 0.444
+shader_param/residentialness = 1.0
+shader_param/WINDOW_OFFSET = 0.75
+shader_param/override_tint_color = Color( 0, 0, 0, 0 )
+shader_param/sky_target = SubResource( 5 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="SkyRenderManager" parent="." instance=ExtResource( 1 )]
-buildingMaterial = SubResource( 4 )
+position = Vector2( -9, 13 )
+buildingMaterial = SubResource( 2 )
+
+[node name="BuildingFactory" parent="." instance=ExtResource( 2 )]
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 2 )
+material = SubResource( 4 )
 margin_left = -78.0
 margin_top = -42.0
 margin_right = 474.0
@@ -203,3 +232,26 @@ __meta__ = {
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( -168, 487, -46, 468, 56, 459, 202, 446, 346, 440, 447, 422, 567, 418, 669, 403, 783, 381, 986, 354, 1174, 340, 1258, 367, 1280, 734, 1124, 773, -152, 762 )
+
+[node name="BuildingInstance" type="Sprite" parent="."]
+material = SubResource( 6 )
+position = Vector2( 110, 454 )
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 2048, 1024 )
+transparent_bg = true
+handle_input_locally = false
+hdr = false
+disable_3d = true
+usage = 0
+render_target_v_flip = true
+render_target_update_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="Viewport"]
+material = ExtResource( 7 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 512.0
+margin_bottom = 512.0

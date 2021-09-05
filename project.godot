@@ -9,19 +9,43 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "BUILDING",
+"language": "GDScript",
+"path": "res://BuildingConstants.gd"
+}, {
 "base": "Polygon2D",
 "class": "BuildingDefinition",
 "language": "GDScript",
 "path": "res://arttest/Building.gd"
+}, {
+"base": "Node",
+"class": "BuildingFactory",
+"language": "GDScript",
+"path": "res://arttest/BuildingFactory.gd"
+}, {
+"base": "Sprite",
+"class": "BuildingInstance",
+"language": "GDScript",
+"path": "res://arttest/BuildingInstance.gd"
+}, {
+"base": "Node2D",
+"class": "SkyRenderManager",
+"language": "GDScript",
+"path": "res://arttest/SkyRenderManager.gd"
 } ]
 _global_script_class_icons={
-"BuildingDefinition": ""
+"BUILDING": "",
+"BuildingDefinition": "",
+"BuildingFactory": "",
+"BuildingInstance": "",
+"SkyRenderManager": ""
 }
 
 [application]
 
 config/name="Smpl"
-run/main_scene="res://test1.tscn"
+run/main_scene="res://Skyline.tscn"
 config/icon="res://icon.png"
 
 [input]

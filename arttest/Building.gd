@@ -4,8 +4,13 @@ extends Polygon2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+
+
 class_name BuildingDefinition
-export (int) var width;
+export (String) var building_name;
+export (BUILDING.TYPE, FLAGS ) var building_type;
+export (BUILDING.LAYER) var layer;
+export (int, 0, 50) var person_capacity;
 
 #var sr_manager = preload("res://arttest/SkyRenderManager.gd")
 

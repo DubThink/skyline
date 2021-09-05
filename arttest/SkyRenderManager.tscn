@@ -1,22 +1,22 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://arttest/building_shader.gdshader" type="Shader" id=1]
 [ext_resource path="res://arttest/sky.material" type="Material" id=2]
 [ext_resource path="res://arttest/SkyRenderManager.gd" type="Script" id=3]
 [ext_resource path="res://arttest/sky_west.tres" type="Material" id=4]
 
-[sub_resource type="ViewportTexture" id=3]
-viewport_path = NodePath("SkyRenderManager/Viewport")
-
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
 shader = ExtResource( 1 )
-shader_param/test = null
-shader_param/sky_target = SubResource( 3 )
+shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
+shader_param/FIXED_TIME_OF_DAY = null
+shader_param/residentialness = 1.0
+shader_param/WINDOW_OFFSET = null
+shader_param/override_tint_color = Color( 0, 0, 0, 0 )
 
 [node name="SkyRenderManager" type="Node2D"]
 script = ExtResource( 3 )
-buildingMaterial = SubResource( 4 )
+buildingMaterial = SubResource( 1 )
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 2048, 1024 )
