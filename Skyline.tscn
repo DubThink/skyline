@@ -286,9 +286,12 @@ starting_food_demand = 3.0
 starting_work_demand = 2.0
 
 [node name="terrain_card-8" type="Sprite" parent="."]
-position = Vector2( -80.3451, 905.431 )
+position = Vector2( -81.236, 890.286 )
 z_index = 13
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ColorRect" type="ColorRect" parent="terrain_card-8"]
 margin_left = -11492.0
@@ -337,6 +340,7 @@ max_db = -6.039
 
 [node name="Startup" type="Node" parent="."]
 script = ExtResource( 14 )
+dev_mode = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Startup"]
 

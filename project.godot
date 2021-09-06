@@ -48,6 +48,11 @@ _global_script_classes=[ {
 "class": "SkyRenderManager",
 "language": "GDScript",
 "path": "res://arttest/SkyRenderManager.gd"
+}, {
+"base": "Node2D",
+"class": "SkylineLayer",
+"language": "GDScript",
+"path": "res://SkylineLayer.gd"
 } ]
 _global_script_class_icons={
 "BUILDING": "",
@@ -57,7 +62,8 @@ _global_script_class_icons={
 "BuildingInstance": "",
 "Person": "",
 "RuntimeImportData": "",
-"SkyRenderManager": ""
+"SkyRenderManager": "",
+"SkylineLayer": ""
 }
 
 [application]
@@ -71,6 +77,7 @@ config/icon="res://icon.png"
 window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
+window/size/borderless=true
 window/size/fullscreen=true
 <<<<<<<Updatedupstreamwindow/size/borderless=true
 
