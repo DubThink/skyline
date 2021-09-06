@@ -5,7 +5,7 @@ extends PathFollow2D
 # var a = 2
 # var b = "text"
 
-var per_tick_hunger = 0.003
+var per_tick_hunger = 0.05
 var per_tick_shopping = 0.001
 var per_tick_work = 0.002
 
@@ -17,6 +17,7 @@ onready var path: Path2D = get_parent()
 onready var game_manager: Node = get_parent().get_parent()
 onready var demand_manager: Node = game_manager.get_node("DemandManager")
 onready var top_layer: SkylineLayer = game_manager.get_node("LayerArray")
+onready var skyrm: SkyRenderManager = game_manager.get_node("SkyRenderManager")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng.randomize()
@@ -67,17 +68,17 @@ export (float, 1, 1200) var walkspeed_pps
 # needs
 var hunger = 0
 var occupation = 0
-var retail = 0
+var shopping = 0
 
 func tick_needs(delta):
 	if hunger <= 1:
 		hunger += delta * per_tick_hunger
 	else:
 		hunger = 1
-	if retail <= 1:
-		retail += delta * per_tick_shopping
+	if shopping <= 1:
+		shopping += delta * per_tick_shopping
 	else:
-		retail = 1
+		shopping = 1
 	if occupation <= 1:
 		occupation += delta * per_tick_work
 	else:
@@ -86,7 +87,7 @@ func tick_needs(delta):
 	# todo the rest of the needs
 
 func find_next_goal():
-	goal_timer.wait_time = rng.randf_range(28, 33)
+	goal_timer.wait_time = rng.randf_range(12, 33)
 	match current_goal:
 		GOAL.NONE:
 			goal_pos = home.get_left()	
@@ -142,7 +143,7 @@ func try_to_find_work():
 		goal_pos = home.get_left()
 
 func decide_next_goal():
-	var time_of_day = .5#SkyRenderManager.world_time % 1
+	var time_of_day = skyrm.world_time - floor(skyrm.world_time)
 	if work != null:
 		occupation *= 0.95
 	current_goal = GOAL.HOME
@@ -156,12 +157,9 @@ func decide_next_goal():
 	if shopping > current_goal_strength:
 		current_goal = GOAL.RETAIL
 		current_goal_strength = shopping
-	if time_of_day < 0.25 or time_of_day > .65:
+	if time_of_day < 0.25 or time_of_day > .75:
 		current_goal = GOAL.HOME
 		current_goal_strength = 1.1
-	if retail > current_goal_strength:
-		current_goal = GOAL.RETAIL
-		current_goal_strength = retail
 	print(name + " decided goal: ", GOAL_NAMES[current_goal])
 	find_next_goal()
 
@@ -183,15 +181,15 @@ func walk_step(delta):
 		else:
 			if current_goal == GOAL.FOOD:
 				demand_manager.add_demand(BUILDING.TYPE.FOOD, 0.03)
-			elif current_goal == GOAL.HEALTH:
-				demand_manager.add_demand(BUILDING.TYPE.HEALTH, 0.06)
+			elif current_goal == GOAL.RETAIL:
+				demand_manager.add_demand(BUILDING.TYPE.RETAIL, 0.06)
 
 func _unhide_person():
 	print("unhiding")
 	if current_goal == GOAL.FOOD:
 		hunger = 0
 	if current_goal == GOAL.RETAIL:
-		retail = 0
+		shopping = 0
 	decide_next_goal()
 	self.visible = true
 

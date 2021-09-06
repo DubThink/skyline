@@ -48,7 +48,7 @@ script = ExtResource( 2 )
 [node name="SkyRenderManager" parent="." instance=ExtResource( 5 )]
 position = Vector2( -114, -98 )
 buildingMaterial = SubResource( 1 )
-SECONDS_PER_DAY = 15.0
+SECONDS_PER_DAY = 60.0
 
 [node name="PersonManager" type="Node" parent="."]
 script = ExtResource( 7 )
