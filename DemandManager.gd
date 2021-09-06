@@ -13,7 +13,8 @@ onready var dock = get_parent().get_node("GuiLayer/MenuDock")
 onready var happiness_mgr = get_parent().get_node("HappinessManager")
 var has_demanded = false
 export (Array, float) var demand_reduction_for_size = [0.5, 1, 1.5, 3, 6]
-export (float) var decay_amount = 0.05
+export (float) var decay_amount = 0.04
+export (float) var demand_min = 1
 
 var type_names = ["HOUSE", "FOOD", "RETAIL", "SCHOOL", "WORK"]
 var size_names = ["SMOL","MEDIUM","LARGE","HIGH_RISE","MONUMENT"]
@@ -141,3 +142,10 @@ func decay_demand(delta):
 	demand[BUILDING.TYPE.RETAIL] -= (demand[BUILDING.TYPE.RETAIL] * decay_amount)
 	demand[BUILDING.TYPE.WORK] -= (demand[BUILDING.TYPE.WORK] * decay_amount)
 	demand[BUILDING.TYPE.SCHOOL] -= (demand[BUILDING.TYPE.SCHOOL] * decay_amount)
+
+func decay(type):
+	var prev = demand[type]
+	demand[type] -= (demand[type] * decay_amount)
+	if demand[type] < demand_min:
+		demand[type] = demand_min
+	
