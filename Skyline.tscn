@@ -49,6 +49,12 @@ z_index = 2
 [node name="LayerArray3" parent="." instance=ExtResource( 1 )]
 z_index = 1
 
+[node name="LayerArray4" parent="." instance=ExtResource( 1 )]
+z_index = 1
+
+[node name="LayerArray5" parent="." instance=ExtResource( 1 )]
+z_index = 1
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 511.143, 301.606 )
 current = true

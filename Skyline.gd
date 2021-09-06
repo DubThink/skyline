@@ -23,7 +23,8 @@ func _ready():
 	layers.append(get_node("LayerArray"))
 	layers.append(get_node("LayerArray2"))
 	layers.append(get_node("LayerArray3"))
-	
+	layers.append(get_node("LayerArray4"))
+	layers.append(get_node("LayerArray5"))
 	# this stuff should actually happen in whatever "buttons" we make for 
 	# selection, as well as in the place where the "buttons" are instantiated.
 	
@@ -65,16 +66,19 @@ func find_max_zoom():
 
 func _process(delta):
 	var mouse_pos = get_node("Camera2D").get_global_mouse_position()
-	var mouse_in_allowance = abs(layers[0].get_approx_y_value(0) - mouse_pos.y) < height_allowance
+	var layer_index = 0
+	if selected_building != null:
+		layer_index = selected_building.definition.layer
+	var mouse_in_allowance = abs(layers[layer_index].get_approx_y_value(0) - mouse_pos.y) < height_allowance
 	if mouse_in_allowance and not selected_building == null:
-		layers[0].display_preview(selected_building, mouse_pos.x)
+		layers[layer_index].display_preview(selected_building, mouse_pos.x)
 	elif not selected_building == null:
 		selected_building.set_position(mouse_pos)
 		selected_building.clear_tint()
 	if Input.is_action_just_pressed("ui_click"):
 		if mouse_in_allowance and not selected_building == null:
 			# TODO replace with actual building stuff
-			if layers[0].add_building(selected_building, mouse_pos.x):
+			if layers[layer_index].add_building(selected_building, mouse_pos.x):
 				selected_building = null#building_factory.create_building(null)
 				dock.free_selected_slot()
 				#add_child(selected_building)
