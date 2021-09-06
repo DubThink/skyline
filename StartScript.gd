@@ -9,6 +9,7 @@ onready var audio = get_parent().get_node("BackgroundMusic")
 onready var title = get_parent().get_node("GuiLayer/TitleText")
 onready var skyrm = get_parent().get_node("SkyRenderManager")
 onready var uidock = get_parent().get_node("GuiLayer/MenuDock")
+onready var uilabels = get_parent().get_node("GuiLayer/MenuDock/CanvasLayer/LabelPanel")
 onready var status = get_parent().get_node("DemandManager/CanvasLayer/Panel")
 
 export (bool) var dev_mode
@@ -26,6 +27,7 @@ func _ready():
 		skyrm.SECONDS_PER_DAY = 30
 		title.modulate = Color(1,1,1,0)
 		uidock.modulate = Color(1,1,1,0)
+		uilabels.modulate = Color(1,1,1,0)
 		status.modulate = Color(1,1,1,0)
 		
 
@@ -58,9 +60,11 @@ func _process(delta):
 			# fade dock in
 			var p = pow(ttime/5,2.2)
 			uidock.modulate = Color(1,1,1,p)
+			uilabels.modulate = Color(1,1,1,p)
 			status.modulate = Color(1,1,1,p)
 			if elapsed_time > 16:
 				uidock.modulate = Color(1,1,1,1)
+				uilabels.modulate = Color(1,1,1,1)
 				status.modulate = Color(1,1,1,1)
 #				print("going to state 3")
 				state = 3
