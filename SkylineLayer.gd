@@ -16,7 +16,7 @@ func get_approx_y_value(x_pos):
 func get_y_value_at(x_pos):
 	var curve = terrain.get_curve()
 	var est_point = curve.interpolate_baked(curve.get_closest_offset(Vector2(x_pos, y_value)))
-	return est_point.y
+	return est_point.y+terrain.position.y
 
 func add_building(building_inst: BuildingInstance, x_position):
 	var footprint = building_inst.get_footprint()
@@ -54,7 +54,7 @@ func find_building_before(position, required_type=null):
 		return -1
 	var index = building_list.size()-1
 	for i in range(0, building_list.size()):
-		if building_list[i][1] > position and building_list[i][0].has_flag(required_type):
+		if building_list[i][1] > position and building_list[i][0].definiton.has_flag(required_type):
 			index = i-1
 			break
 	return index
@@ -64,7 +64,7 @@ func find_building_after(position, required_type=null):
 		return 0
 	var index = building_list.size()
 	for i in range(0, building_list.size()):
-		if building_list[i][1] > position and building_list[i][0].has_flag(required_type):
+		if building_list[i][1] > position and building_list[i][0].definiton.has_flag(required_type):
 			index = i
 			break
 	return index
