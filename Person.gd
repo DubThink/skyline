@@ -70,7 +70,7 @@ func find_next_goal():
 			goal_pos = 0 #TODO: find the things
 
 func decide_next_goal():
-	var time_of_day = SkyRenderManager.worldtime % 1
+	var time_of_day = SkyRenderManager.world_time % 1
 	current_goal = GOAL.NONE
 	var current_goal_strength = 0
 	if occupation > current_goal_strength:

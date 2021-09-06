@@ -18,7 +18,7 @@ var buildingShader = preload("res://arttest/building_shader.gdshader")
 var skyEastMat: ShaderMaterial = preload("res://arttest/sky.material")
 var skyWestMat: ShaderMaterial = preload("res://arttest/sky_west.tres")
 
-var world_time: float;
+var world_time: float = 0;
 var do_daynight_cycle=true
 
 
@@ -36,6 +36,8 @@ func _ready():
 	assert(sky_viewport)
 	print("Setting up building material...")
 	buildingMaterial.set_shader_param("sky_target", get_node("Viewport").get_texture())
+	skyEastMat.set_shader_param("FIXED_TIME_OF_DAY",world_time)
+	skyWestMat.set_shader_param("FIXED_TIME_OF_DAY",world_time)
 #	for child in get_parent().get_children():
 #		print(child)
 #		if child is BuildingDefinition:
@@ -49,6 +51,7 @@ func notify_resized(new_size: Rect2):
 func instance_and_track_building_shader():
 	var mat = buildingMaterial.duplicate()
 	building_shaders_to_update.append(mat)
+	mat.set_shader_param("FIXED_TIME_OF_DAY",world_time)
 	return mat
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
