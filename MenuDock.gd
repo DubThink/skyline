@@ -13,8 +13,8 @@ func _ready():
 	buttons.append(get_node("Button2"))
 	buttons.append(get_node("Button3"))
 	buttons.append(get_node("Button4"))
-	buttons.append(get_node("Button5"))
-	buttons.append(get_node("Button6"))
+	#buttons.append(get_node("Button5"))
+	#buttons.append(get_node("Button6"))
 	for i in range(0, buttons.size()):
 		buttons[i].connect("pressed", self, "on_click", [i])
 		available_buildings.append(null)
@@ -66,7 +66,7 @@ func visualize_building_on_button(index):
 	var building_height = available_buildings[index].texture.get_height()
 	var ratio = buttons[index].get_rect().size.y / building_height
 	available_buildings[index].scale = Vector2(ratio,ratio)
-	available_buildings[index].set_position(Vector2(buttons[index].get_rect().size.x/2,buttons[index].get_rect().size.y*9/10))
+	available_buildings[index].set_position(Vector2(buttons[index].get_rect().size.x/2,buttons[index].get_rect().size.y*17/20))
 	
 
 func get_free_slots():

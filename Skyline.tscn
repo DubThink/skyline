@@ -30,7 +30,7 @@ script = ExtResource( 2 )
 [node name="BuildingFactory" parent="." instance=ExtResource( 4 )]
 
 [node name="SkyRenderManager" parent="." instance=ExtResource( 5 )]
-position = Vector2( -15.4363, -61.5636 )
+position = Vector2( -114, -98 )
 buildingMaterial = SubResource( 1 )
 SECONDS_PER_DAY = 15.0
 
@@ -64,84 +64,63 @@ smoothing_enabled = true
 
 [node name="MenuDock" type="Panel" parent="GuiLayer"]
 self_modulate = Color( 1, 1, 1, 0.505882 )
-anchor_top = 1.00174
+anchor_top = 0.75
 anchor_right = 1.0
-anchor_bottom = 1.00174
-margin_top = -101.0
-margin_right = 3.0
+anchor_bottom = 1.0
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="GuiLayer/MenuDock"]
-self_modulate = Color( 1, 1, 1, 0.403922 )
-anchor_top = 0.495
-anchor_bottom = 0.495
-margin_left = 82.158
-margin_top = -44.995
-margin_right = 168.158
-margin_bottom = 45.005
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.1
+anchor_right = 0.3
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_right = -0.25
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button2" type="Button" parent="GuiLayer/MenuDock"]
-self_modulate = Color( 1, 1, 1, 0.403922 )
-anchor_top = 0.495
-anchor_bottom = 0.495
-margin_left = 247.316
-margin_top = -44.995
-margin_right = 333.316
-margin_bottom = 45.005
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.3
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 0.75
+margin_right = -0.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button3" type="Button" parent="GuiLayer/MenuDock"]
-self_modulate = Color( 1, 1, 1, 0.403922 )
-anchor_top = 0.495
-anchor_bottom = 0.495
-margin_left = 398.52
-margin_top = -44.995
-margin_right = 484.52
-margin_bottom = 45.005
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_right = 0.7
+anchor_bottom = 1.0
+margin_left = 0.75
+margin_right = -0.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button4" type="Button" parent="GuiLayer/MenuDock"]
-self_modulate = Color( 1, 1, 1, 0.403922 )
-anchor_top = 0.495
-anchor_bottom = 0.495
-margin_left = 573.268
-margin_top = -44.995
-margin_right = 659.268
-margin_bottom = 45.005
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.7
+anchor_right = 0.9
+anchor_bottom = 1.0
+margin_left = 0.75
+margin_right = -0.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button5" type="Button" parent="GuiLayer/MenuDock"]
-self_modulate = Color( 1, 1, 1, 0.403922 )
-anchor_top = 0.495
-anchor_bottom = 0.495
-margin_left = 715.729
-margin_top = -44.995
-margin_right = 801.729
-margin_bottom = 45.005
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button6" type="Button" parent="GuiLayer/MenuDock"]
-self_modulate = Color( 1, 1, 1, 0.403922 )
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 867.808
-margin_top = -45.5
-margin_right = 953.808
-margin_bottom = 44.5
+[node name="ColorRect" type="ColorRect" parent="GuiLayer/MenuDock"]
+anchor_top = 0.85
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -157,5 +136,7 @@ starting_food_demand = 3.0
 starting_work_demand = 2.0
 
 [node name="terrain_card-8" type="Sprite" parent="."]
+visible = false
 position = Vector2( -26, 744 )
+z_index = 20
 texture = ExtResource( 3 )
