@@ -10,6 +10,7 @@ var cap_ratio = 25 #a number
 var demand : PoolRealArray
 onready var factory = get_parent().get_node("BuildingFactory")
 onready var dock = get_parent().get_node("GuiLayer/MenuDock")
+onready var happiness_mgr = get_parent().get_node("HappinessManager")
 var has_demanded = false
 
 # Called when the node enters the scene tree for the first time.
@@ -100,5 +101,6 @@ func display_demand_info_text():
 	text += "FOOD:    " + str(demand[BUILDING.TYPE.FOOD]) + "\n"
 	text += "RETAIL: " + str(demand[BUILDING.TYPE.RETAIL]) + "\n"
 	text += "SCHOOL:  " + str(demand[BUILDING.TYPE.SCHOOL]) + "\n"
-	text += "WORK:    " + str(demand[BUILDING.TYPE.WORK])
+	text += "WORK:    " + str(demand[BUILDING.TYPE.WORK]) + "\n"
+	text += "HAPPINESS: " + str(happiness_mgr.get_happiness_level())
 	label.text = text
