@@ -5,6 +5,7 @@ extends Node2D
 var building_list = [] # array of tuples of [building_instance, x_pos, footprint]
 var y_value = 270 # TODO; actually probably get curve height at position
 onready var terrain : Path2D = get_parent().get_node("Terrain")
+onready var person_manager = get_parent().get_node("PersonManager")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,6 +43,10 @@ func add_building(building_inst: BuildingInstance, x_position):
 			return false
 #	print("Inserting new building at index %d" % after_idx)
 	building_list.insert(after_idx, [instance_building(building_inst, x_position), x_position, footprint])
+	if(building_inst.definition.has_type(BUILDING.TYPE.HOUSE)):
+		for i in range(building_inst.definition.person_capacity):
+			# TODO: why doesn't this instantiate the person at the house's coords?
+			person_manager.add_person(terrain.curve.get_closest_offset(Vector2(x_position, get_approx_y_value(x_position))), building_inst)
 #	print("number of existing buildings: %d" % building_list.size())
 	var s = ""
 	for i in range(0, building_list.size()):
