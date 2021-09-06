@@ -45,7 +45,6 @@ func add_building(building_inst: BuildingInstance, x_position):
 	building_list.insert(after_idx, [instance_building(building_inst, x_position), x_position, footprint])
 	if(building_inst.definition.has_type(BUILDING.TYPE.HOUSE)):
 		for i in range(building_inst.definition.person_capacity):
-			# TODO: why doesn't this instantiate the person at the house's coords?
 			person_manager.add_person(terrain.curve.get_closest_offset(Vector2(x_position, get_approx_y_value(x_position))), building_inst)
 #	print("number of existing buildings: %d" % building_list.size())
 	var s = ""

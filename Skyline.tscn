@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://SkylineLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skyline.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://StartScript.gd" type="Script" id=14]
 [ext_resource path="res://PedestrianAmbience.gd" type="Script" id=15]
 [ext_resource path="res://Audio/pedestrian_loop.wav" type="AudioStream" id=16]
+[ext_resource path="res://HappinessManager.gd" type="Script" id=17]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -46,7 +47,7 @@ SECONDS_PER_DAY = 60.0
 script = ExtResource( 7 )
 
 [node name="HappinessManager" type="Node" parent="."]
-script = ExtResource( 9 )
+script = ExtResource( 17 )
 
 [node name="LayerArray" parent="." instance=ExtResource( 1 )]
 z_index = 9

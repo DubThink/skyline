@@ -19,7 +19,7 @@ var skyEastMat: ShaderMaterial = preload("res://arttest/sky.material")
 var skyWestMat: ShaderMaterial = preload("res://arttest/sky_west.tres")
 
 var world_time: float = 0;
-var do_daynight_cycle=true
+var do_daynight_cycle = true
 
 
 var building_shaders_to_update: Array;

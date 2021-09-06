@@ -7,10 +7,21 @@ var conductivity = 2
 #onready var skyline = get_tree().find_node("SkylineLayer")
 var quantization_interval = 1000
 var quantization_rate = 1.0 / quantization_interval
+var base_happiness_val = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
+func get_happiness_level():
+	var total_happiness = 0
+	var all_people = get_tree().get_nodes_in_group("people")
+	if len(all_people) == 0:
+		return -1
+	for i in all_people:
+		total_happiness += i.current_happiness
+	print(total_happiness / len(all_people))
+	return total_happiness / len(all_people)
 
 func evolve_happiness(h, dt):
 	var o = []
@@ -31,7 +42,7 @@ func happiness_sum(h, base_happiness):
 	var o = 0
 	for i in h:
 		o += (i - base_happiness)
-	return o
+	return o * quantization_rate
 
 # quantizes the happiness for locations to allow for discrete evolution
 func happiness_heat_helper(building_list):

@@ -16,6 +16,7 @@ onready var cam : Camera2D = get_node("Camera2D")
 onready var dock = get_node("GuiLayer/MenuDock")
 onready var terrain = get_node("terrain_card-8")
 onready var exit_menu = get_node("GuiLayer/ExitMenu")
+onready var happiness_manager = get_node("HappinessManager")
 var drag_origin
 var ter_margin = 100
 export (float) var zoom_min = 0.1
