@@ -18,7 +18,7 @@ var cache_spd
 func _ready():
 	if dev_mode:
 		audio.play()
-		state = 99
+		state = 3
 		title.visible = false
 	else:
 		skyrm.do_daynight_cycle=false
@@ -33,8 +33,11 @@ func _ready():
 
 var elapsed_time=0
 var state = 0
+var screenshot_fade = 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+		
+	
 	elapsed_time += delta
 	if state == 0:
 		# initial fade in
@@ -69,4 +72,13 @@ func _process(delta):
 #				print("going to state 3")
 				state = 3
 				elapsed_time = 0
+	elif state == 3:
+		if Input.is_action_pressed("space"):
+			screenshot_fade = max(0,screenshot_fade-delta*1.6)
+		else:
+			screenshot_fade = min(1,screenshot_fade+delta*1.6)
+		uidock.modulate = Color(1,1,1,screenshot_fade)
+		uilabels.modulate = Color(1,1,1,screenshot_fade)
+		status.modulate = Color(1,1,1,screenshot_fade)
 	pass
+
