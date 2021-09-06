@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://SkylineLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skyline.gd" type="Script" id=2]
@@ -12,8 +12,10 @@
 [ext_resource path="res://ExitMenu.gd" type="Script" id=10]
 [ext_resource path="res://title.png" type="Texture" id=11]
 [ext_resource path="res://arttest/sky.material" type="Material" id=12]
-[ext_resource path="res://lofi_longer2.wav" type="AudioStream" id=13]
+[ext_resource path="res://Audio/lofi_longer2.wav" type="AudioStream" id=13]
 [ext_resource path="res://StartScript.gd" type="Script" id=14]
+[ext_resource path="res://PedestrianAmbience.gd" type="Script" id=15]
+[ext_resource path="res://Audio/pedestrian_loop.wav" type="AudioStream" id=16]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -250,11 +252,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 volume_db = -7.38
 
+[node name="PedestrianAmbience" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 16 )
+script = ExtResource( 15 )
+min_db = -49.652
+max_db = -6.039
+
 [node name="Startup" type="Node" parent="."]
 script = ExtResource( 14 )
+dev_mode = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Startup"]

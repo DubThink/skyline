@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/lofi_longer2.wav-b38d3017741add3a69fb2e7c0d50b78f.sample"
+
+[deps]
+
+source_file="res://Audio/lofi_longer2.wav"
+dest_files=[ "res://.import/lofi_longer2.wav-b38d3017741add3a69fb2e7c0d50b78f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

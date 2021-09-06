@@ -18,6 +18,9 @@ onready var terrain = get_node("terrain_card-8")
 onready var exit_menu = get_node("GuiLayer/ExitMenu")
 var drag_origin
 var ter_margin = 100
+export (float) var zoom_min = 0.1
+
+signal placed_building(position)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,7 +42,7 @@ func update_cam():
 	var prev_zoom = cam.zoom
 	if cam.zoom != target_cam_zoom:
 		cam.zoom = lerp(cam.zoom, target_cam_zoom, 0.05)
-		if cam.zoom.x <= 0:
+		if cam.zoom.x <= zoom_min:
 			cam.zoom = prev_zoom
 	if cam.position != target_cam_pos:
 		cam.position = lerp(cam.position, target_cam_pos, 0.05)
@@ -84,6 +87,7 @@ func _process(delta):
 			if mouse_in_allowance and not selected_building == null:
 				# TODO replace with actual building stuff
 				if layers[layer_index].add_building(selected_building, mouse_pos.x):
+					emit_signal("placed_building", selected_building.position)
 					selected_building = null#building_factory.create_building(null)
 					dock.free_selected_slot()
 					#add_child(selected_building)
@@ -126,3 +130,20 @@ func select_building(inst):
 		selected_building = null
 	selected_building = inst
 	add_child(inst)
+
+func find_center():
+	var center = Vector2(0,0)
+	var count = 0
+	for i in range(layers.size()):
+		count += layers[i].building_list.size()
+		for j in range(layers[i].building_list.size()):
+			center += layers[i].building_list[j][0].position
+	if count == 0:
+		return Vector2(0,0)
+	center /= count
+	return center
+
+func has_any_buildings():
+	var has_buildings = false
+	for i in range(layers.size()):
+		has_buildings &= layers[i].has_buildings()

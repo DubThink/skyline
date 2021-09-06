@@ -104,3 +104,6 @@ func display_preview(inst, x_position):
 			inst.set_tint(Color(1,0,0))
 	inst.set_position(Vector2(x_position, get_y_value_at(x_position)))
 	inst.show()
+	
+func has_buildings():
+	return building_list.size() > 0

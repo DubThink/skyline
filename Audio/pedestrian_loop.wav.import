@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pedestrian_loop.wav-b9fc5c725d968ad681056b48c48b04ae.sample"
+
+[deps]
+
+source_file="res://Audio/pedestrian_loop.wav"
+dest_files=[ "res://.import/pedestrian_loop.wav-b9fc5c725d968ad681056b48c48b04ae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

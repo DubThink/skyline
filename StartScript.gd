@@ -5,7 +5,7 @@ extends Node
 # var a = 2
 # var b = "text"
 
-onready var audio = get_parent().get_node("AudioStreamPlayer")
+onready var audio = get_parent().get_node("BackgroundMusic")
 onready var title = get_parent().get_node("GuiLayer/TitleText")
 onready var skyrm = get_parent().get_node("SkyRenderManager")
 onready var uidock = get_parent().get_node("GuiLayer/MenuDock")
@@ -38,7 +38,7 @@ func _process(delta):
 		var p = pow(elapsed_time/5.0,2.2)
 		get_node("CanvasModulate").color = Color(p,p,p,1)
 		if elapsed_time>5.0:
-			print("going to state 1")
+#			print("going to state 1")
 			state = 1
 			get_node("CanvasModulate").color = Color(1,1,1,1)
 			title.modulate = Color(1,1,1,p)
@@ -46,7 +46,7 @@ func _process(delta):
 		audio.play()
 		skyrm.do_daynight_cycle=true
 		elapsed_time = 0
-		print("going to state 2")
+#		print("going to state 2")
 		state = 2
 	elif state == 2:
 		if elapsed_time > 15:
@@ -61,7 +61,7 @@ func _process(delta):
 			if elapsed_time > 16:
 				uidock.modulate = Color(1,1,1,1)
 				status.modulate = Color(1,1,1,1)
-				print("going to state 3")
+#				print("going to state 3")
 				state = 3
 				elapsed_time = 0
 	pass
