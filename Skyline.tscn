@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://SkylineLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skyline.gd" type="Script" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://HappinessManager.gd" type="Script" id=17]
 [ext_resource path="res://PlacementSFX.gd" type="Script" id=18]
 [ext_resource path="res://Audio/building_sfx_0.wav" type="AudioStream" id=19]
+[ext_resource path="res://SansSerifFLF.otf" type="DynamicFontData" id=20]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -30,7 +31,11 @@ shader_param/layer = 0.0
 shader_param/WINDOW_OFFSET = null
 shader_param/override_tint_color = Color( 0, 0, 0, 0 )
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 20 )
+
+[sub_resource type="Curve2D" id=3]
 _data = {
 "points": PoolVector2Array( -307.211, 52.6375, 307.211, -52.6375, -6502, 409, -66.742, 10.6787, 66.742, -10.6787, -5886, 322, -210.905, 38.7104, 210.905, -38.7104, -5579, 271, -154.841, -5.35142, 154.841, 5.35142, -5179, 229, -161.463, 5.35142, 161.463, -5.35142, -4604, 288, -85.025, 4.89391, 85.025, -4.89391, -4185, 257, 0, 0, 0, 0, -4025, 250, 0, 0, 0, 0, -2744, 247, -255.697, 13.6044, 255.697, -13.6044, -2049, 170, -417.085, 8.40896, 417.085, -8.40896, -1384, 144, -385.309, -24.7725, 385.309, 24.7725, 128, 215, -328.54, -6.82718, 328.54, 6.82718, 1428, 265, -174.616, -16.0362, 174.616, 16.0362, 2303, 335, -280.432, -19.8907, 280.432, 19.8907, 3009, 405, -366.949, -35.2268, 366.949, 35.2268, 4289, 466, 0, 0, 0, 0, 4704, 525, 0, 0, 0, 0, 5044, 570 )
 }
@@ -88,7 +93,6 @@ self_modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.1
 anchor_right = 0.3
 anchor_bottom = 1.0
-margin_left = -2.0
 margin_right = -0.25
 __meta__ = {
 "_edit_use_anchors_": false
@@ -138,6 +142,67 @@ color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="LabelPanel" type="Panel" parent="GuiLayer/MenuDock/CanvasLayer"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_top = 0.968
+anchor_right = 1.0
+anchor_bottom = 1.012
+margin_top = -5.44006
+margin_right = -4.0
+margin_bottom = 0.039917
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GuiLayer/MenuDock/CanvasLayer/LabelPanel"]
+anchor_left = 0.1
+anchor_right = 0.299896
+anchor_bottom = 1.0
+margin_left = 0.399994
+margin_right = 0.400024
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label2" type="Label" parent="GuiLayer/MenuDock/CanvasLayer/LabelPanel"]
+anchor_left = 0.3
+anchor_right = 0.5
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label3" type="Label" parent="GuiLayer/MenuDock/CanvasLayer/LabelPanel"]
+anchor_left = 0.5
+anchor_right = 0.7
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label4" type="Label" parent="GuiLayer/MenuDock/CanvasLayer/LabelPanel"]
+anchor_left = 0.7
+anchor_right = 0.9
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GuiLayer/MenuDock"]
+layer = 50
 
 [node name="ExitMenu" type="Panel" parent="GuiLayer"]
 visible = false
@@ -213,7 +278,7 @@ __meta__ = {
 [node name="Terrain" type="Path2D" parent="."]
 position = Vector2( -5, 118 )
 z_index = 11
-curve = SubResource( 2 )
+curve = SubResource( 3 )
 
 [node name="DemandManager" parent="." instance=ExtResource( 9 )]
 starting_house_demand = 3.0
@@ -221,7 +286,7 @@ starting_food_demand = 3.0
 starting_work_demand = 2.0
 
 [node name="terrain_card-8" type="Sprite" parent="."]
-position = Vector2( -81.236, 890.286 )
+position = Vector2( -80.3451, 905.431 )
 z_index = 13
 texture = ExtResource( 3 )
 
@@ -272,7 +337,6 @@ max_db = -6.039
 
 [node name="Startup" type="Node" parent="."]
 script = ExtResource( 14 )
-dev_mode = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Startup"]
 

@@ -20,7 +20,7 @@ func get_happiness_level():
 		return -1
 	for i in all_people:
 		total_happiness += i.current_happiness
-	print(total_happiness / len(all_people))
+	#print(total_happiness / len(all_people))
 	return total_happiness / len(all_people)
 
 func evolve_happiness(h, dt):

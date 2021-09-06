@@ -2,27 +2,36 @@ extends Panel
 
 var available_buildings = [] # : BuildingInstance # normal arrays cannot be type hinted
 var buttons = []
+var labels = []
 var building_factory: BuildingFactory
 var skyline
 var last_removed = -1
+var num_buildings_placed = 0
 onready var exit_menu = get_parent().get_parent().get_node("GuiLayer/ExitMenu")
 onready var starter = get_parent().get_parent().get_node("Startup")
 
+export (Array, int) var unlock_nums = [0, 2, 6, 10]
+
 func _ready():
 	skyline = get_parent().get_parent()
+	skyline.connect("placed_building", self, "on_building_placed")
 	building_factory = skyline.get_node("BuildingFactory")
 	buttons.append(get_node("Button"))
 	buttons.append(get_node("Button2"))
 	buttons.append(get_node("Button3"))
 	buttons.append(get_node("Button4"))
+	labels.append(get_node("CanvasLayer/LabelPanel/Label"))
+	labels.append(get_node("CanvasLayer/LabelPanel/Label2"))
+	labels.append(get_node("CanvasLayer/LabelPanel/Label3"))
+	labels.append(get_node("CanvasLayer/LabelPanel/Label4"))
 	for i in range(0, buttons.size()):
 		buttons[i].connect("pressed", self, "on_click", [i])
 		available_buildings.append(null)
-#	if starter.dev_mode:
-	for button in buttons:
-		var self_mod : Color = button.self_modulate
-		self_mod.a = 1
-		button.self_modulate = self_mod
+	if starter.dev_mode:
+		for button in buttons:
+			var self_mod : Color = button.self_modulate
+			self_mod.a = 1
+			button.self_modulate = self_mod
 
 #TODO build a wrapper for this for sim API
 func add_available_building(index):
@@ -82,8 +91,9 @@ func get_free_slots():
 	return slots
 
 func check_slot_free(index):
-#	if index == last_removed:
-#		return false
+#	print("checking slot %d, %d slots unlocked" % [index, get_num_unlocked_slots()])
+	if index >= get_num_unlocked_slots():
+		return false
 	return index < available_buildings.size() and available_buildings[index] == null
 
 func num_slots():
@@ -96,7 +106,24 @@ func debug_buttons():
 #	if starter.dev_mode:
 	for i in range(buttons.size()):
 		if available_buildings[i] != null:
-			buttons[i].text = str(available_buildings[i].definition.building_name)
-		
+			labels[i].text = str(available_buildings[i].definition.building_name)
+		else:
+			labels[i].text = ""
+			
+func get_num_unlocked_slots():
+	return calc_unlock_slots(num_buildings_placed)
+	
+func calc_unlock_slots(num_moves):
+	var	num_slots_unlocked = 0
+	for i in range(unlock_nums.size()):
+		if num_moves >= unlock_nums[i]:
+			num_slots_unlocked += 1
+#	print("num slots available: %d with %d moves done" % [num_slots_unlocked, num_moves ])
+	return num_slots_unlocked
+
+func on_building_placed(pos):
+#	print("building was placed")
+	num_buildings_placed += 1
+
 func _process(delta):
 	debug_buttons()

@@ -24,7 +24,7 @@ var do_daynight_cycle = true
 
 var building_shaders_to_update: Array;
 
-export var SECONDS_PER_DAY=30.0;
+export var SECONDS_PER_DAY=300.0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
