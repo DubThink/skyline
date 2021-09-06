@@ -125,8 +125,8 @@ func _process(delta):
 			target_cam_pos = cam.position - move
 	update_cam()
 	var avg_happiness = happiness_manager.get_happiness_level()
-	if avg_happiness > 0.65:
-		demand_manager.add_demand(BUILDING.TYPE.HOUSE, avg_happiness - 0.5)
+	if avg_happiness > 0.75:
+		demand_manager.add_demand(BUILDING.TYPE.HOUSE, (avg_happiness - 0.75) * 0.1)
 
 func select_building(inst):
 	if selected_building != null:

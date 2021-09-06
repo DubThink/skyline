@@ -28,7 +28,7 @@ func _ready():
 
 func add_demand(type, amount):
 	assert(type >= 0 and type < BUILDING.TYPE._COUNT)
-	demand[type] += amount
+	demand[type] += amount  * 1/max(1, demand[type] + 1)
 
 func apply_demand_to_dock():
 	var sizes = get_building_sizes_allowed_in_slot()
