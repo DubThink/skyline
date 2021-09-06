@@ -31,4 +31,4 @@ func _process(delta):
 		b.show_behind_parent = true
 		b.set_position(xpos,200)
 		print(b.get_left())
-		xpos+=300
+		xpos+=524

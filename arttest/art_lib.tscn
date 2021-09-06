@@ -583,6 +583,7 @@ __meta__ = {
 }
 
 [node name="Pyramid" type="Polygon2D" parent="."]
+visible = false
 position = Vector2( -60, -28 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 668, 92, 60, -516, -548, 92 )
@@ -902,7 +903,6 @@ __meta__ = {
 }
 
 [node name="Park Place" type="Polygon2D" parent="."]
-visible = false
 position = Vector2( -92, -28 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( -36, 76, -36, -136, -40, -136, -40, -140, 8, -140, 8, -148, 32, -148, 32, -140, 48, -140, 48, -148, 72, -148, 72, -140, 124, -140, 124, -156, 128, -156, 128, -140, 136, -140, 136, -152, 140, -152, 140, -140, 224, -140, 224, -136, 220, -136, 220, 76 )
