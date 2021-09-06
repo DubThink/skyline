@@ -18,7 +18,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if randf() <0.05:
+	if randf() < 0.05:
 		add_person(0)
 	pass
 

@@ -12,6 +12,12 @@ class_name Person
 onready var path: Path2D = get_parent()
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.visible = true
+	goal_timer = Timer.new()
+	goal_timer.one_shot = true
+	goal_timer.wait_time = 30
+	goal_timer.connect("timeout",self,"_unhide_person")
+	add_child(goal_timer)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,7 +43,8 @@ var work: BuildingInstance
 var is_child = false
 var current_goal
 var goal_timer
-var goal_pos = 0
+var goal_pos = 5000
+var waiting = false
 
 export (float, 1, 400) var walkspeed_pps
 
@@ -80,13 +87,22 @@ func find_next_goal():
 			goal_pos = 0 #TODO: find the things
 
 func walk_step(delta):
-	dir = -1 if offset > goal_pos else 1
-	var dist = dir*walkspeed_pps*delta
-	#print(offset)
-	set_offset(offset+dist)
-	#if abs(goal_pos-offset)<10:
-		# go invis
-	#	goal_timer = new timer(60)
+	if self.visible:
+		dir = -1 if offset > goal_pos else 1
+		var dist = dir*walkspeed_pps*delta
+		#print(offset)
+		set_offset(offset+dist)
+		if abs(goal_pos-offset)<10:
+			self.visible = false
+			print("[" + self.name + ", " + str(offset) + ", " + str(goal_pos) + "]" )
+			goal_timer.start()
+	
+
+func _unhide_person():
+	goal_pos = 0
+	self.visible = true
+
+
 
 func find_neighbors(dist):
 	var all_people = get_tree().get_nodes_in_group("people")
