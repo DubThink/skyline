@@ -10,6 +10,7 @@ shader = ExtResource( 3 )
 shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
 shader_param/FIXED_TIME_OF_DAY = null
 shader_param/residentialness = 1.0
+shader_param/layer = 0.0
 shader_param/WINDOW_OFFSET = null
 shader_param/override_tint_color = Color( 0, 0, 0, 0 )
 

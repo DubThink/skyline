@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://SkylineLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skyline.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://MenuDock.gd" type="Script" id=8]
 [ext_resource path="res://DemandManager.tscn" type="PackedScene" id=9]
 [ext_resource path="res://ExitMenu.gd" type="Script" id=10]
+[ext_resource path="res://title.png" type="Texture" id=11]
+[ext_resource path="res://arttest/sky.material" type="Material" id=12]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -17,12 +19,13 @@ shader = ExtResource( 6 )
 shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
 shader_param/FIXED_TIME_OF_DAY = null
 shader_param/residentialness = 1.0
+shader_param/layer = 0.0
 shader_param/WINDOW_OFFSET = null
 shader_param/override_tint_color = Color( 0, 0, 0, 0 )
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( -307.211, 52.6375, 307.211, -52.6375, -6500, 418, -66.742, 10.6787, 66.742, -10.6787, -5884, 330, -210.905, 38.7104, 210.905, -38.7104, -5574, 279, -154.841, 5.33936, 154.841, -5.33936, -5180, 227, -208.235, -5.33936, 208.235, 5.33936, -4602, 283, -49.3891, 5.33936, 49.3891, -5.33936, -4185, 257, 0, 0, 0, 0, -4025, 250, 0, 0, 0, 0, -2702, 250, -149.68, 10.9317, 149.68, -10.9317, -2046, 172, -417.085, 8.40896, 417.085, -8.40896, -1386, 145, -385.309, -29.227, 385.309, 29.227, 128, 211, -332.995, -5.04538, 332.995, 5.04538, 1426, 261, -168.179, -10.0908, 168.179, 10.0908, 3054, 408, -331.313, -21.8633, 331.313, 21.8633, 4290, 460, -429.272, -40.4409, 429.272, 40.4409, 5110, 572 )
+"points": PoolVector2Array( -307.211, 52.6375, 307.211, -52.6375, -6502, 409, -66.742, 10.6787, 66.742, -10.6787, -5886, 322, -210.905, 38.7104, 210.905, -38.7104, -5579, 271, -154.841, -5.35142, 154.841, 5.35142, -5179, 229, -161.463, 5.35142, 161.463, -5.35142, -4604, 288, -85.025, 4.89391, 85.025, -4.89391, -4185, 257, 0, 0, 0, 0, -4025, 250, 0, 0, 0, 0, -2744, 247, -255.697, 13.6044, 255.697, -13.6044, -2049, 170, -417.085, 8.40896, 417.085, -8.40896, -1384, 144, -385.309, -24.7725, 385.309, 24.7725, 128, 215, -328.54, -6.82718, 328.54, 6.82718, 1428, 265, -174.616, -16.0362, 174.616, 16.0362, 2303, 335, -280.432, -19.8907, 280.432, 19.8907, 3009, 405, -366.949, -35.2268, 366.949, 35.2268, 4289, 466, 0, 0, 0, 0, 4704, 525, 0, 0, 0, 0, 5044, 570 )
 }
 
 [node name="Node2D2" type="Node2D"]
@@ -42,16 +45,16 @@ script = ExtResource( 7 )
 script = ExtResource( 9 )
 
 [node name="LayerArray" parent="." instance=ExtResource( 1 )]
-z_index = 3
+z_index = 9
 
 [node name="LayerArray2" parent="." instance=ExtResource( 1 )]
-z_index = 2
+z_index = 7
 
 [node name="LayerArray3" parent="." instance=ExtResource( 1 )]
-z_index = 1
+z_index = 5
 
 [node name="LayerArray4" parent="." instance=ExtResource( 1 )]
-z_index = 1
+z_index = 3
 
 [node name="LayerArray5" parent="." instance=ExtResource( 1 )]
 z_index = 1
@@ -127,6 +130,7 @@ __meta__ = {
 }
 
 [node name="ExitMenu" type="Panel" parent="GuiLayer"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -177,9 +181,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TitleText" type="TextureRect" parent="GuiLayer"]
+material = ExtResource( 12 )
+anchor_right = 1.0
+anchor_bottom = 0.4
+margin_bottom = 0.799988
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Terrain" type="Path2D" parent="."]
-position = Vector2( -5, -20 )
-z_index = 10
+position = Vector2( -5, 118 )
+z_index = 11
 curve = SubResource( 2 )
 
 [node name="DemandManager" parent="." instance=ExtResource( 9 )]
@@ -188,5 +204,39 @@ starting_food_demand = 3.0
 starting_work_demand = 2.0
 
 [node name="terrain_card-8" type="Sprite" parent="."]
-position = Vector2( -81.2357, 740.286 )
+position = Vector2( -81.236, 890.286 )
+z_index = 13
 texture = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="terrain_card-8"]
+margin_left = -11492.0
+margin_top = 1196.0
+margin_right = 10758.0
+margin_bottom = 3569.0
+rect_pivot_offset = Vector2( 7729.24, 846.714 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="terrain_card-8"]
+margin_left = -11323.0
+margin_top = -345.0
+margin_right = -6443.0
+margin_bottom = 2128.0
+rect_pivot_offset = Vector2( 7729.24, 846.714 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="terrain_card-8"]
+margin_left = 5883.24
+margin_top = -169.286
+margin_right = 10763.2
+margin_bottom = 2303.71
+rect_pivot_offset = Vector2( 7729.24, 846.714 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

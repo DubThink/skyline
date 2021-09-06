@@ -60,7 +60,7 @@ func update_cam():
 		print("out of bounds on both, zoom is (%f,%f)" % [cam.zoom.x, cam.zoom.y])
 		cam.zoom = find_max_zoom()
 #	if cam.zoom.x - find_max_zoom().x < 0.2:
-		cam.position = terrain.position
+		cam.position.x = terrain.position.x
 		
 func find_max_zoom():
 	var max_zoom = (terrain.texture.get_width() - (ter_margin * cam.zoom.x * 2)) / cam.get_viewport_rect().size.x

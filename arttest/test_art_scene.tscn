@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://arttest/SkyRenderManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://BuildingFactory.tscn" type="PackedScene" id=2]
@@ -9,20 +9,7 @@
 [ext_resource path="res://arttest/sky.material" type="Material" id=7]
 [ext_resource path="res://placeholder_building.png" type="Texture" id=8]
 
-[sub_resource type="ViewportTexture" id=4]
-viewport_path = NodePath("SkyRenderManager/Viewport")
-
-[sub_resource type="ShaderMaterial" id=1]
-resource_local_to_scene = true
-shader = ExtResource( 3 )
-shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
-shader_param/FIXED_TIME_OF_DAY = null
-shader_param/residentialness = 1.0
-shader_param/WINDOW_OFFSET = null
-shader_param/override_tint_color = Color( 0, 0, 0, 0 )
-shader_param/sky_target = SubResource( 4 )
-
-[sub_resource type="ViewportTexture" id=5]
+[sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("SkyRenderManager/Viewport")
 
 [sub_resource type="ShaderMaterial" id=2]
@@ -31,35 +18,190 @@ shader = ExtResource( 3 )
 shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
 shader_param/FIXED_TIME_OF_DAY = null
 shader_param/residentialness = 1.0
+shader_param/layer = 0.0
 shader_param/WINDOW_OFFSET = null
 shader_param/override_tint_color = Color( 0, 0, 0, 0 )
-shader_param/sky_target = SubResource( 5 )
+shader_param/sky_target = SubResource( 1 )
 
-[sub_resource type="ViewportTexture" id=6]
-viewport_path = NodePath("Viewport")
+[sub_resource type="ViewportTexture" id=3]
+viewport_path = NodePath("SkyRenderManager/Viewport")
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=4]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
-shader_param/FIXED_TIME_OF_DAY = 0.444
+shader_param/FIXED_TIME_OF_DAY = null
 shader_param/residentialness = 1.0
+shader_param/layer = 0.0
+shader_param/WINDOW_OFFSET = null
+shader_param/override_tint_color = Color( 0, 0, 0, 0 )
+shader_param/sky_target = SubResource( 3 )
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+uniform sampler2D sky_target;
+uniform vec4 window_color: hint_color = vec4(1f,.8f,.7f,1f);
+uniform float FIXED_TIME_OF_DAY;
+uniform float residentialness: hint_range(0,1) = 1;
+uniform float layer: hint_range(0,5) = 0;
+uniform float WINDOW_OFFSET: hint_range(0,1);
+uniform vec4 override_tint_color: hint_color = vec4(0f);
+
+//uniform float add_val: hint_range(0,5);
+const float add_val = 3f;
+//uniform float scale_val: hint_range(0,5);
+const float scale_val = 1.63;
+
+const vec3 shadow_color = vec3(0.141,0.125,0.212);//0.761,0.122,0.451);
+
+const float GAMMA = 2.2f;
+
+const float EPSILON = .00001;
+const float TWO_PI = 6.28318530718;
+const float PI = 3.1415926535;
+const float HALF_PI = 1.57079632679;
+
+const vec3 argb(vec3 color){
+	return pow(color,vec3(1f/GAMMA));
+}
+
+const vec3 argbf(float r, float g, float b){
+	return argb(vec3(r,g,b));
+}
+
+vec3 define_color(float time, float alt, float hpos){
+	time = mod(time,1);
+	float htime = 1f-2f*abs(time-0.5);
+	float dawn_power = sin(TWO_PI*htime - HALF_PI)*0.5+0.5f;
+	
+	// skoosh dawn towards the day
+	float skew = sin(htime*PI - HALF_PI);
+	float skew_a = sign(skew)*pow(abs(skew),mix(0.55,1.5,alt));
+	
+	// the solar energy at a given point
+	float solar = .5+.5*skew_a;
+	solar *= abs(solar);
+	
+	vec2 sun_pos = vec2(time*1.6,time*8f-2.2f);
+	vec2 sun_delta = sun_pos-vec2(hpos,alt);
+	float sun_bloom = min(0.7f,.2f/max(0.001,1000f*dot(sun_delta,sun_delta)));
+	
+	// calculate the amount of dawn effect to show at a given point
+	//2f*pow(dawn_power,6f-(-6f*(alt)))*solar*step(time,0.5)
+	return vec3(solar);//*mt2u(cos(alt*2.5f));
+}
+
+void fragment() {
+	vec4 ts = texture(TEXTURE,UV);
+	if(ts.a<EPSILON){
+		discard;
+	}
+	COLOR.a = ts.a;
+	
+	float time = FIXED_TIME_OF_DAY;
+//	time = UV.x;
+	time+=0.5f;
+	time=mod(time,1f);
+		
+		
+	
+	vec2 sky_uv = SCREEN_UV;
+	vec3 sky_color = argb(texture(sky_target,sky_uv).rgb);
+	
+	float is_window = 1f-step(ts.b,0.5f);
+	
+	
+	// window calc
+	float nightness = .5f+.5*cos(PI+time*TWO_PI);
+	nightness = sqrt(nightness);
+	float dayness = .5f+.5*cos(time*TWO_PI);
+	dayness = sqrt(dayness);
+		
+	float eveningness = .5f+.5*cos(PI+HALF_PI+.2+time*PI*1.9);
+	float light_amt = 2.2f*mix(nightness*.9, sqrt(nightness*eveningness), residentialness)-1f;
+	
+	//nightness, eveningness, light_amt
+	if(UV.y>.5)
+		COLOR.rgb = vec3(light_amt);
+	else COLOR.rgb = define_color(UV.x,0.2,.5);
+	
+	// correct for texture filtering
+	ts.b/=ts.r;
+	float window_val = mod(ts.b+WINDOW_OFFSET,.8f)+.2f;
+	//window_val = WINDOW_OFFSET;
+	//COLOR.rgb = step(vec3(1f-UV.y),COLOR.rgb);
+	float layer2 = layer;//4f-floor(UV.y*4f);
+	vec3 window = sky_color*0.7+argb(window_color.rgb)*0.7*step(window_val,light_amt);
+	vec3 surface_color = argb(shadow_color*log(log(layer2+add_val))*scale_val*(dayness));
+	surface_color = mix(surface_color, override_tint_color.rgb, override_tint_color.a);
+	//surface_color = vec3(window);
+	COLOR.rgb=mix(surface_color, window, is_window);//+vec3(0.1,0.3,0.3);
+	//COLOR.rgb = vec3(vec3(tex.rg),0f);
+	//COLOR.rgb=mix(vec3(UV,1),COLOR.rgb, ts.a);
+	// gamma correction	
+	COLOR.rgb = pow(COLOR.rgb, vec3(GAMMA));
+}"
+
+[sub_resource type="ViewportTexture" id=5]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="ShaderMaterial" id=8]
+resource_local_to_scene = true
+shader = SubResource( 7 )
+shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
+shader_param/FIXED_TIME_OF_DAY = -0.009
+shader_param/residentialness = 1.0
+shader_param/layer = 3.0
 shader_param/WINDOW_OFFSET = 0.75
 shader_param/override_tint_color = Color( 0, 0, 0, 0 )
-shader_param/sky_target = SubResource( 6 )
+shader_param/sky_target = SubResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=9]
+resource_local_to_scene = true
+shader = SubResource( 7 )
+shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
+shader_param/FIXED_TIME_OF_DAY = -0.542
+shader_param/residentialness = 1.0
+shader_param/layer = 2.0
+shader_param/WINDOW_OFFSET = 0.75
+shader_param/override_tint_color = Color( 0, 0, 0, 0 )
+shader_param/sky_target = SubResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=10]
+resource_local_to_scene = true
+shader = SubResource( 7 )
+shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
+shader_param/FIXED_TIME_OF_DAY = -0.542
+shader_param/residentialness = 1.0
+shader_param/layer = 1.0
+shader_param/WINDOW_OFFSET = 0.75
+shader_param/override_tint_color = Color( 0, 0, 0, 0 )
+shader_param/sky_target = SubResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=6]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
+shader_param/FIXED_TIME_OF_DAY = -1.19
+shader_param/residentialness = 1.0
+shader_param/layer = 5.0
+shader_param/WINDOW_OFFSET = 0.75
+shader_param/override_tint_color = Color( 0, 0, 0, 0 )
+shader_param/sky_target = SubResource( 5 )
 
 [node name="Node2D2" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="SkyRenderManager" parent="." instance=ExtResource( 1 )]
 position = Vector2( -9, 13 )
-buildingMaterial = SubResource( 1 )
+buildingMaterial = SubResource( 2 )
 
 [node name="BuildingFactory" parent="." instance=ExtResource( 2 )]
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 2 )
+material = SubResource( 4 )
 margin_left = -78.0
 margin_top = -42.0
 margin_right = 474.0
@@ -233,9 +375,27 @@ __meta__ = {
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( -168, 487, -46, 468, 56, 459, 202, 446, 346, 440, 447, 422, 567, 418, 669, 403, 783, 381, 986, 354, 1174, 340, 1258, 367, 1280, 734, 1124, 773, -152, 762 )
 
-[node name="BuildingInstance" type="Sprite" parent="."]
-material = SubResource( 3 )
-position = Vector2( 113, 430 )
+[node name="BuildingInstance2" type="Sprite" parent="."]
+material = SubResource( 8 )
+position = Vector2( 159, 427 )
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="BuildingInstance3" type="Sprite" parent="."]
+material = SubResource( 9 )
+position = Vector2( 218, 433 )
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="BuildingInstance4" type="Sprite" parent="."]
+material = SubResource( 10 )
+position = Vector2( 286, 437 )
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="BuildingInstance5" type="Sprite" parent="."]
+material = SubResource( 6 )
+position = Vector2( 348, 444 )
 texture = ExtResource( 8 )
 script = ExtResource( 6 )
 

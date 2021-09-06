@@ -17,9 +17,8 @@ func _ready():
 #	ResourceSaver.save("res://testbw.tres",bw2,ResourceSaver.FLAG_CHANGE_PATH)
 	#bw2.take_over_path(bw2.resource_path)
 	
-	
 	var a = ResourceLoader.load("res://testbw.tres","",true)
-	var b = ResourceLoader.load("res://rid1.tres","",true)
+	var b = ResourceLoader.load("res://rid1.res","",true)
 	#print(a.building_name)
 	print(a.building_name)
 	for b2 in b.building_definitions:

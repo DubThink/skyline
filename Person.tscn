@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://20210715_084239.jpg" type="Texture" id=1]
+[ext_resource path="res://peopl.png" type="Texture" id=1]
 [ext_resource path="res://Person.gd" type="Script" id=2]
 
 [node name="Person" type="PathFollow2D"]
@@ -10,6 +10,5 @@ script = ExtResource( 2 )
 walkspeed_pps = 400.0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1.80591, 1.76538 )
-scale = Vector2( 0.0592593, 0.0830956 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )

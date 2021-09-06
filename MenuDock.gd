@@ -49,7 +49,7 @@ func on_click(index):
 #	print("on_click for %d, %d available buildings" % [index, available_buildings.size()])
 	if (not exit_menu.visible) and available_buildings.size() > index and available_buildings[index] != null:
 		var building = available_buildings[index]
-		building.scale = Vector2(1,1)
+		building.set_scale(Vector2(1,1))
 		building.get_parent().remove_child(building)
 		skyline.select_building(building)
 		available_buildings[index] = null
@@ -66,7 +66,7 @@ func visualize_building_on_button(index):
 	#TODO replace this with get_height
 	var building_height = available_buildings[index].texture.get_height()
 	var ratio = buttons[index].get_rect().size.y / building_height
-	available_buildings[index].scale = Vector2(ratio,ratio)
+	available_buildings[index].set_scale(Vector2(ratio,ratio))
 	available_buildings[index].set_position(Vector2(buttons[index].get_rect().size.x/2,buttons[index].get_rect().size.y*17/20))
 	
 

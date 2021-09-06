@@ -28,6 +28,7 @@ func _process(delta):
 		#bf.rid.building_definitions
 		var b = bf.create_building(bd)
 		add_child(b)
+		b.show_behind_parent = true
 		b.set_position(xpos,200)
 		print(b.get_left())
 		xpos+=300

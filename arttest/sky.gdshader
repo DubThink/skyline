@@ -79,7 +79,7 @@ void fragment(){
 	time_of_day = FIXED_TIME_OF_DAY;
 	float altitude = sin(HALF_PI*SCREEN_UV.y*SKY_HEMISPHERE_PERCENT)-0.4;
 	float altitude2 = sin(SCREEN_UV.y);
-	
+	COLOR.a=texture(TEXTURE,UV).a;
 	//mix(altitude,altitude2,step(time_of_day, .5))
 	float ASPECT = SKY_HEMISPHERE_PERCENT*SCREEN_PIXEL_SIZE.y/SCREEN_PIXEL_SIZE.x;	
 	// adjust horizontal coords to the same scale as the altitude coord

@@ -9,4 +9,5 @@ building_type = 0
 layer = 0
 person_capacity = 0
 bounds = Rect2( 0, 0, 0, 0 )
+image_scale_factor = 0
 strings = [  ]

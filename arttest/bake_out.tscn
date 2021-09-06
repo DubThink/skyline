@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://arttest/bake_out.gd" type="Script" id=1]
 [ext_resource path="res://20210715_084239.jpg" type="Texture" id=2]
+[ext_resource path="res://arttest/Building.gd" type="Script" id=3]
+[ext_resource path="res://arttest/window_gen.gdshader" type="Shader" id=4]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 4 )
+shader_param/bchannel = 0.1
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -70,6 +76,672 @@ margin_bottom = 38.0
 rect_pivot_offset = Vector2( 49, 9 )
 text = "#awfawef"
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D2elta Tower" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( 56, 474 )
+scale = Vector2( 0.5, 0.5 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 232, 76, 184, 28, 184, 24, 160, 24, 160, -388, 96, -388, 96, -432, 32, -432, 32, -476, 4, -476, 0, -536, 0, -540, 4, -540, 5, -536, 7, -536, 8, -540, 8, -544, 7, -580, 5, -580, 4, -544, -2, -544, -3, -580, -5, -580, -6, -544, -12, -544, -13, -580, -15, -580, -16, -544, -16, -540, -15, -536, -13, -536, -12, -540, -8, -540, -8, -536, -12, -476, -36, -476, -36, 24, -64, 24, -64, 28, -112, 76, 188, 76 )
+script = ExtResource( 3 )
+building_type = 5
+layer = 3
+person_capacity = 20
+
+[node name="ColorRect15" type="ColorRect" parent="D2elta Tower"]
+material = SubResource( 2 )
+margin_left = -32.0
+margin_top = -376.0
+margin_right = -4.0
+margin_bottom = -344.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="D2elta Tower/ColorRect15"]
+material = SubResource( 2 )
+margin_left = 160.0
+margin_right = 188.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="D2elta Tower/ColorRect15"]
+material = SubResource( 2 )
+margin_left = 128.0
+margin_right = 156.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="D2elta Tower/ColorRect15"]
+material = SubResource( 2 )
+margin_left = 64.0
+margin_right = 92.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="D2elta Tower/ColorRect15"]
+material = SubResource( 2 )
+margin_left = 96.0
+margin_right = 124.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="D2elta Tower/ColorRect15"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect18" type="ColorRect" parent="D2elta Tower"]
+material = SubResource( 2 )
+margin_left = -32.0
+margin_top = -332.0
+margin_right = -4.0
+margin_bottom = -300.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="D2elta Tower/ColorRect18"]
+material = SubResource( 2 )
+margin_left = 160.0
+margin_right = 188.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="D2elta Tower/ColorRect18"]
+material = SubResource( 2 )
+margin_left = 128.0
+margin_right = 156.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="D2elta Tower/ColorRect18"]
+material = SubResource( 2 )
+margin_left = 64.0
+margin_right = 92.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="D2elta Tower/ColorRect18"]
+material = SubResource( 2 )
+margin_left = 96.0
+margin_right = 124.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="D2elta Tower/ColorRect18"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect19" type="ColorRect" parent="D2elta Tower"]
+material = SubResource( 2 )
+margin_left = -32.0
+margin_top = -288.0
+margin_right = -4.0
+margin_bottom = -256.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="D2elta Tower/ColorRect19"]
+material = SubResource( 2 )
+margin_left = 160.0
+margin_right = 188.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="D2elta Tower/ColorRect19"]
+material = SubResource( 2 )
+margin_left = 128.0
+margin_right = 156.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="D2elta Tower/ColorRect19"]
+material = SubResource( 2 )
+margin_left = 64.0
+margin_right = 92.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="D2elta Tower/ColorRect19"]
+material = SubResource( 2 )
+margin_left = 96.0
+margin_right = 124.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="D2elta Tower/ColorRect19"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect20" type="ColorRect" parent="D2elta Tower"]
+material = SubResource( 2 )
+margin_left = -32.0
+margin_top = -244.0
+margin_right = -4.0
+margin_bottom = -212.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="D2elta Tower/ColorRect20"]
+material = SubResource( 2 )
+margin_left = 160.0
+margin_right = 188.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="D2elta Tower/ColorRect20"]
+material = SubResource( 2 )
+margin_left = 128.0
+margin_right = 156.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="D2elta Tower/ColorRect20"]
+material = SubResource( 2 )
+margin_left = 64.0
+margin_right = 92.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="D2elta Tower/ColorRect20"]
+material = SubResource( 2 )
+margin_left = 96.0
+margin_right = 124.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="D2elta Tower/ColorRect20"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect21" type="ColorRect" parent="D2elta Tower"]
+material = SubResource( 2 )
+margin_left = -32.0
+margin_top = -200.0
+margin_right = -4.0
+margin_bottom = -168.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="D2elta Tower/ColorRect21"]
+material = SubResource( 2 )
+margin_left = 160.0
+margin_right = 188.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="D2elta Tower/ColorRect21"]
+material = SubResource( 2 )
+margin_left = 128.0
+margin_right = 156.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="D2elta Tower/ColorRect21"]
+material = SubResource( 2 )
+margin_left = 64.0
+margin_right = 92.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="D2elta Tower/ColorRect21"]
+material = SubResource( 2 )
+margin_left = 96.0
+margin_right = 124.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="D2elta Tower/ColorRect21"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect23" type="ColorRect" parent="D2elta Tower"]
+material = SubResource( 2 )
+margin_left = -32.0
+margin_top = -156.0
+margin_right = -4.0
+margin_bottom = -124.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="D2elta Tower/ColorRect23"]
+material = SubResource( 2 )
+margin_left = 160.0
+margin_right = 188.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="D2elta Tower/ColorRect23"]
+material = SubResource( 2 )
+margin_left = 128.0
+margin_right = 156.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="D2elta Tower/ColorRect23"]
+material = SubResource( 2 )
+margin_left = 64.0
+margin_right = 92.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="D2elta Tower/ColorRect23"]
+material = SubResource( 2 )
+margin_left = 96.0
+margin_right = 124.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="D2elta Tower/ColorRect23"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect24" type="ColorRect" parent="D2elta Tower"]
+material = SubResource( 2 )
+margin_left = -32.0
+margin_top = -112.0
+margin_right = -4.0
+margin_bottom = -80.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="D2elta Tower/ColorRect24"]
+material = SubResource( 2 )
+margin_left = 160.0
+margin_right = 188.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="D2elta Tower/ColorRect24"]
+material = SubResource( 2 )
+margin_left = 128.0
+margin_right = 156.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="D2elta Tower/ColorRect24"]
+material = SubResource( 2 )
+margin_left = 64.0
+margin_right = 92.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="D2elta Tower/ColorRect24"]
+material = SubResource( 2 )
+margin_left = 96.0
+margin_right = 124.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="D2elta Tower/ColorRect24"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect25" type="ColorRect" parent="D2elta Tower"]
+material = SubResource( 2 )
+margin_left = -32.0
+margin_top = -68.0
+margin_right = -4.0
+margin_bottom = -36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="D2elta Tower/ColorRect25"]
+material = SubResource( 2 )
+margin_left = 160.0
+margin_right = 188.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="D2elta Tower/ColorRect25"]
+material = SubResource( 2 )
+margin_left = 128.0
+margin_right = 156.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="D2elta Tower/ColorRect25"]
+material = SubResource( 2 )
+margin_left = 64.0
+margin_right = 92.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="D2elta Tower/ColorRect25"]
+material = SubResource( 2 )
+margin_left = 96.0
+margin_right = 124.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="D2elta Tower/ColorRect25"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect26" type="ColorRect" parent="D2elta Tower"]
+material = SubResource( 2 )
+margin_left = -32.0
+margin_top = -24.0
+margin_right = -4.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="D2elta Tower/ColorRect26"]
+material = SubResource( 2 )
+margin_left = 160.0
+margin_right = 188.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="D2elta Tower/ColorRect26"]
+material = SubResource( 2 )
+margin_left = 128.0
+margin_right = 156.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="D2elta Tower/ColorRect26"]
+material = SubResource( 2 )
+margin_left = 64.0
+margin_right = 92.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="D2elta Tower/ColorRect26"]
+material = SubResource( 2 )
+margin_left = 96.0
+margin_right = 124.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="D2elta Tower/ColorRect26"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect13" type="ColorRect" parent="D2elta Tower/ColorRect26"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_top = 20.0
+margin_right = 44.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect14" type="ColorRect" parent="D2elta Tower/ColorRect26"]
+material = SubResource( 2 )
+margin_left = 48.0
+margin_top = 20.0
+margin_right = 60.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect15" type="ColorRect" parent="D2elta Tower/ColorRect26"]
+material = SubResource( 2 )
+margin_left = 64.0
+margin_top = 20.0
+margin_right = 76.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect16" type="ColorRect" parent="D2elta Tower/ColorRect26"]
+material = SubResource( 2 )
+margin_left = 80.0
+margin_top = 20.0
+margin_right = 92.0
+margin_bottom = 48.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect16" type="ColorRect" parent="D2elta Tower"]
+material = SubResource( 2 )
+margin_left = -32.0
+margin_top = -420.0
+margin_right = -4.0
+margin_bottom = -388.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="D2elta Tower/ColorRect16"]
+material = SubResource( 2 )
+margin_left = 64.0
+margin_right = 92.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="D2elta Tower/ColorRect16"]
+material = SubResource( 2 )
+margin_left = 96.0
+margin_right = 124.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="D2elta Tower/ColorRect16"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect17" type="ColorRect" parent="D2elta Tower"]
+material = SubResource( 2 )
+margin_left = -32.0
+margin_top = -464.0
+margin_right = -4.0
+margin_bottom = -432.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="D2elta Tower/ColorRect17"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 8, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

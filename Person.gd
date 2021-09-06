@@ -46,7 +46,7 @@ var goal_timer
 var goal_pos = 5000
 var waiting = false
 
-export (float, 1, 400) var walkspeed_pps
+export (float, 1, 1200) var walkspeed_pps
 
 # needs
 var hunger = 0

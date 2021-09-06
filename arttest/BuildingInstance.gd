@@ -16,7 +16,9 @@ func _init(var _definition: BuildingBakedDefinition, var srm: SkyRenderManager):
 #	set_texture(load("res://tmp_uvs.jpg"))
 	set_material(srm.instance_and_track_building_shader())
 	get_material().set_shader_param("WINDOW_OFFSET", randf())
+	get_material().set_shader_param("layer",definition.layer)
 	definition.get_residentialness()
+	set_scale(Vector2(1,1))
 	#get_material().set_shader_param("residentialness",definition.)
 	# TODO set up render init
 	pass
@@ -25,23 +27,27 @@ func _init(var _definition: BuildingBakedDefinition, var srm: SkyRenderManager):
 func _ready():
 	pass # Replace with function body.
 
+func set_scale(var sc):
+	scale = sc*definition.image_scale_factor
+	print("scale of ",definition.building_name,": ",scale)
+
 func set_position(var x, var y = null):
 	if y:
 		x = Vector2(x,y)
-	var offset = Vector2(248,-248)
-	offset += definition.bounds.position
+	var offset = Vector2(256,-256)
+	#offset += definition.bounds.position
 	#x.x-=definition.bounds.position.x
 	#x.y-=definition.bounds.position.y
-	position = x + offset*scale
+	position = x + offset*scale + definition.bounds.position
 
 func set_position_left(var x, var y = null):
 	if y:
 		x = Vector2(x,y)
-	var offset = Vector2(248,-248)
-	offset.y += definition.bounds.position.y
+	var offset = Vector2(256,-256)
+	#offset.y += definition.bounds.position.y
 	#x.x-=definition.bounds.position.x
 	#x.y-=definition.bounds.position.y
-	position = x + offset*scale
+	position = x + offset*scale  + Vector2(0,definition.bounds.position.y)
 
 func get_left():
 	return position.x - (248+definition.bounds.position.x)*scale.x
@@ -54,6 +60,9 @@ func clear_tint():
 	
 func get_footprint():
 	return definition.bounds.size.y #texture.get_width()
+
+func get_definition():
+	return definition
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

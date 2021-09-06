@@ -25,7 +25,7 @@ func _ready():
 	
 
 func save_out():
-	ResourceSaver.save("res://rid1.tres",rid,ResourceSaver.FLAG_CHANGE_PATH)
+	ResourceSaver.save("res://rid1.res",rid,ResourceSaver.FLAG_CHANGE_PATH+ResourceSaver.FLAG_COMPRESS)
 	#rid.take_over_path(rid.resource_path)
 	
 	var bw = BuildingBakedDefinition.new()
@@ -37,32 +37,34 @@ var bake_target_idx=-1
 var scanned_count=0
 func get_next_bake_target():
 	var child_count = data_instance.get_child_count()
-	print("ct",child_count)
 	bake_target_idx+=1
 	scanned_count+=1
 	if bake_target_idx<=child_count:
 		bake_target = data_instance.get_child(bake_target_idx)
-		print("checking ", bake_target)
+		#print("checking ", bake_target)
 	
 	while not bake_target is BuildingDefinition or bake_target.no_export:
 		bake_target_idx+=1
 		scanned_count+=1		
 		if bake_target_idx<=child_count:
 			bake_target = data_instance.get_child(bake_target_idx)
-			print("checking ", bake_target)		
+			#print("checking ", bake_target)		
 		else:
 			break
 	
 	if bake_target_idx > child_count:
 		bake_target = null
 
-
+var scale_factor
 func setup_building_bake(target: BuildingDefinition):
 	assert(target)
 	print("Setting up bake for ",target,' "',target.name,'"')
 	var pos = target.get_position()
 	var bounds = target.calculate_bounds()
 	var c = Vector2(0,bounds.size.y)
+	var ms = max(bounds.size.x,bounds.size.y)
+	scale_factor = int(max(1,ceil(log(ms)/log(2))-8))
+	print("Scale factor ",scale_factor)
 	
 	target.get_parent().remove_child(target)
 	bake_target_idx-=1
@@ -71,10 +73,24 @@ func setup_building_bake(target: BuildingDefinition):
 	
 	#print(offset, bounds)
 	# todo figure out why we render out of position on some buildings
-	var tex_offset = Vector2(8,504)
-
-	target.set_position(tex_offset-bounds.position-c)#+(bounds.position)) #-offset)*Vector2(-1,1))
+	# move shape from at origin of render target to the bottom left corner
+	var tex_offset = Vector2(0,512)
+	# inset to prevent texture bleed bc wrap mode
+	#var margin = Vector2(8,-8)
+	# should scale around origin of tex
+	# goddammit integer division stupid gtfo
+	target.set_scale(Vector2(1.0/scale_factor,1.0/scale_factor))
+	# tex_offset - n (in diagram)
+	target.set_position(tex_offset - (bounds.position + c)/scale_factor)
+	#print(bounds.position + c)
+	#print("final position for rendering ",target.position)
+	# TODO $AWELSH should this also be scaled
 	target.bounds.position = pos+bounds.position+c
+	#print("bounds val calculated ",target.bounds.position)
+	#print("sum ", target.bounds.position+target.position)
+	#if target.name == "Delta Tower":
+	#	print("DBG")
+	#	baking = false
 
 var baked_count = 0
 
@@ -83,10 +99,12 @@ func finish_building_bake(target: BuildingDefinition):
 	var bbd = BuildingBakedDefinition.new(target)
 	var vtex = viewport.get_texture()
 	var tex=ImageTexture.new()
-	tex.create_from_image(vtex.get_data())
+	# don't have wrapping so that wrapping edge bleed isn't an issue
+	tex.create_from_image(vtex.get_data(), ImageTexture.FLAG_FILTER+ImageTexture.FLAG_MIPMAPS)
 	get_node("Preview2").set_texture(tex)
 	
 	bbd.set_tex(tex)
+	bbd.image_scale_factor = scale_factor
 	rid.add_building_definition(bbd)
 	
 	baked_count+=1
@@ -104,6 +122,7 @@ func _process(delta):
 	
 	print("### FRAME ",fc," ###")
 	fc +=1
+	# TODO $AWELSH ditch this
 	if fc%2==1:
 		return
 	if bake_target:
