@@ -15,6 +15,7 @@ onready var building_factory: BuildingFactory = get_node("BuildingFactory")
 onready var cam : Camera2D = get_node("Camera2D")
 onready var dock = get_node("GuiLayer/MenuDock")
 onready var terrain = get_node("terrain_card-8")
+onready var exit_menu = get_node("GuiLayer/ExitMenu")
 var drag_origin
 var ter_margin = 100
 
@@ -25,6 +26,7 @@ func _ready():
 	layers.append(get_node("LayerArray3"))
 	layers.append(get_node("LayerArray4"))
 	layers.append(get_node("LayerArray5"))
+	exit_menu.hide()
 	# this stuff should actually happen in whatever "buttons" we make for 
 	# selection, as well as in the place where the "buttons" are instantiated.
 	
@@ -70,44 +72,48 @@ func _process(delta):
 	if selected_building != null:
 		layer_index = selected_building.definition.layer
 	var mouse_in_allowance = abs(layers[layer_index].get_approx_y_value(0) - mouse_pos.y) < height_allowance
-	if mouse_in_allowance and not selected_building == null:
-		layers[layer_index].display_preview(selected_building, mouse_pos.x)
-	elif not selected_building == null:
-		selected_building.set_position(mouse_pos)
-		selected_building.clear_tint()
-	if Input.is_action_just_pressed("ui_click"):
+	if not exit_menu.visible:
 		if mouse_in_allowance and not selected_building == null:
-			# TODO replace with actual building stuff
-			if layers[layer_index].add_building(selected_building, mouse_pos.x):
-				selected_building = null#building_factory.create_building(null)
-				dock.free_selected_slot()
-				#add_child(selected_building)
-	#TODO smooth these out and make it nice :)
-	if Input.is_action_just_released("ui_zoom_in"):
-		target_cam_zoom = (cam.zoom - Vector2(pct_zoom, pct_zoom))
-		var move_vec = (Vector2(mouse_pos.x, cam.position.y) - cam.position) * pct_zoom
-		target_cam_pos = cam.position + move_vec
-	if Input.is_action_just_released("ui_zoom_out"):
-		var inverse_mouse_xpos = cam.get_viewport_rect().size.x - mouse_pos.x
-		target_cam_zoom = (cam.zoom + Vector2(pct_zoom, pct_zoom))
-		var move_vec = (Vector2(mouse_pos.x, cam.position.y) - cam.position) * pct_zoom
-		target_cam_pos = cam.position - move_vec
-	if Input.is_action_just_pressed("ui_cancel"):
-		# get rid of current thing
-		# actually just put it back at the bottom?
-		if not selected_building == null:
-			remove_child(selected_building)
-#			dock.add_specific_building(selected_building)
-			dock.visualize_last_removed()
-			selected_building = null
-	if Input.is_action_just_pressed("ui_right_click"):
-		drag_origin = mouse_pos
-	if Input.is_action_pressed("ui_right_click"):
-		# drag cam
-		var pos = mouse_pos - drag_origin
-		var drag_speed = 1
-		var move = Vector2(pos.x * drag_speed, 0)
-		target_cam_pos = cam.position - move
+			layers[layer_index].display_preview(selected_building, mouse_pos.x)
+		elif not selected_building == null:
+			selected_building.set_position(mouse_pos)
+			selected_building.clear_tint()
+		if Input.is_action_just_pressed("ui_click"):
+			if mouse_in_allowance and not selected_building == null:
+				# TODO replace with actual building stuff
+				if layers[layer_index].add_building(selected_building, mouse_pos.x):
+					selected_building = null#building_factory.create_building(null)
+					dock.free_selected_slot()
+					#add_child(selected_building)
+		#TODO smooth these out and make it nice :)
+		if Input.is_action_just_released("ui_zoom_in"):
+			target_cam_zoom = (cam.zoom - Vector2(pct_zoom, pct_zoom))
+			var move_vec = (Vector2(mouse_pos.x, cam.position.y) - cam.position) * pct_zoom
+			target_cam_pos = cam.position + move_vec
+		if Input.is_action_just_released("ui_zoom_out"):
+			var inverse_mouse_xpos = cam.get_viewport_rect().size.x - mouse_pos.x
+			target_cam_zoom = (cam.zoom + Vector2(pct_zoom, pct_zoom))
+			var move_vec = (Vector2(mouse_pos.x, cam.position.y) - cam.position) * pct_zoom
+			target_cam_pos = cam.position - move_vec
+		if Input.is_action_just_pressed("ui_cancel"):
+			# get rid of current thing
+			# actually just put it back at the bottom?
+			if selected_building != null:
+				remove_child(selected_building)
+	#			dock.add_specific_building(selected_building)
+				dock.visualize_last_removed()
+				selected_building = null
+			else:
+				#TODO $AWELSH pause day/night cycle
+				exit_menu.show()
+		if Input.is_action_just_pressed("ui_right_click"):
+			drag_origin = mouse_pos
+		if Input.is_action_pressed("ui_right_click"):
+			# drag cam
+			var pos = mouse_pos - drag_origin
+			var drag_speed = 1
+			var move = Vector2(pos.x * drag_speed, 0)
+			target_cam_pos = cam.position - move
 	update_cam()
 
 func select_building(inst):

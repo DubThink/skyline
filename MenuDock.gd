@@ -5,6 +5,7 @@ var buttons = []
 var building_factory: BuildingFactory
 var skyline
 var last_removed = -1
+onready var exit_menu = get_parent().get_parent().get_node("GuiLayer/ExitMenu")
 
 func _ready():
 	skyline = get_parent().get_parent()
@@ -46,7 +47,7 @@ func visualize_last_removed():
 
 func on_click(index):
 #	print("on_click for %d, %d available buildings" % [index, available_buildings.size()])
-	if available_buildings.size() > index and available_buildings[index] != null:
+	if (not exit_menu.visible) and available_buildings.size() > index and available_buildings[index] != null:
 		var building = available_buildings[index]
 		building.scale = Vector2(1,1)
 		building.get_parent().remove_child(building)
