@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://SkylineLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skyline.gd" type="Script" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://PedestrianAmbience.gd" type="Script" id=15]
 [ext_resource path="res://Audio/pedestrian_loop.wav" type="AudioStream" id=16]
 [ext_resource path="res://HappinessManager.gd" type="Script" id=17]
+[ext_resource path="res://PlacementSFX.gd" type="Script" id=18]
+[ext_resource path="res://Audio/building_sfx_0.wav" type="AudioStream" id=19]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -256,9 +258,11 @@ __meta__ = {
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 volume_db = -7.38
+bus = "BackgroundMusic"
 
 [node name="PedestrianAmbience" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 16 )
+bus = "SFX"
 script = ExtResource( 15 )
 min_db = -49.652
 max_db = -6.039
@@ -268,3 +272,8 @@ script = ExtResource( 14 )
 dev_mode = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Startup"]
+
+[node name="PlacementSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+bus = "SFX"
+script = ExtResource( 18 )

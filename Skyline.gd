@@ -5,7 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var layers = []
-var height_allowance = 100
+var height_allowance = 400
 var selected_building: BuildingInstance
 
 var target_cam_zoom
