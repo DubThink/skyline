@@ -19,6 +19,8 @@ var skyEastMat: ShaderMaterial = preload("res://arttest/sky.material")
 var skyWestMat: ShaderMaterial = preload("res://arttest/sky_west.tres")
 
 var world_time: float;
+var do_daynight_cycle=true
+
 
 var building_shaders_to_update: Array;
 
@@ -54,12 +56,13 @@ func _process(delta):
 	var viewport_rect = get_viewport_rect();
 	if(!last_viewport_rect.is_equal_approx(viewport_rect)):
 		notify_resized(viewport_rect)
-	world_time+=delta/SECONDS_PER_DAY
-	skyEastMat.set_shader_param("FIXED_TIME_OF_DAY",world_time)
-	skyWestMat.set_shader_param("FIXED_TIME_OF_DAY",world_time)
-	for building_shader in building_shaders_to_update:
-		assert(building_shader is ShaderMaterial)
-		building_shader.set_shader_param("FIXED_TIME_OF_DAY",world_time)
+	if do_daynight_cycle:
+		world_time+=delta/SECONDS_PER_DAY
+		skyEastMat.set_shader_param("FIXED_TIME_OF_DAY",world_time)
+		skyWestMat.set_shader_param("FIXED_TIME_OF_DAY",world_time)
+		for building_shader in building_shaders_to_update:
+			assert(building_shader is ShaderMaterial)
+			building_shader.set_shader_param("FIXED_TIME_OF_DAY",world_time)
 		
 		
-	
+

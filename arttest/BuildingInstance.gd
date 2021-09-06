@@ -34,6 +34,15 @@ func set_position(var x, var y = null):
 	#x.y-=definition.bounds.position.y
 	position = x + offset*scale
 
+func set_position_left(var x, var y = null):
+	if y:
+		x = Vector2(x,y)
+	var offset = Vector2(248,-248)
+	offset.y += definition.bounds.position.y
+	#x.x-=definition.bounds.position.x
+	#x.y-=definition.bounds.position.y
+	position = x + offset*scale
+
 func get_left():
 	return position.x - (248+definition.bounds.position.x)*scale.x
 

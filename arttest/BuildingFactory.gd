@@ -33,3 +33,24 @@ func _process(delta):
 #		create_building(building_defs[0])
 #		add_child(null)
 #	hasRun = true
+
+func visualize_food():
+	pass
+
+func visualize_happiness():
+	pass
+	
+func visualize_retail():
+	pass
+	
+func visualize_work():
+	pass
+
+func visualize_school():
+	pass
+		
+func is_visualizing():
+	pass
+	
+func stop_visualizing():
+	pass

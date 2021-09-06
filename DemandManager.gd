@@ -75,8 +75,8 @@ func reduce_demand(definition: BuildingBakedDefinition):
 		reduce_demand_for(BUILDING.TYPE.WORK, capacity_to_demand(definition.person_capacity))
 	if definition.building_type & (1<<BUILDING.TYPE.FOOD):
 		reduce_demand_for(BUILDING.TYPE.FOOD, sizelayer_to_demand(definition.layer))
-	if definition.building_type & (1<<BUILDING.TYPE.MEDICAL):
-		reduce_demand_for(BUILDING.TYPE.FOOD, sizelayer_to_demand(definition.layer))
+	if definition.building_type & (1<<BUILDING.TYPE.RETAIL):
+		reduce_demand_for(BUILDING.TYPE.RETAIL, sizelayer_to_demand(definition.layer))
 	
 func reduce_demand_for(type, amount):
 	print("reducing demand for %d by %f" % [type, amount])
@@ -93,7 +93,7 @@ func display_demand_info_text():
 	var text = ""
 	text += "HOUSING: " + str(demand[BUILDING.TYPE.HOUSE]) + "\n"
 	text += "FOOD:    " + str(demand[BUILDING.TYPE.FOOD]) + "\n"
-	text += "MEDICAL: " + str(demand[BUILDING.TYPE.MEDICAL]) + "\n"
+	text += "RETAIL: " + str(demand[BUILDING.TYPE.RETAIL]) + "\n"
 	text += "SCHOOL:  " + str(demand[BUILDING.TYPE.SCHOOL]) + "\n"
 	text += "WORK:    " + str(demand[BUILDING.TYPE.WORK])
 	label.text = text

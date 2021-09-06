@@ -10,7 +10,7 @@ class_name BUILDING
 enum TYPE {
 	HOUSE,
 	FOOD,
-	MEDICAL,
+	RETAIL,
 	SCHOOL,
 	WORK,
 	_COUNT
