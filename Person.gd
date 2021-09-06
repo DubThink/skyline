@@ -35,7 +35,9 @@ func _process(delta):
 	curr_x = path.curve.interpolate_baked(offset)[0]
 	walk_step(delta)
 	tick_needs(delta)
-	pass
+	var demand_below = max(0,0.5-current_happiness)*2
+	var demand_above = max(0,current_happiness - 0.5)*2
+	modulate = Color(0.5*demand_below,0.5*demand_above,0.2*max(demand_below,demand_above))
 
 var dir: int = 1;
 
@@ -113,6 +115,8 @@ func find_next_goal():
 			if len(foodlist) == 0:
 				demand_manager.add_demand(BUILDING.TYPE.FOOD, 0.5)
 			else:
+				for f in foodlist:
+					print("  ",f.definition.building_name)
 				var rand_index: int = randi() % len(foodlist)
 				goal_pos = foodlist[rand_index].get_left()
 		GOAL.RETAIL:
