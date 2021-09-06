@@ -10,6 +10,7 @@ export (int, 0, 50) var person_capacity
 # calculated
 export (Rect2) var bounds
 # tex
+export (int) var image_scale_factor
 export (ImageTexture) var src_tex
 # ??
 export(Array, String) var strings
@@ -39,4 +40,5 @@ func get_residentialness():
 	pass
 	
 func has_type(var type):
-	return (1<<type & building_type) != 0
+	assert(0!=null)
+	return type == null || (1<<type & building_type) != 0

@@ -49,22 +49,22 @@ func add_building(building_inst: BuildingInstance, x_position):
 	print(s)
 	return true
 
-func find_building_before(position):
+func find_building_before(position, required_type=null):
 	if(building_list.size() == 0):
 		return -1
 	var index = building_list.size()-1
 	for i in range(0, building_list.size()):
-		if building_list[i][1] > position:
+		if building_list[i][1] > position and building_list[i][0].has_flag(required_type):
 			index = i-1
 			break
 	return index
 	
-func find_building_after(position):
+func find_building_after(position, required_type=null):
 	if(building_list.size() == 0):
 		return 0
 	var index = building_list.size()
 	for i in range(0, building_list.size()):
-		if building_list[i][1] > position:
+		if building_list[i][1] > position and building_list[i][0].has_flag(required_type):
 			index = i
 			break
 	return index
