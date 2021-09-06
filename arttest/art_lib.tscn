@@ -3988,10 +3988,9 @@ __meta__ = {
 }
 
 [node name="Bridged Buildings" type="Polygon2D" parent="."]
-visible = false
-position = Vector2( -60, -48 )
+position = Vector2( -60.0078, -48 )
 color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( -72, 76, -72, 72, -60, 72, -60, -144, 12, -144, 11.9492, 25.5312, 15.864, 24.0514, 15.9844, 23.9844, 16.1016, 23.8984, 19.8867, 20.1133, 20.0078, 20.0234, 20.1641, 20, 51.8672, 20, 51.9922, 20.0234, 52.0938, 20.0938, 55.9023, 23.9023, 56.0078, 23.9844, 56.1131, 24.0706, 60.1033, 26.5629, 60, -144, 124, -144, 124, 72, 136, 72, 136, 76, 184, 108, 40, 108, 40.0078, 72, 60.0078, 72, 60, 40.125, 59.8672, 40, 12.1484, 40, 12, 40.1484, 12.0078, 72, 40.0078, 72, 40, 108, -112, 108 )
+polygon = PoolVector2Array( -72, 76, -72, 72, -60, 72, -60, -144, 12, -144, 12, 19.6484, 12.0234, 19.7734, 12.0703, 19.8438, 12.1719, 19.8828, 12.2938, 19.8531, 19.8438, 16.0781, 20.0078, 16.0234, 20.1875, 16, 51.8203, 16, 51.9922, 16.0156, 52.1531, 16.0766, 59.7297, 19.861, 59.8281, 19.8984, 59.9375, 19.8984, 59.9922, 19.8281, 60.0078, 19.6875, 60, -144, 124, -144, 124, 72, 136, 72, 136, 76, 184, 108, 40, 108, 40.0078, 72, 60.0078, 72, 60, 40.125, 59.8672, 40, 12.1484, 40, 12, 40.1484, 12.0078, 72, 40.0078, 72, 40, 108, -112, 108 )
 script = ExtResource( 1 )
 building_type = 1
 layer = 2
@@ -4420,8 +4419,7 @@ __meta__ = {
 [node name="ColorRect21" type="ColorRect" parent="Bridged Buildings/ColorRect17"]
 material = SubResource( 1 )
 margin_left = 28.0
-margin_top = 4.0
-margin_right = 36.0
+margin_right = 32.0
 margin_bottom = 12.0
 rect_pivot_offset = Vector2( 8, 16 )
 __meta__ = {
@@ -4430,8 +4428,7 @@ __meta__ = {
 
 [node name="ColorRect22" type="ColorRect" parent="Bridged Buildings/ColorRect17"]
 material = SubResource( 1 )
-margin_left = -12.0
-margin_top = 4.0
+margin_left = -8.0
 margin_right = -4.0
 margin_bottom = 12.0
 rect_pivot_offset = Vector2( 8, 16 )
