@@ -17,14 +17,20 @@ func _ready():
 	buttons.append(get_node("Button6"))
 	for i in range(0, buttons.size()):
 		buttons[i].connect("pressed", self, "on_click", [i])
-	add_available_building(0) #test
-	add_available_building(1) #test
+		available_buildings.append(null)
+#	add_available_building(0) #test
+#	add_available_building(1) #test
 
 #TODO build a wrapper for this for sim API
 func add_available_building(index):
 	print("adding new building")
 	var inst = building_factory.create_building(building_factory.get_building_def())
-	available_buildings.append(inst)
+	available_buildings[index] = inst
+	visualize_building_on_button(index)
+
+func add_building_by_demand(index, inst):
+	print("adding new building by demand")
+	available_buildings[index] = inst
 	visualize_building_on_button(index)
 
 func add_specific_building(inst):
@@ -35,17 +41,20 @@ func add_specific_building(inst):
 	visualize_building_on_button(last_removed)
 #	last_removed = -1
 
+func visualize_last_removed():
+	visualize_building_on_button(last_removed)
+
 func on_click(index):
 #	print("on_click for %d, %d available buildings" % [index, available_buildings.size()])
 	if available_buildings.size() > index and available_buildings[index] != null:
-#		print("had something in")
 		var building = available_buildings[index]
 		building.scale = Vector2(1,1)
 		building.get_parent().remove_child(building)
 		skyline.select_building(building)
 		available_buildings[index] = null
+		free_selected_slot()
 		last_removed = index
-		add_specific_building(building_factory.create_building(building_factory.get_building_def()))
+		add_specific_building(building_factory.create_building(building_factory.get_building_def())) # what is this
 	elif available_buildings.size() <= index:
 		print("empty")
 	pass
@@ -59,3 +68,20 @@ func visualize_building_on_button(index):
 	var building_height = available_buildings[index].texture.get_height()
 	var ratio = buttons[index].get_rect().size.y / building_height
 	available_buildings[index].scale = Vector2(ratio,ratio)
+
+func get_free_slots():
+	var slots = []
+	for i in range(buttons.size()):
+		slots.append(check_slot_free(i))
+	return slots
+
+func check_slot_free(index):
+	if index == last_removed:
+		return false
+	return index < available_buildings.size() and available_buildings[index] == null
+
+func num_slots():
+	return buttons.size()
+	
+func free_selected_slot():
+	available_buildings[last_removed] = null

@@ -14,6 +14,7 @@ var pct_zoom = 0.2 # maybe change to 0.3
 onready var building_factory: BuildingFactory = get_node("BuildingFactory")
 onready var cam : Camera2D = get_node("Camera2D")
 onready var dock = get_node("GuiLayer/MenuDock")
+var drag_origin
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,6 +49,7 @@ func _process(delta):
 			# TODO replace with actual building stuff
 			if layers[0].add_building(selected_building, mouse_pos.x):
 				selected_building = null#building_factory.create_building(null)
+				dock.free_selected_slot()
 				#add_child(selected_building)
 	#TODO smooth these out and make it nice :)
 	if Input.is_action_just_released("ui_zoom_in"):
@@ -59,19 +61,29 @@ func _process(delta):
 		target_cam_zoom = (cam.zoom + Vector2(pct_zoom, pct_zoom))
 		var move_vec = (Vector2(mouse_pos.x, cam.position.y) - cam.position) * pct_zoom
 		target_cam_pos = cam.position - move_vec
-	if Input.is_action_just_pressed("ui_right_click"):
+	if Input.is_action_just_pressed("ui_cancel"):
 		# get rid of current thing
 		# actually just put it back at the bottom?
 		if not selected_building == null:
 			remove_child(selected_building)
-			dock.add_specific_building(selected_building)
+#			dock.add_specific_building(selected_building)
+			dock.visualize_last_removed()
 			selected_building = null
+	if Input.is_action_just_pressed("ui_right_click"):
+		drag_origin = mouse_pos
+	if Input.is_action_pressed("ui_right_click"):
+		# drag cam
+		var pos = mouse_pos - drag_origin
+		var drag_speed = 1
+		var move = Vector2(pos.x * drag_speed, 0)
+		target_cam_pos = cam.position - move
 	update_cam()
 
 func select_building(inst):
 	if selected_building != null:
 		remove_child(selected_building)
-		dock.add_specific_building(selected_building)
+#		dock.add_specific_building(selected_building)
+		dock.visualize_last_removed()
 		selected_building = null
 	selected_building = inst
 	add_child(inst)

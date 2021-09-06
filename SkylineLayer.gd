@@ -24,7 +24,7 @@ func add_building(building_inst: BuildingInstance, x_position):
 	var placement_index = 0
 	var before_idx = find_building_before(x_position)
 	var after_idx = before_idx + 1# find_building_after(x_position)#before_idx + 1
-	print("before idx %d, after idx %d" % [before_idx, after_idx])
+#	print("before idx %d, after idx %d" % [before_idx, after_idx])
 	# TODO Rejig this so it doesn't assume that we're dealing with the bottom left corner
 	var new_l = x_position
 	var new_r = x_position + footprint
@@ -32,17 +32,17 @@ func add_building(building_inst: BuildingInstance, x_position):
 		var before_r = building_list[before_idx][1] + building_list[before_idx][2]
 		if new_l < before_r:
 			# overlap with before building
-			print("overlap with before building")
+#			print("overlap with before building")
 			return false
 	if after_idx >= 0 and after_idx < building_list.size(): # validity check
 		var after_l = building_list[after_idx][1]
 		if new_l < after_l and new_r > after_l:
 			# overlap with after building
-			print("overlap with after building")
+#			print("overlap with after building")
 			return false
-	print("Inserting new building at index %d" % after_idx)
+#	print("Inserting new building at index %d" % after_idx)
 	building_list.insert(after_idx, [instance_building(building_inst, x_position), x_position, footprint])
-	print("number of existing buildings: %d" % building_list.size())
+#	print("number of existing buildings: %d" % building_list.size())
 	var s = ""
 	for i in range(0, building_list.size()):
 		s += "[" + str(building_list[i][1]) + "," + str(building_list[i][2]) + "],"

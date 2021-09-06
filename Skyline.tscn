@@ -8,7 +8,7 @@
 [ext_resource path="res://arttest/building_shader.gdshader" type="Shader" id=6]
 [ext_resource path="res://PersonManager.gd" type="Script" id=7]
 [ext_resource path="res://MenuDock.gd" type="Script" id=8]
-[ext_resource path="res://HappinessManager.gd" type="Script" id=9]
+[ext_resource path="res://DemandManager.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -30,7 +30,7 @@ script = ExtResource( 2 )
 [node name="BuildingFactory" parent="." instance=ExtResource( 4 )]
 
 [node name="SkyRenderManager" parent="." instance=ExtResource( 5 )]
-position = Vector2( -21, -58 )
+position = Vector2( -15.4363, -61.5636 )
 buildingMaterial = SubResource( 1 )
 SECONDS_PER_DAY = 15.0
 
@@ -57,7 +57,6 @@ smoothing_enabled = true
 [node name="GuiLayer" type="CanvasLayer" parent="."]
 
 [node name="MenuDock" type="Panel" parent="GuiLayer"]
-modulate = Color( 1, 1, 1, 0.537255 )
 self_modulate = Color( 1, 1, 1, 0.505882 )
 anchor_top = 1.00174
 anchor_right = 1.0
@@ -145,6 +144,11 @@ __meta__ = {
 position = Vector2( -5, -20 )
 z_index = 10
 curve = SubResource( 2 )
+
+[node name="DemandManager" parent="." instance=ExtResource( 9 )]
+starting_house_demand = 3.0
+starting_food_demand = 3.0
+starting_work_demand = 2.0
 
 [node name="terrain_card-8" type="Sprite" parent="."]
 position = Vector2( -26, 744 )
