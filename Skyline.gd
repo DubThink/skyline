@@ -39,6 +39,8 @@ func update_cam():
 	var prev_zoom = cam.zoom
 	if cam.zoom != target_cam_zoom:
 		cam.zoom = lerp(cam.zoom, target_cam_zoom, 0.05)
+		if cam.zoom.x <= 0:
+			cam.zoom = prev_zoom
 	if cam.position != target_cam_pos:
 		cam.position = lerp(cam.position, target_cam_pos, 0.05)
 #	print("viewport posx %f" % cam.position.x)
