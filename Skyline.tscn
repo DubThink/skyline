@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://SkylineLayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skyline.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://arttest/building_shader.gdshader" type="Shader" id=6]
 [ext_resource path="res://PersonManager.gd" type="Script" id=7]
 [ext_resource path="res://MenuDock.gd" type="Script" id=8]
+[ext_resource path="res://HappinessManager.gd" type="Script" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -35,6 +36,9 @@ SECONDS_PER_DAY = 15.0
 
 [node name="PersonManager" type="Node" parent="."]
 script = ExtResource( 7 )
+
+[node name="HappinessManager" type="Node" parent="."]
+script = ExtResource( 9 )
 
 [node name="LayerArray" parent="." instance=ExtResource( 1 )]
 z_index = 3

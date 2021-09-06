@@ -25,4 +25,7 @@ func _process(delta):
 
 func add_person(var hpos):
 	# todo actually set up the person with whatever DEETs they need
-	terrain.add_child(Person.instance())
+	var _person = Person.instance()
+	terrain.add_child(_person)
+	_person.add_to_group("people")
+	
