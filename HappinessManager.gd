@@ -4,7 +4,7 @@ extends Node
 # var a = 2
 # var b = "text"
 var conductivity = 2
-onready var skyline = get_tree().find_node("SkylineLayer")
+#onready var skyline = get_tree().find_node("SkylineLayer")
 var quantization_interval = 1000
 var quantization_rate = 1.0 / quantization_interval
 
