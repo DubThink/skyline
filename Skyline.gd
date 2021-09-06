@@ -10,11 +10,13 @@ var selected_building: BuildingInstance
 
 var target_cam_zoom
 var target_cam_pos
-var pct_zoom = 0.2 # maybe change to 0.3
+var pct_zoom = 0.3 # maybe change to 0.3
 onready var building_factory: BuildingFactory = get_node("BuildingFactory")
 onready var cam : Camera2D = get_node("Camera2D")
 onready var dock = get_node("GuiLayer/MenuDock")
+onready var terrain = get_node("terrain_card-8")
 var drag_origin
+var ter_margin = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,10 +33,35 @@ func _ready():
 	target_cam_pos = cam.position
 	
 func update_cam():
+	var prev_zoom = cam.zoom
 	if cam.zoom != target_cam_zoom:
 		cam.zoom = lerp(cam.zoom, target_cam_zoom, 0.05)
 	if cam.position != target_cam_pos:
 		cam.position = lerp(cam.position, target_cam_pos, 0.05)
+#	print("viewport posx %f" % cam.position.x)
+	var cam_left = cam.position.x - (cam.get_viewport_rect().size.x/2 * cam.zoom.x)
+	var cam_right = cam.position.x + (cam.get_viewport_rect().size.x/2 * cam.zoom.x)
+	var terrain_left = terrain.position.x - (terrain.texture.get_width()/2) + ter_margin * cam.zoom.x
+	var terrain_right = terrain.position.x + (terrain.texture.get_width()/2) - ter_margin * cam.zoom.x
+	var out_on_left = false
+	var out_on_right = false
+	if cam_left < terrain_left:
+		out_on_left = true
+#		print("out of bounds on left!")
+		cam.position.x += terrain_left - cam_left
+	if cam_right > terrain_right:
+		out_on_right = true
+#		print("out of bounds on right!")
+		cam.position.x -= cam_right - terrain_right
+	if out_on_left and out_on_right:
+		print("out of bounds on both, zoom is (%f,%f)" % [cam.zoom.x, cam.zoom.y])
+		cam.zoom = find_max_zoom()
+#	if cam.zoom.x - find_max_zoom().x < 0.2:
+		cam.position = terrain.position
+		
+func find_max_zoom():
+	var max_zoom = (terrain.texture.get_width() - (ter_margin * cam.zoom.x * 2)) / cam.get_viewport_rect().size.x
+	return Vector2(max_zoom, max_zoom)
 
 func _process(delta):
 	var mouse_pos = get_node("Camera2D").get_global_mouse_position()

@@ -1,0 +1,161 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://SkylineLayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Skyline.gd" type="Script" id=2]
+[ext_resource path="res://terrain_card-8.png" type="Texture" id=3]
+[ext_resource path="res://BuildingFactory.tscn" type="PackedScene" id=4]
+[ext_resource path="res://arttest/SkyRenderManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://arttest/building_shader.gdshader" type="Shader" id=6]
+[ext_resource path="res://PersonManager.gd" type="Script" id=7]
+[ext_resource path="res://MenuDock.gd" type="Script" id=8]
+[ext_resource path="res://DemandManager.tscn" type="PackedScene" id=9]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 6 )
+shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
+shader_param/FIXED_TIME_OF_DAY = null
+shader_param/residentialness = 1.0
+shader_param/WINDOW_OFFSET = null
+shader_param/override_tint_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( -307.211, 52.6375, 307.211, -52.6375, -6500, 418, -66.742, 10.6787, 66.742, -10.6787, -5884, 330, -210.905, 38.7104, 210.905, -38.7104, -5574, 279, -154.841, 5.33936, 154.841, -5.33936, -5180, 227, -208.235, -5.33936, 208.235, 5.33936, -4602, 283, -49.3891, 5.33936, 49.3891, -5.33936, -4185, 257, 0, 0, 0, 0, -4025, 250, 0, 0, 0, 0, -2702, 250, -149.68, 10.9317, 149.68, -10.9317, -2046, 172, -417.085, 8.40896, 417.085, -8.40896, -1386, 145, -385.309, -29.227, 385.309, 29.227, 128, 211, -332.995, -5.04538, 332.995, 5.04538, 1426, 261, -168.179, -10.0908, 168.179, 10.0908, 3054, 408, -331.313, -21.8633, 331.313, 21.8633, 4290, 460, -429.272, -40.4409, 429.272, 40.4409, 5110, 572 )
+}
+
+[node name="Node2D2" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BuildingFactory" parent="." instance=ExtResource( 4 )]
+
+[node name="SkyRenderManager" parent="." instance=ExtResource( 5 )]
+<<<<<<< Updated upstream
+position = Vector2( -21, -58 )
+=======
+position = Vector2( -15.4363, -61.5636 )
+>>>>>>> Stashed changes
+buildingMaterial = SubResource( 1 )
+SECONDS_PER_DAY = 15.0
+
+[node name="PersonManager" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="HappinessManager" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="LayerArray" parent="." instance=ExtResource( 1 )]
+z_index = 3
+
+[node name="LayerArray2" parent="." instance=ExtResource( 1 )]
+z_index = 2
+
+[node name="LayerArray3" parent="." instance=ExtResource( 1 )]
+z_index = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 511.143, 301.606 )
+current = true
+smoothing_enabled = true
+
+[node name="GuiLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuDock" type="Panel" parent="GuiLayer"]
+self_modulate = Color( 1, 1, 1, 0.505882 )
+anchor_top = 1.00174
+anchor_right = 1.0
+anchor_bottom = 1.00174
+margin_top = -101.0
+margin_right = 3.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="GuiLayer/MenuDock"]
+self_modulate = Color( 1, 1, 1, 0.403922 )
+anchor_top = 0.495
+anchor_bottom = 0.495
+margin_left = 82.158
+margin_top = -44.995
+margin_right = 168.158
+margin_bottom = 45.005
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="GuiLayer/MenuDock"]
+self_modulate = Color( 1, 1, 1, 0.403922 )
+anchor_top = 0.495
+anchor_bottom = 0.495
+margin_left = 247.316
+margin_top = -44.995
+margin_right = 333.316
+margin_bottom = 45.005
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="GuiLayer/MenuDock"]
+self_modulate = Color( 1, 1, 1, 0.403922 )
+anchor_top = 0.495
+anchor_bottom = 0.495
+margin_left = 398.52
+margin_top = -44.995
+margin_right = 484.52
+margin_bottom = 45.005
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="GuiLayer/MenuDock"]
+self_modulate = Color( 1, 1, 1, 0.403922 )
+anchor_top = 0.495
+anchor_bottom = 0.495
+margin_left = 573.268
+margin_top = -44.995
+margin_right = 659.268
+margin_bottom = 45.005
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="GuiLayer/MenuDock"]
+self_modulate = Color( 1, 1, 1, 0.403922 )
+anchor_top = 0.495
+anchor_bottom = 0.495
+margin_left = 715.729
+margin_top = -44.995
+margin_right = 801.729
+margin_bottom = 45.005
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button6" type="Button" parent="GuiLayer/MenuDock"]
+self_modulate = Color( 1, 1, 1, 0.403922 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 867.808
+margin_top = -45.5
+margin_right = 953.808
+margin_bottom = 44.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Terrain" type="Path2D" parent="."]
+position = Vector2( -5, -20 )
+z_index = 10
+curve = SubResource( 2 )
+
+<<<<<<< Updated upstream
+[node name="terrain_card-8" type="Sprite" parent="."]
+position = Vector2( -26, 744 )
+texture = ExtResource( 3 )
+=======
+[node name="DemandManager" parent="." instance=ExtResource( 9 )]
+starting_house_demand = 3.0
+starting_food_demand = 3.0
+starting_work_demand = 2.0
+>>>>>>> Stashed changes
