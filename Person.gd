@@ -58,6 +58,17 @@ func tick_needs(delta):
 	# todo do boundsing
 	# todo the rest of the needs
 
+func find_next_goal():
+	match current_goal:
+		GOAL.HOME:
+			goal_pos = home.offset
+		GOAL.WORK:
+			goal_pos = work.offset
+		GOAL.FOOD:
+			goal_pos = 0 #TODO: find the things
+		GOAL.HEALTH:
+			goal_pos = 0 #TODO: find the things
+
 func decide_next_goal():
 	var time_of_day = SkyRenderManager.worldtime % SkyRenderManager.SECONDS_PER_DAY
 	current_goal = GOAL.NONE
@@ -74,20 +85,10 @@ func decide_next_goal():
 	if medical > current_goal_strength:
 		current_goal = GOAL.HEALTH
 		current_goal_strength = medical
-	
-func find_next_goal():
-	match current_goal:
-		GOAL.HOME:
-			goal_pos = home.offset
-		GOAL.WORK:
-			goal_pos = work.offset
-		GOAL.FOOD:
-			goal_pos = 0 #TODO: find the things
-		GOAL.HEALTH:
-			goal_pos = 0 #TODO: find the things
+	find_next_goal()
 
 func walk_step(delta):
-	if self.visible:
+	if self.visible: #TODO: and !paused
 		dir = -1 if offset > goal_pos else 1
 		var dist = dir*walkspeed_pps*delta
 		#print(offset)
@@ -97,12 +98,9 @@ func walk_step(delta):
 			print("[" + self.name + ", " + str(offset) + ", " + str(goal_pos) + "]" )
 			goal_timer.start()
 	
-
 func _unhide_person():
-	goal_pos = 0
+	decide_next_goal()
 	self.visible = true
-
-
 
 func find_neighbors(dist):
 	var all_people = get_tree().get_nodes_in_group("people")
