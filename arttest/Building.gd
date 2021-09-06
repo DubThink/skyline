@@ -12,6 +12,9 @@ export (BUILDING.LAYER) var layer;
 export (int, 0, 50) var person_capacity;
 export (bool) var no_export;
 
+var n_residents = 0
+var average_happiness = 0
+
 #var sr_manager = preload("res://arttest/SkyRenderManager.gd")
 var bounds: Rect2;
 
