@@ -6,7 +6,7 @@ extends PathFollow2D
 # var b = "text"
 
 var per_tick_hunger = 0.003
-var per_tick_retail = 0.001
+var per_tick_shopping = 0.001
 var per_tick_work = 0.002
 
 class_name Person
@@ -74,6 +74,10 @@ func tick_needs(delta):
 		hunger += delta * per_tick_hunger
 	else:
 		hunger = 1
+	if retail <= 1:
+		retail += delta * per_tick_shopping
+	else:
+		retail = 1
 	if occupation <= 1:
 		occupation += delta * per_tick_work
 	else:
@@ -149,6 +153,9 @@ func decide_next_goal():
 	if hunger > current_goal_strength:
 		current_goal = GOAL.FOOD
 		current_goal_strength = hunger
+	if shopping > current_goal_strength:
+		current_goal = GOAL.RETAIL
+		current_goal_strength = shopping
 	if time_of_day < 0.25 or time_of_day > .65:
 		current_goal = GOAL.HOME
 		current_goal_strength = 1.1
@@ -173,7 +180,12 @@ func walk_step(delta):
 			self.visible = false
 			print(name + " found goal: ", GOAL_NAMES[current_goal], " at ",offset)
 			goal_timer.start()
-	
+		else:
+			if current_goal == GOAL.FOOD:
+				demand_manager.add_demand(BUILDING.TYPE.FOOD, 0.03)
+			elif current_goal == GOAL.HEALTH:
+				demand_manager.add_demand(BUILDING.TYPE.HEALTH, 0.06)
+
 func _unhide_person():
 	print("unhiding")
 	if current_goal == GOAL.FOOD:
