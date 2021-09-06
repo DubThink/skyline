@@ -17,6 +17,7 @@ onready var dock = get_node("GuiLayer/MenuDock")
 onready var terrain = get_node("terrain_card-8")
 onready var exit_menu = get_node("GuiLayer/ExitMenu")
 onready var happiness_manager = get_node("HappinessManager")
+onready var demand_manager = get_node("DemandManager")
 var drag_origin
 var ter_margin = 100
 export (float) var zoom_min = 0.1
@@ -122,6 +123,9 @@ func _process(delta):
 			var move = Vector2(pos.x * drag_speed, 0)
 			target_cam_pos = cam.position - move
 	update_cam()
+	var avg_happiness = happiness_manager.get_happiness_level()
+	if avg_happiness > 0.65:
+		demand_manager.add_demand(BUILDING.TYPE.HOUSE, avg_happiness - 0.5)
 
 func select_building(inst):
 	if selected_building != null:

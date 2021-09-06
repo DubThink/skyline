@@ -6,7 +6,7 @@ extends PathFollow2D
 # var b = "text"
 
 var per_tick_hunger = 0.003
-var per_tick_medical = 0.001
+var per_tick_shopping = 0.001
 var per_tick_work = 0.002
 
 class_name Person
@@ -44,7 +44,7 @@ enum GOAL{
 	HOME,
 	WORK,
 	FOOD,
-	HEALTH
+	RETAIL
 }
 
 var home: BuildingInstance
@@ -63,13 +63,17 @@ export (float, 1, 1200) var walkspeed_pps
 # needs
 var hunger = 0
 var occupation = 0
-var medical = 0
+var shopping = 0
 
 func tick_needs(delta):
 	if hunger <= 1:
 		hunger += delta * per_tick_hunger
 	else:
 		hunger = 1
+	if shopping <= 1:
+		shopping += delta * per_tick_shopping
+	else:
+		shopping = 1
 	if occupation <= 1:
 		occupation += delta * per_tick_work
 	else:
@@ -105,12 +109,12 @@ func find_next_goal():
 			else:
 				var rand_index: int = randi() % len(foodlist)
 				goal_pos = foodlist[rand_index].get_left()
-		GOAL.HEALTH:
+		GOAL.RETAIL:
 			var healthlist = []
 			for i in game_manager.layers:
-				healthlist.append(i.find_building_before(curr_x, BUILDING.TYPE.HEALTH))
+				healthlist.append(i.find_building_before(curr_x, BUILDING.TYPE.RETAIL))
 			if len(healthlist) == 0:
-					demand_manager.add_demand(BUILDING.TYPE.HEALTH, 0.5)
+					demand_manager.add_demand(BUILDING.TYPE.RETAIL, 0.5)
 			else:
 				var rand_index: int = randi() % len(healthlist)
 				goal_pos = healthlist[rand_index].get_left()
@@ -141,12 +145,12 @@ func decide_next_goal():
 	if hunger > current_goal_strength:
 		current_goal = GOAL.FOOD
 		current_goal_strength = hunger
+	if shopping > current_goal_strength:
+		current_goal = GOAL.RETAIL
+		current_goal_strength = shopping
 	if time_of_day < 0.25 or time_of_day > .65:
 		current_goal = GOAL.HOME
 		current_goal_strength = 1.1
-	if medical > current_goal_strength:
-		current_goal = GOAL.HEALTH
-		current_goal_strength = medical
 	print(name + " decided goal: " + str(current_goal))
 	find_next_goal()
 
@@ -165,12 +169,17 @@ func walk_step(delta):
 			self.visible = false
 			print("[" + self.name + ", " + str(offset) + ", " + str(goal_pos) + "]" )
 			goal_timer.start()
-	
+		else:
+			if current_goal == GOAL.FOOD:
+				demand_manager.add_demand(BUILDING.TYPE.FOOD, 0.03)
+			elif current_goal == GOAL.HEALTH:
+				demand_manager.add_demand(BUILDING.TYPE.HEALTH, 0.06)
+
 func _unhide_person():
 	if current_goal == GOAL.FOOD:
 		hunger = 0
-	if current_goal == GOAL.HEALTH:
-		medical = 0
+	if current_goal == GOAL.RETAIL:
+		shopping = 0
 	decide_next_goal()
 	self.visible = true
 
