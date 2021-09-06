@@ -69,16 +69,17 @@ func sizelayer_to_demand(layer):
 
 func reduce_demand(definition: BuildingBakedDefinition):
 	print("[demand] building of type %d had %d capacity, was size %d" % [definition.building_type, definition.person_capacity, definition.layer])
-	if definition.building_type & (1<<BUILDING.TYPE.HOUSE):
-		reduce_demand_for(BUILDING.TYPE.HOUSE, capacity_to_demand(definition.person_capacity))
-	if definition.building_type & (1<<BUILDING.TYPE.SCHOOL):
-		reduce_demand_for(BUILDING.TYPE.SCHOOL, capacity_to_demand(definition.person_capacity))
-	if definition.building_type & (1<<BUILDING.TYPE.WORK):
-		reduce_demand_for(BUILDING.TYPE.WORK, capacity_to_demand(definition.person_capacity))
-	if definition.building_type & (1<<BUILDING.TYPE.FOOD):
-		reduce_demand_for(BUILDING.TYPE.FOOD, sizelayer_to_demand(definition.layer))
-	if definition.building_type & (1<<BUILDING.TYPE.RETAIL):
-		reduce_demand_for(BUILDING.TYPE.RETAIL, sizelayer_to_demand(definition.layer))
+	if definition.building_type:
+		if definition.building_type == BUILDING.TYPE.HOUSE:
+			reduce_demand_for(BUILDING.TYPE.HOUSE, capacity_to_demand(definition.person_capacity))
+		if definition.building_type == BUILDING.TYPE.SCHOOL:
+			reduce_demand_for(BUILDING.TYPE.SCHOOL, capacity_to_demand(definition.person_capacity))
+		if definition.building_type == BUILDING.TYPE.WORK:
+			reduce_demand_for(BUILDING.TYPE.WORK, capacity_to_demand(definition.person_capacity))
+		if definition.building_type == BUILDING.TYPE.FOOD:
+			reduce_demand_for(BUILDING.TYPE.FOOD, sizelayer_to_demand(definition.layer))
+		if definition.building_type == BUILDING.TYPE.RETAIL:
+			reduce_demand_for(BUILDING.TYPE.RETAIL, sizelayer_to_demand(definition.layer))
 	
 func reduce_demand_for(type, amount):
 	print("[demand] reducing demand for %d by %f" % [type, amount])

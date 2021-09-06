@@ -5,25 +5,33 @@ extends PathFollow2D
 # var a = 2
 # var b = "text"
 
-
+var per_tick_hunger = 0.003
+var per_tick_medical = 0.001
+var per_tick_work = 0.002
 
 class_name Person
 
+var rng = RandomNumberGenerator.new()
+
 onready var path: Path2D = get_parent()
-onready var skyrm = get_parent().get_parent().get_node("SkyRenderManager")
+onready var game_manager: Node = get_parent().get_parent()
+onready var demand_manager: Node = game_manager.get_node("DemandManager")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.visible = true
+	rng.randomize()
 	goal_timer = Timer.new()
 	goal_timer.one_shot = true
 	goal_timer.wait_time = 30
 	goal_timer.connect("timeout",self,"_unhide_person")
 	add_child(goal_timer)
+	_unhide_person()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	curr_x = path.curve.interpolate_baked(offset)[0]
 	walk_step(delta)
+	tick_needs(delta)
 	pass
 
 var dir: int = 1;
@@ -41,11 +49,14 @@ enum GOAL{
 
 var home: BuildingInstance
 var work: BuildingInstance
+var work_target: BuildingInstance
 var is_child = false
 var current_goal
 var goal_timer
-var goal_pos = 5000
+var goal_pos
 var waiting = false
+var curr_x = 0
+var worklist = [] #once again, bad but it will work
 
 export (float, 1, 1200) var walkspeed_pps
 
@@ -55,24 +66,73 @@ var occupation = 0
 var medical = 0
 
 func tick_needs(delta):
-	hunger+=delta*0.003
+	if hunger <= 1:
+		hunger += delta * per_tick_hunger
+	else:
+		hunger = 1
+	if occupation <= 1:
+		occupation += delta * per_tick_work
+	else:
+		occupation = 1
 	# todo do boundsing
 	# todo the rest of the needs
 
 func find_next_goal():
+	goal_timer.wait_time = rng.randf_range(28, 33)
 	match current_goal:
+		GOAL.NONE:
+			goal_pos = home.get_left()	
 		GOAL.HOME:
-			goal_pos = 0#home.offset
+			goal_pos = home.get_left()
 		GOAL.WORK:
-			goal_pos = 0#work.offset
+			if work != null:
+				goal_timer.wait_time = rng.randf_range(4, 6)
+				goal_pos = work.get_left()
+			elif work_target != null:
+				goal_timer.wait_time = rng.randf_range(4, 6)
+				goal_pos = work_target.get_left()
+			else:
+				try_to_find_work()
 		GOAL.FOOD:
-			goal_pos = 0 #TODO: find the things
+			var foodlist = []
+			for i in game_manager.layers:
+				#print(i.find_building_before(curr_x, BUILDING.TYPE.FOOD))
+				if i.find_building_before(curr_x, BUILDING.TYPE.FOOD) >= 0:
+					#print(i.building_list[i.find_building_before(curr_x, BUILDING.TYPE.FOOD)][0])
+					foodlist.append(i.building_list[i.find_building_before(curr_x, BUILDING.TYPE.FOOD)][0])
+			if len(foodlist) == 0:
+				demand_manager.add_demand(BUILDING.TYPE.FOOD, 0.5)
+			else:
+				var rand_index: int = randi() % len(foodlist)
+				goal_pos = foodlist[rand_index].get_left()
 		GOAL.HEALTH:
-			goal_pos = 0 #TODO: find the things
+			var healthlist = []
+			for i in game_manager.layers:
+				healthlist.append(i.find_building_before(curr_x, BUILDING.TYPE.HEALTH))
+			if len(healthlist) == 0:
+					demand_manager.add_demand(BUILDING.TYPE.HEALTH, 0.5)
+			else:
+				var rand_index: int = randi() % len(healthlist)
+				goal_pos = healthlist[rand_index].get_left()
+
+func try_to_find_work():
+	worklist = []
+	for i in game_manager.layers:
+		for j in i.building_list:
+			if j[0].definition.building_type == BUILDING.TYPE.WORK:
+				worklist.append(j)
+	if len(worklist) > 0:
+		var rand_index: int = randi() % len(worklist)
+		work_target = worklist[rand_index]
+		goal_pos = work_target.get_left()
+	else:
+		demand_manager.add_demand(BUILDING.TYPE.WORK, 0.1)
+		goal_pos = home.get_left()
 
 func decide_next_goal():
-	# bootleg floating point modulo
-	var time_of_day = skyrm.world_time - floor(skyrm.world_time)
+	var time_of_day = .5#SkyRenderManager.world_time % 1
+	if work != null:
+		occupation *= 0.95
 	current_goal = GOAL.NONE
 	var current_goal_strength = 0
 	if occupation > current_goal_strength:
@@ -87,20 +147,30 @@ func decide_next_goal():
 	if medical > current_goal_strength:
 		current_goal = GOAL.HEALTH
 		current_goal_strength = medical
+	print(name + " decided goal: " + str(current_goal))
 	find_next_goal()
 
 func walk_step(delta):
-	if self.visible: #TODO: and !paused
-		dir = -1 if offset > goal_pos else 1
+	if goal_pos == null:
+		decide_next_goal()
+	if self.visible and (goal_pos != null): #TODO: and !paused
+		if (curr_x > goal_pos):
+			dir = -1
+		else:
+			dir = 1
 		var dist = dir*walkspeed_pps*delta
 		#print(offset)
 		set_offset(offset+dist)
-		if abs(goal_pos-offset)<10:
+		if abs( goal_pos - curr_x ) < 10:
 			self.visible = false
-			#print("[" + self.name + ", " + str(offset) + ", " + str(goal_pos) + "]" )
+			print("[" + self.name + ", " + str(offset) + ", " + str(goal_pos) + "]" )
 			goal_timer.start()
 	
 func _unhide_person():
+	if current_goal == GOAL.FOOD:
+		hunger = 0
+	if current_goal == GOAL.HEALTH:
+		medical = 0
 	decide_next_goal()
 	self.visible = true
 
@@ -110,7 +180,7 @@ func find_neighbors(dist):
 	for i in all_people:
 		if (i.name == name):
 			pass
-		if (abs(i.offset - offset) < dist):
+		if (abs(i.curr_x - curr_x) < dist):
 			neighbors.append(i)
 	return neighbors
 
