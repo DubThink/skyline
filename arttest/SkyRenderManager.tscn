@@ -37,11 +37,10 @@ margin_bottom = 512.0
 
 [node name="Background" type="ColorRect" parent="."]
 material = ExtResource( 4 )
-margin_left = -5000.0
-margin_top = -1000.0
-margin_right = 5000.0
-margin_bottom = 1000.0
+margin_left = -11404.0
+margin_top = -2830.0
+margin_right = 18024.0
+margin_bottom = 4579.0
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
