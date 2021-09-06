@@ -1438,6 +1438,7 @@ __meta__ = {
 [node name="--MEDIUM--" type="Node" parent="."]
 
 [node name="Corner Store" type="Polygon2D" parent="."]
+visible = false
 position = Vector2( -56, -32 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( -16, 64, 16, 32, 16, 28, 40, 28, 40, -8, 24, -8, 24, -12, 40, -24, 40, -59.8328, 36, -64, 32, -64, 32, -94, 30, -94, 30, -95, 40, -100, 40, -105, 39, -106, 39, -108, 140, -108, 140, 64 )

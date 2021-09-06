@@ -16,9 +16,11 @@ var rng = RandomNumberGenerator.new()
 onready var path: Path2D = get_parent()
 onready var game_manager: Node = get_parent().get_parent()
 onready var demand_manager: Node = game_manager.get_node("DemandManager")
+onready var top_layer: SkylineLayer = game_manager.get_node("LayerArray")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng.randomize()
+	print(name, " added")
 	goal_timer = Timer.new()
 	goal_timer.one_shot = true
 	goal_timer.wait_time = 30
@@ -47,6 +49,8 @@ enum GOAL{
 	RETAIL
 }
 
+var GOAL_NAMES = ["NONE", "HOME", "WORK", "FOOD", "RETAIL"]
+
 var home: BuildingInstance
 var work: BuildingInstance
 var work_target: BuildingInstance
@@ -63,17 +67,17 @@ export (float, 1, 1200) var walkspeed_pps
 # needs
 var hunger = 0
 var occupation = 0
-var shopping = 0
+var retail = 0
 
 func tick_needs(delta):
 	if hunger <= 1:
 		hunger += delta * per_tick_hunger
 	else:
 		hunger = 1
-	if shopping <= 1:
-		shopping += delta * per_tick_shopping
+	if retail <= 1:
+		retail += delta * per_tick_shopping
 	else:
-		shopping = 1
+		retail = 1
 	if occupation <= 1:
 		occupation += delta * per_tick_work
 	else:
@@ -101,24 +105,28 @@ func find_next_goal():
 			var foodlist = []
 			for i in game_manager.layers:
 				#print(i.find_building_before(curr_x, BUILDING.TYPE.FOOD))
-				if i.find_building_before(curr_x, BUILDING.TYPE.FOOD) >= 0:
+				#offset
+				if i.find_building_before(top_layer.get_x_value_at_offset(offset), BUILDING.TYPE.FOOD) >= 0:
 					#print(i.building_list[i.find_building_before(curr_x, BUILDING.TYPE.FOOD)][0])
-					foodlist.append(i.building_list[i.find_building_before(curr_x, BUILDING.TYPE.FOOD)][0])
+					foodlist.append(i.building_list[i.find_building_before(top_layer.get_x_value_at_offset(offset), BUILDING.TYPE.FOOD)][0])
 			if len(foodlist) == 0:
 				demand_manager.add_demand(BUILDING.TYPE.FOOD, 0.5)
 			else:
 				var rand_index: int = randi() % len(foodlist)
 				goal_pos = foodlist[rand_index].get_left()
 		GOAL.RETAIL:
-			var healthlist = []
+			var retaillist = []
 			for i in game_manager.layers:
-				healthlist.append(i.find_building_before(curr_x, BUILDING.TYPE.RETAIL))
-			if len(healthlist) == 0:
+				retaillist.append(i.find_building_before(top_layer.get_x_value_at_offset(offset), BUILDING.TYPE.RETAIL))
+			if len(retaillist) == 0:
 					demand_manager.add_demand(BUILDING.TYPE.RETAIL, 0.5)
 			else:
-				var rand_index: int = randi() % len(healthlist)
-				goal_pos = healthlist[rand_index].get_left()
-
+				var rand_index: int = randi() % len(retaillist)
+				goal_pos = retaillist[rand_index].get_left()
+	goal_pos = top_layer.get_offset_value_at(goal_pos)
+	print(name + " found goal at loc: ", goal_pos)
+	print(name + " current pos: ", offset)
+	
 func try_to_find_work():
 	worklist = []
 	for i in game_manager.layers:
@@ -137,7 +145,7 @@ func decide_next_goal():
 	var time_of_day = .5#SkyRenderManager.world_time % 1
 	if work != null:
 		occupation *= 0.95
-	current_goal = GOAL.NONE
+	current_goal = GOAL.HOME
 	var current_goal_strength = 0
 	if occupation > current_goal_strength:
 		current_goal = GOAL.WORK
@@ -151,23 +159,26 @@ func decide_next_goal():
 	if time_of_day < 0.25 or time_of_day > .65:
 		current_goal = GOAL.HOME
 		current_goal_strength = 1.1
-	print(name + " decided goal: " + str(current_goal))
+	if retail > current_goal_strength:
+		current_goal = GOAL.RETAIL
+		current_goal_strength = retail
+	print(name + " decided goal: ", GOAL_NAMES[current_goal])
 	find_next_goal()
 
 func walk_step(delta):
 	if goal_pos == null:
 		decide_next_goal()
 	if self.visible and (goal_pos != null): #TODO: and !paused
-		if (curr_x > goal_pos):
+		if (offset > goal_pos):
 			dir = -1
 		else:
 			dir = 1
 		var dist = dir*walkspeed_pps*delta
 		#print(offset)
 		set_offset(offset+dist)
-		if abs( goal_pos - curr_x ) < 10:
+		if abs( goal_pos - offset ) < 10:
 			self.visible = false
-			print("[" + self.name + ", " + str(offset) + ", " + str(goal_pos) + "]" )
+			print(name + " found goal: ", GOAL_NAMES[current_goal], " at ",offset)
 			goal_timer.start()
 		else:
 			if current_goal == GOAL.FOOD:
@@ -176,10 +187,11 @@ func walk_step(delta):
 				demand_manager.add_demand(BUILDING.TYPE.HEALTH, 0.06)
 
 func _unhide_person():
+	print("unhiding")
 	if current_goal == GOAL.FOOD:
 		hunger = 0
 	if current_goal == GOAL.RETAIL:
-		shopping = 0
+		retail = 0
 	decide_next_goal()
 	self.visible = true
 
@@ -189,7 +201,7 @@ func find_neighbors(dist):
 	for i in all_people:
 		if (i.name == name):
 			pass
-		if (abs(i.curr_x - curr_x) < dist):
+		if (abs(i.offset - offset) < dist):
 			neighbors.append(i)
 	return neighbors
 

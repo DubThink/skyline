@@ -1,7 +1,7 @@
 extends Node2D
 
 # This file is for a single layer of the skyline
-
+class_name SkylineLayer
 var building_list = [] # array of tuples of [building_instance, x_pos, footprint]
 var y_value = 270 # TODO; actually probably get curve height at position
 onready var terrain : Path2D = get_parent().get_node("Terrain")
@@ -18,6 +18,16 @@ func get_y_value_at(x_pos):
 	var curve = terrain.get_curve()
 	var est_point = curve.interpolate_baked(curve.get_closest_offset(Vector2(x_pos, y_value)))
 	return est_point.y+terrain.position.y
+
+func get_x_value_at_offset(offset):
+	var curve = terrain.get_curve()
+	var est_point = curve.interpolate_baked(offset)
+	return est_point.x
+
+func get_offset_value_at(x_pos):
+	var curve = terrain.get_curve()
+	return curve.get_closest_offset(Vector2(x_pos, y_value))
+
 
 func add_building(building_inst: BuildingInstance, x_position):
 	var footprint = building_inst.get_footprint()
@@ -43,7 +53,9 @@ func add_building(building_inst: BuildingInstance, x_position):
 			return false
 #	print("Inserting new building at index %d" % after_idx)
 	building_list.insert(after_idx, [instance_building(building_inst, x_position), x_position+ building_inst.get_h_center(), footprint])
+	print("about to add people plz")
 	if(building_inst.definition.has_type(BUILDING.TYPE.HOUSE)):
+		print("is house")
 		for i in range(building_inst.definition.person_capacity):
 			person_manager.add_person(terrain.curve.get_closest_offset(Vector2(x_position, get_approx_y_value(x_position))), building_inst)
 #	print("number of existing buildings: %d" % building_list.size())
