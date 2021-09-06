@@ -30,7 +30,11 @@ script = ExtResource( 2 )
 [node name="BuildingFactory" parent="." instance=ExtResource( 4 )]
 
 [node name="SkyRenderManager" parent="." instance=ExtResource( 5 )]
+<<<<<<< Updated upstream
+position = Vector2( -21, -58 )
+=======
 position = Vector2( -15.4363, -61.5636 )
+>>>>>>> Stashed changes
 buildingMaterial = SubResource( 1 )
 SECONDS_PER_DAY = 15.0
 
@@ -47,12 +51,6 @@ z_index = 3
 z_index = 2
 
 [node name="LayerArray3" parent="." instance=ExtResource( 1 )]
-z_index = 1
-
-[node name="LayerArray4" parent="." instance=ExtResource( 1 )]
-z_index = 1
-
-[node name="LayerArray5" parent="." instance=ExtResource( 1 )]
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -151,11 +149,13 @@ position = Vector2( -5, -20 )
 z_index = 10
 curve = SubResource( 2 )
 
+<<<<<<< Updated upstream
+[node name="terrain_card-8" type="Sprite" parent="."]
+position = Vector2( -26, 744 )
+texture = ExtResource( 3 )
+=======
 [node name="DemandManager" parent="." instance=ExtResource( 9 )]
 starting_house_demand = 3.0
 starting_food_demand = 3.0
 starting_work_demand = 2.0
-
-[node name="terrain_card-8" type="Sprite" parent="."]
-position = Vector2( -26, 744 )
-texture = ExtResource( 3 )
+>>>>>>> Stashed changes
