@@ -26,9 +26,15 @@ func _process(delta):
 		cr.set_position(Vector2(xpos,200))
 	
 		#bf.rid.building_definitions
+		var b2 = bf.create_building(bd)
+		add_child(b2)
+		b2.show_behind_parent = true
+		b2.set_position(xpos,500)
+		b2.set_scale(Vector2(0.5,0.5))
+		
 		var b = bf.create_building(bd)
 		add_child(b)
 		b.show_behind_parent = true
 		b.set_position(xpos,200)
-		print(b.get_left())
+		
 		xpos+=524

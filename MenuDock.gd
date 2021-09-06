@@ -26,6 +26,7 @@ func _ready():
 
 #TODO build a wrapper for this for sim API
 func add_available_building(index):
+	assert(false)
 #	print("[dock] adding new building")
 	var inst = building_factory.create_building(building_factory.get_building_def())
 	available_buildings[index] = inst

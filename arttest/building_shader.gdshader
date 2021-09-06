@@ -13,8 +13,8 @@ const float add_val = 3f;
 //uniform float scale_val: hint_range(0,5);
 const float scale_val = 1.63;
 
-const vec3 shadow_color = vec3(0.12);//0.141,0.125,0.212);//0.761,0.122,0.451);
-const vec3 dist_tint = vec3(0.85,0.9,1.1);
+const vec3 shadow_color = vec3(0.16);//0.141,0.125,0.212);//0.761,0.122,0.451);
+const vec3 dist_tint = vec3(1);
 const float GAMMA = 2.2f;
 
 const float EPSILON = .00001;
@@ -93,10 +93,10 @@ void fragment() {
 	//COLOR.rgb = step(vec3(1f-UV.y),COLOR.rgb);
 	float layer2 = layer;//4f-floor(UV.y*4f);
 	vec3 window = sky_color*0.7+argb(window_color.rgb)*0.7*step(window_val,light_amt);
-	vec3 surface_color = argb(shadow_color*log(log(layer2+add_val))*scale_val*(dayness));
+	vec3 surface_color = argb(shadow_color*log(log(layer2+add_val))*scale_val*dayness*dayness);
 	surface_color = mix(surface_color, override_tint_color.rgb, override_tint_color.a);
 	//surface_color = vec3(window);
-	COLOR.rgb=mix(surface_color, window, is_window)*mix(vec3(1),argb(dist_tint),layer2/5f);//+vec3(0.1,0.3,0.3);
+	COLOR.rgb=mix(surface_color, surface_color+window, is_window)*mix(vec3(1),argb(dist_tint),layer2/5f);//+vec3(0.1,0.3,0.3);
 	//COLOR.rgb = vec3(vec3(tex.rg),0f);
 	//COLOR.rgb=mix(vec3(UV,1),COLOR.rgb, ts.a);
 	// gamma correction	

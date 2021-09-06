@@ -19,13 +19,13 @@ shader_param/override_tint_color = Color( 0, 0, 0, 0 )
 [node name="SkyRenderManager" parent="." index="1"]
 buildingMaterial = SubResource( 1 )
 
-[node name="ColorRect" type="ColorRect" parent="." index="10"]
+[node name="Terrain" parent="." index="11"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="." index="17"]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Terrain" parent="." index="12"]
-visible = false

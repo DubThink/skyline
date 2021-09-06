@@ -55,6 +55,13 @@ func get_next_bake_target():
 	if bake_target_idx > child_count:
 		bake_target = null
 
+func try_to_set_win_param(target, val):
+	if not target is ColorRect:
+		return
+	if not target.material:
+		return
+	target.material.set_shader_param("bchannel",val)
+
 var scale_factor
 func setup_building_bake(target: BuildingDefinition):
 	assert(target)
@@ -70,7 +77,21 @@ func setup_building_bake(target: BuildingDefinition):
 	bake_target_idx-=1
 	viewport.add_child(target)
 	target.visible=true
-	
+	for root_window in target.get_children():
+		var wp = randf()
+		if not root_window is ColorRect:
+			continue
+		if not root_window.material:
+			continue
+		var newmat = root_window.material.duplicate()
+		newmat.set_shader_param("bchannel",wp)
+		root_window.set_material(newmat)
+		for window in root_window.get_children():
+			if not window is ColorRect:
+				continue
+			if not window.material:
+				continue
+			window.set_material(newmat)
 	#print(offset, bounds)
 	# todo figure out why we render out of position on some buildings
 	# move shape from at origin of render target to the bottom left corner
@@ -86,6 +107,7 @@ func setup_building_bake(target: BuildingDefinition):
 	#print("final position for rendering ",target.position)
 	# TODO $AWELSH should this also be scaled
 	target.bounds.position = pos+bounds.position+c
+	print("bounds: ", target.bounds)
 	#print("bounds val calculated ",target.bounds.position)
 	#print("sum ", target.bounds.position+target.position)
 	#if target.name == "Delta Tower":

@@ -34,20 +34,22 @@ func set_scale(var sc):
 func set_position(var x, var y = null):
 	if y:
 		x = Vector2(x,y)
-	var offset = Vector2(256,-256)
+	# move the texture to the corner
+	var offset = Vector2(256,-256)*scale
 	#offset += definition.bounds.position
 	#x.x-=definition.bounds.position.x
 	#x.y-=definition.bounds.position.y
-	position = x + offset*scale + definition.bounds.position
+	# WHYHYHWHYWHYWYHWHY
+	position = x + offset  + definition.bounds.position*scale/definition.image_scale_factor #Vector2(definition.bounds.position.x*scale.x, definition.bounds.position.y)
 
-func set_position_left(var x, var y = null):
-	if y:
-		x = Vector2(x,y)
-	var offset = Vector2(256,-256)
-	#offset.y += definition.bounds.position.y
-	#x.x-=definition.bounds.position.x
-	#x.y-=definition.bounds.position.y
-	position = x + offset*scale  + Vector2(0,definition.bounds.position.y)
+#func set_position_left(var x, var y = null):
+#	if y:
+#		x = Vector2(x,y)
+#	var offset = Vector2(256,-256)
+#	#offset.y += definition.bounds.position.y
+#	#x.x-=definition.bounds.position.x
+#	#x.y-=definition.bounds.position.y
+#	position = x + offset*scale  + Vector2(0,definition.bounds.position.y)
 
 func get_left():
 	return position.x - (248+definition.bounds.position.x)*scale.x
@@ -59,7 +61,10 @@ func clear_tint():
 	get_material().set_shader_param("override_tint_color",Color(0,0,0,0))
 	
 func get_footprint():
-	return definition.bounds.size.y #texture.get_width()
+	return definition.bounds.size.x #texture.get_width()
+
+func get_h_center():
+	return definition.bounds.position.x
 
 func get_definition():
 	return definition

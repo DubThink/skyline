@@ -27,8 +27,8 @@ func add_building(building_inst: BuildingInstance, x_position):
 	var after_idx = before_idx + 1# find_building_after(x_position)#before_idx + 1
 #	print("before idx %d, after idx %d" % [before_idx, after_idx])
 	# TODO Rejig this so it doesn't assume that we're dealing with the bottom left corner
-	var new_l = x_position
-	var new_r = x_position + footprint
+	var new_l = x_position + building_inst.get_h_center()
+	var new_r = x_position + footprint + building_inst.get_h_center()
 	if before_idx >= 0 and before_idx < building_list.size(): # validity check
 		var before_r = building_list[before_idx][1] + building_list[before_idx][2]
 		if new_l < before_r:
@@ -42,7 +42,7 @@ func add_building(building_inst: BuildingInstance, x_position):
 #			print("overlap with after building")
 			return false
 #	print("Inserting new building at index %d" % after_idx)
-	building_list.insert(after_idx, [instance_building(building_inst, x_position), x_position, footprint])
+	building_list.insert(after_idx, [instance_building(building_inst, x_position), x_position+ building_inst.get_h_center(), footprint])
 	if(building_inst.definition.has_type(BUILDING.TYPE.HOUSE)):
 		for i in range(building_inst.definition.person_capacity):
 			person_manager.add_person(terrain.curve.get_closest_offset(Vector2(x_position, get_approx_y_value(x_position))), building_inst)
@@ -85,9 +85,9 @@ func instance_building(inst, x_pos):
 func display_preview(inst, x_position):
 	var before_idx = find_building_before(x_position)
 	var after_idx = before_idx + 1# find_building_after(x_position)#before_idx + 1
-	var new_l = x_position
-	var new_r = x_position + inst.get_footprint()
-	
+	var new_l = x_position + inst.get_h_center()
+	var new_r = x_position + inst.get_footprint() + inst.get_h_center()
+	 
 	inst.clear_tint()
 	if before_idx >= 0 and before_idx < building_list.size(): # validity check
 		var before_r = building_list[before_idx][1] + building_list[before_idx][2]

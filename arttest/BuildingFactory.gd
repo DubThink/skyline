@@ -20,11 +20,32 @@ func create_building(definition: BuildingBakedDefinition):
 	var testInstance = BuildingInstance.new(definition, sky_render_manager)
 	testInstance.z_index = 10 - definition.layer*2+1
 	testInstance.z_as_relative=false
+	testInstance.show_behind_parent=true
 	return testInstance
 	# todo more binding here
 	
-func get_building_def():
+func get_building_def(var layer = null, var type = null):
+	#expensive
+	if layer:
+		# size and type
+		var valid = []
+		for def in rid.building_definitions:
+			if def.layer == layer and def.has_type(type):
+				valid.append(def)
+		if len(valid)>0:
+			return valid[randi()%len(valid)]
+		print("failed to find building matching layer ",layer, " with type ",type)
+		# only size
+		valid = []
+		for def in rid.building_definitions:
+			if def.layer == layer:
+				valid.append(def)
+		if len(valid)>0:
+			return valid[randi()%len(valid)]
+		print("failed to find building matching layer ",layer)
+			
 	return rid.building_definitions[randi()%len(rid.building_definitions)]
+	
 
 var hasRun = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.

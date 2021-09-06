@@ -43,6 +43,9 @@ func _ready():
 #		if child is BuildingDefinition:
 #			child.initialize(buildingMaterial)
 
+func get_world_time():
+	return world_time
+
 func notify_resized(new_size: Rect2):
 	last_viewport_rect = new_size
 	print("Resizing viewport to size ", new_size.size)

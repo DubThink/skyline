@@ -10,6 +10,7 @@ extends PathFollow2D
 class_name Person
 
 onready var path: Path2D = get_parent()
+onready var skyrm = get_parent().get_parent().get_node("SkyRenderManager")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.visible = true
@@ -61,16 +62,17 @@ func tick_needs(delta):
 func find_next_goal():
 	match current_goal:
 		GOAL.HOME:
-			goal_pos = home.offset
+			goal_pos = 0#home.offset
 		GOAL.WORK:
-			goal_pos = work.offset
+			goal_pos = 0#work.offset
 		GOAL.FOOD:
 			goal_pos = 0 #TODO: find the things
 		GOAL.HEALTH:
 			goal_pos = 0 #TODO: find the things
 
 func decide_next_goal():
-	var time_of_day = SkyRenderManager.world_time % 1
+	# bootleg floating point modulo
+	var time_of_day = skyrm.world_time - floor(skyrm.world_time)
 	current_goal = GOAL.NONE
 	var current_goal_strength = 0
 	if occupation > current_goal_strength:
@@ -95,7 +97,7 @@ func walk_step(delta):
 		set_offset(offset+dist)
 		if abs(goal_pos-offset)<10:
 			self.visible = false
-			print("[" + self.name + ", " + str(offset) + ", " + str(goal_pos) + "]" )
+			#print("[" + self.name + ", " + str(offset) + ", " + str(goal_pos) + "]" )
 			goal_timer.start()
 	
 func _unhide_person():

@@ -18,6 +18,7 @@ func _ready():
 	if dev_mode:
 		audio.play()
 		state = 99
+		title.visible = false
 	else:
 		skyrm.do_daynight_cycle=false
 		cache_spd = skyrm.SECONDS_PER_DAY

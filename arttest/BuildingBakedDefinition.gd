@@ -40,5 +40,4 @@ func get_residentialness():
 	pass
 	
 func has_type(var type):
-	assert(0!=null)
 	return type == null || (1<<type & building_type) != 0

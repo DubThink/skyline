@@ -41,7 +41,7 @@ script = ExtResource( 2 )
 [node name="SkyRenderManager" parent="." instance=ExtResource( 5 )]
 position = Vector2( -114, -98 )
 buildingMaterial = SubResource( 1 )
-SECONDS_PER_DAY = 60.0
+SECONDS_PER_DAY = 15.0
 
 [node name="PersonManager" type="Node" parent="."]
 script = ExtResource( 7 )
@@ -125,8 +125,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="GuiLayer/MenuDock"]
-anchor_top = 0.85
+[node name="CanvasLayer" type="CanvasLayer" parent="GuiLayer/MenuDock"]
+layer = 30
+
+[node name="ColorRect" type="ColorRect" parent="GuiLayer/MenuDock/CanvasLayer"]
+anchor_top = 0.963
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )

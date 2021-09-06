@@ -37,7 +37,7 @@ func apply_demand_to_dock():
 			var size_to_use = sizes[i][randi() % (sizes[i].size())]
 			print("[demand] placing a building of size ")
 			# TODO generate a building of that type
-			var def = factory.get_building_def()
+			var def = factory.get_building_def(size_to_use,type)
 			var inst = factory.create_building(def)
 			# decrease demands by that much
 			reduce_demand(def)
