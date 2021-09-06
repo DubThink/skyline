@@ -29,4 +29,5 @@ func _process(delta):
 		var b = bf.create_building(bd)
 		add_child(b)
 		b.set_position(xpos,200)
+		print(b.get_left())
 		xpos+=300

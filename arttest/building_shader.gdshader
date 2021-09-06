@@ -51,7 +51,7 @@ vec3 define_color(float time, float alt, float hpos){
 void fragment() {
 	vec4 ts = texture(TEXTURE,UV);
 	if(ts.a<EPSILON){
-		discard;
+		//discard;
 	}
 	float time = FIXED_TIME_OF_DAY;
 	//time = UV.x;
@@ -87,7 +87,7 @@ void fragment() {
 	vec3 surface_color = shadow_color*0.2;
 	surface_color = mix(surface_color, override_tint_color.rgb, override_tint_color.a);
 	//surface_color = vec3(window);
-	COLOR.rgb=mix(surface_color, window, is_window);
+	COLOR.rgb=mix(surface_color, window, is_window);//+vec3(0.1,0.3,0.3);
 	//COLOR.rgb = vec3(vec3(tex.rg),0f);
 	//COLOR.rgb=mix(vec3(UV,1),COLOR.rgb, ts.a);
 	// gamma correction	

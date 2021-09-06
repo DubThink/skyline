@@ -59,17 +59,22 @@ func get_next_bake_target():
 
 func setup_building_bake(target: BuildingDefinition):
 	assert(target)
-	print("Setting up bake for ",target)
-	var offset = target.get_position()
-	offset.y*=-1
+	print("Setting up bake for ",target,' "',target.name,'"')
+	var pos = target.get_position()
+	var bounds = target.calculate_bounds()
+	var c = Vector2(0,bounds.size.y)
+	
 	target.get_parent().remove_child(target)
 	bake_target_idx-=1
 	viewport.add_child(target)
 	target.visible=true
-	var bounds = target.calculate_bounds(offset)
-	print(offset, bounds)
+	
+	#print(offset, bounds)
 	# todo figure out why we render out of position on some buildings
-	target.set_position(Vector2(8,504)+(bounds.position-offset)*Vector2(-1,1))
+	var tex_offset = Vector2(8,504)
+
+	target.set_position(tex_offset-bounds.position-c)#+(bounds.position)) #-offset)*Vector2(-1,1))
+	target.bounds.position = pos+bounds.position+c
 
 var baked_count = 0
 

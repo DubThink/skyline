@@ -31,6 +31,7 @@ __meta__ = {
 }
 
 [node name="FOR SCALE" type="Polygon2D" parent="."]
+visible = false
 position = Vector2( 84, -28 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 32, -40, 64, -56, 96, -40, 88, -40, 88, -24, 120, -8, 112, -8, 112, 56, 40, 56, 40, -40 )
@@ -80,7 +81,6 @@ __meta__ = {
 }
 
 [node name="Cozy Family Home" type="Polygon2D" parent="."]
-visible = false
 position = Vector2( -64, -24 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 16, 48, 16, -64, 9, -62, 8, -64, 64, -96, 120, -64, 119, -62, 112, -64, 112, -32, 160, -32, 160, -13, 156, -13, 156, 16, 168, 16, 168, 48 )
@@ -186,6 +186,7 @@ __meta__ = {
 }
 
 [node name="Pizza Place" type="Polygon2D" parent="."]
+visible = false
 position = Vector2( -56, -40 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 204, 72, 184, 36, 152, 36, 152, 0, 160, 0, 164, -4, 116, -20, 108, -40, 4, -40, -4, -20, -52, -4, -48, 0, -40, 0, -40, 35.75, -72, 36, -92, 72 )
@@ -435,6 +436,7 @@ __meta__ = {
 }
 
 [node name="Stilt House" type="Polygon2D" parent="."]
+visible = false
 position = Vector2( -24, -24 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 92, 56, 92, 0, 112, 0, 112, -8, 96, -8, 96, -44, 100, -44, 100, -80, -52, -80, -52, -44, -48, -44, -48, -8, -64, -8, -64, 0, -64, 32, -48, 32, -48, 0, -44, 0, -44, 56, -36, 56, -36, 0, -12, 0, -12, 56, -4, 56, -4, 0, 20, 0, 20, 56, 28, 56, 28, 0, 52, 0, 52, 56, 60, 56, 60, 0, 84, 0, 84, 56 )
@@ -607,6 +609,7 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_left = -188.0
 margin_top = -80.0
 margin_right = -148.0

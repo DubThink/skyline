@@ -38,13 +38,9 @@ func initialize(var building_mat: ShaderMaterial):
 #func _process(delta):
 #	pass
 
-func calculate_bounds(var offset):
+func calculate_bounds():
 	var pg = get_polygon()
 	bounds = Rect2(pg[0].x,pg[0].y,0,0)
 	for p in pg:
 		bounds = bounds.expand(p)
-	print("Bounds pre offset:",bounds)
-	print("offset:",offset)
-	bounds.position+=offset;
-	print("Bounds post offset:",bounds)	
 	return bounds

@@ -62,12 +62,12 @@ func on_click(index):
 func visualize_building_on_button(index):
 	assert(index < available_buildings.size() and index >= 0)
 	buttons[index].add_child(available_buildings[index])
-#	available_buildings[index].set_position(buttons[index].get_rect().position)
-	available_buildings[index].set_position(Vector2(0,buttons[index].get_rect().size.y))
 	#TODO replace this with get_height
 	var building_height = available_buildings[index].texture.get_height()
 	var ratio = buttons[index].get_rect().size.y / building_height
 	available_buildings[index].scale = Vector2(ratio,ratio)
+	available_buildings[index].set_position(Vector2(buttons[index].get_rect().size.x/2,buttons[index].get_rect().size.y*9/10))
+	
 
 func get_free_slots():
 	var slots = []

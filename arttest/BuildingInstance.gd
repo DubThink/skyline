@@ -27,12 +27,15 @@ func _ready():
 
 func set_position(var x, var y = null):
 	if y:
-		x=Vector2(x,y)
-	x+=Vector2(248,-248)
+		x = Vector2(x,y)
+	var offset = Vector2(248,-248)
+	offset += definition.bounds.position
 	#x.x-=definition.bounds.position.x
-	x.y-=definition.bounds.position.y
-	position=x
-	
+	#x.y-=definition.bounds.position.y
+	position = x + offset*scale
+
+func get_left():
+	return position.x - (248+definition.bounds.position.x)*scale.x
 
 func set_tint(var c: Color):
 	get_material().set_shader_param("override_tint_color",c)

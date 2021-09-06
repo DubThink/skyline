@@ -9,7 +9,20 @@
 [ext_resource path="res://arttest/sky.material" type="Material" id=7]
 [ext_resource path="res://placeholder_building.png" type="Texture" id=8]
 
-[sub_resource type="ViewportTexture" id=1]
+[sub_resource type="ViewportTexture" id=4]
+viewport_path = NodePath("SkyRenderManager/Viewport")
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
+shader_param/FIXED_TIME_OF_DAY = null
+shader_param/residentialness = 1.0
+shader_param/WINDOW_OFFSET = null
+shader_param/override_tint_color = Color( 0, 0, 0, 0 )
+shader_param/sky_target = SubResource( 4 )
+
+[sub_resource type="ViewportTexture" id=5]
 viewport_path = NodePath("SkyRenderManager/Viewport")
 
 [sub_resource type="ShaderMaterial" id=2]
@@ -20,25 +33,12 @@ shader_param/FIXED_TIME_OF_DAY = null
 shader_param/residentialness = 1.0
 shader_param/WINDOW_OFFSET = null
 shader_param/override_tint_color = Color( 0, 0, 0, 0 )
-shader_param/sky_target = SubResource( 1 )
+shader_param/sky_target = SubResource( 5 )
 
-[sub_resource type="ViewportTexture" id=3]
-viewport_path = NodePath("SkyRenderManager/Viewport")
-
-[sub_resource type="ShaderMaterial" id=4]
-resource_local_to_scene = true
-shader = ExtResource( 3 )
-shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
-shader_param/FIXED_TIME_OF_DAY = null
-shader_param/residentialness = 1.0
-shader_param/WINDOW_OFFSET = null
-shader_param/override_tint_color = Color( 0, 0, 0, 0 )
-shader_param/sky_target = SubResource( 3 )
-
-[sub_resource type="ViewportTexture" id=5]
+[sub_resource type="ViewportTexture" id=6]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="ShaderMaterial" id=6]
+[sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
 shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
@@ -46,20 +46,20 @@ shader_param/FIXED_TIME_OF_DAY = 0.444
 shader_param/residentialness = 1.0
 shader_param/WINDOW_OFFSET = 0.75
 shader_param/override_tint_color = Color( 0, 0, 0, 0 )
-shader_param/sky_target = SubResource( 5 )
+shader_param/sky_target = SubResource( 6 )
 
 [node name="Node2D2" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="SkyRenderManager" parent="." instance=ExtResource( 1 )]
 position = Vector2( -9, 13 )
-buildingMaterial = SubResource( 2 )
+buildingMaterial = SubResource( 1 )
 
 [node name="BuildingFactory" parent="." instance=ExtResource( 2 )]
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 4 )
+material = SubResource( 2 )
 margin_left = -78.0
 margin_top = -42.0
 margin_right = 474.0
@@ -234,8 +234,8 @@ color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( -168, 487, -46, 468, 56, 459, 202, 446, 346, 440, 447, 422, 567, 418, 669, 403, 783, 381, 986, 354, 1174, 340, 1258, 367, 1280, 734, 1124, 773, -152, 762 )
 
 [node name="BuildingInstance" type="Sprite" parent="."]
-material = SubResource( 6 )
-position = Vector2( 112, 430 )
+material = SubResource( 3 )
+position = Vector2( 113, 430 )
 texture = ExtResource( 8 )
 script = ExtResource( 6 )
 
