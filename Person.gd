@@ -43,6 +43,8 @@ func find_neighbors(dist):
 func update_happiness(dist):
 	var d_happiness = []
 	var neighbors = find_neighbors(dist)
+	if len(neighbors) == 0:
+		return
 	for i in neighbors:
 		d_happiness.append(i.current_happiness - current_happiness)
 	var happiness_adjust = 0
@@ -50,3 +52,4 @@ func update_happiness(dist):
 	for i in d_happiness:
 		happiness_adjust += i * num_neighbors
 	current_happiness += 0.5 * happiness_adjust * happiness_spread
+	return

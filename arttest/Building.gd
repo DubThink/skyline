@@ -12,6 +12,9 @@ export (BUILDING.TYPE, FLAGS ) var building_type;
 export (BUILDING.LAYER) var layer;
 export (int, 0, 50) var person_capacity;
 
+var n_residents = 0
+var average_happiness = 0
+
 #var sr_manager = preload("res://arttest/SkyRenderManager.gd")
 
 # Called when the node enters the scene tree for the first time.
