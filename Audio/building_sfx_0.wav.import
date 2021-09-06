@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/building_sfx_0.wav-97ef936445f6c1d24c3fe5227bf54654.sample"
+
+[deps]
+
+source_file="res://Audio/building_sfx_0.wav"
+dest_files=[ "res://.import/building_sfx_0.wav-97ef936445f6c1d24c3fe5227bf54654.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

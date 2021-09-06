@@ -18,11 +18,11 @@ func _ready():
 	for i in range(0, buttons.size()):
 		buttons[i].connect("pressed", self, "on_click", [i])
 		available_buildings.append(null)
-	if starter.dev_mode:
-		for button in buttons:
-			var self_mod : Color = button.self_modulate
-			self_mod.a = 1
-			button.self_modulate = self_mod
+#	if starter.dev_mode:
+	for button in buttons:
+		var self_mod : Color = button.self_modulate
+		self_mod.a = 1
+		button.self_modulate = self_mod
 
 #TODO build a wrapper for this for sim API
 func add_available_building(index):
@@ -93,9 +93,10 @@ func free_selected_slot():
 	available_buildings[last_removed] = null
 	
 func debug_buttons():
-	if starter.dev_mode:
-		for i in range(buttons.size()):
-			buttons[i].text = str(available_buildings[i])
+#	if starter.dev_mode:
+	for i in range(buttons.size()):
+		if available_buildings[i] != null:
+			buttons[i].text = str(available_buildings[i].definition.building_name)
 		
 func _process(delta):
 	debug_buttons()
