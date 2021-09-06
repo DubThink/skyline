@@ -6,6 +6,7 @@ var building_factory: BuildingFactory
 var skyline
 var last_removed = -1
 onready var exit_menu = get_parent().get_parent().get_node("GuiLayer/ExitMenu")
+onready var starter = get_parent().get_parent().get_node("Startup")
 
 func _ready():
 	skyline = get_parent().get_parent()
@@ -14,23 +15,24 @@ func _ready():
 	buttons.append(get_node("Button2"))
 	buttons.append(get_node("Button3"))
 	buttons.append(get_node("Button4"))
-	#buttons.append(get_node("Button5"))
-	#buttons.append(get_node("Button6"))
 	for i in range(0, buttons.size()):
 		buttons[i].connect("pressed", self, "on_click", [i])
 		available_buildings.append(null)
-#	add_available_building(0) #test
-#	add_available_building(1) #test
+	if starter.dev_mode:
+		for button in buttons:
+			var self_mod : Color = button.self_modulate
+			self_mod.a = 1
+			button.self_modulate = self_mod
 
 #TODO build a wrapper for this for sim API
 func add_available_building(index):
-	print("adding new building")
+#	print("[dock] adding new building")
 	var inst = building_factory.create_building(building_factory.get_building_def())
 	available_buildings[index] = inst
 	visualize_building_on_button(index)
 
 func add_building_by_demand(index, inst):
-	print("adding new building by demand")
+#	print("[dock] adding new building by demand")
 	available_buildings[index] = inst
 	visualize_building_on_button(index)
 
@@ -48,19 +50,21 @@ func visualize_last_removed():
 func on_click(index):
 #	print("on_click for %d, %d available buildings" % [index, available_buildings.size()])
 	if (not exit_menu.visible) and available_buildings.size() > index and available_buildings[index] != null:
+#		print("[dock] button %d is occupied" % index)
 		var building = available_buildings[index]
 		building.set_scale(Vector2(1,1))
 		building.get_parent().remove_child(building)
 		skyline.select_building(building)
-		available_buildings[index] = null
-		free_selected_slot()
+#		available_buildings[index] = null
+#		free_selected_slot()
 		last_removed = index
-		add_specific_building(building_factory.create_building(building_factory.get_building_def())) # what is this
+#		add_specific_building(building_factory.create_building(building_factory.get_building_def())) # what is this
 	elif available_buildings.size() <= index:
-		print("empty")
+		print("[dock] button %d is empty" % index)
 	pass
 
 func visualize_building_on_button(index):
+#	print("[dock] visualizing building on button %d" % index)
 	assert(index < available_buildings.size() and index >= 0)
 	buttons[index].add_child(available_buildings[index])
 	#TODO replace this with get_height
@@ -77,8 +81,8 @@ func get_free_slots():
 	return slots
 
 func check_slot_free(index):
-	if index == last_removed:
-		return false
+#	if index == last_removed:
+#		return false
 	return index < available_buildings.size() and available_buildings[index] == null
 
 func num_slots():
@@ -86,3 +90,11 @@ func num_slots():
 	
 func free_selected_slot():
 	available_buildings[last_removed] = null
+	
+func debug_buttons():
+	if starter.dev_mode:
+		for i in range(buttons.size()):
+			buttons[i].text = str(available_buildings[i])
+		
+func _process(delta):
+	debug_buttons()

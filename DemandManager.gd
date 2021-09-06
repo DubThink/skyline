@@ -10,6 +10,7 @@ var cap_ratio = 25 #a number
 var demand : PoolRealArray
 onready var factory = get_parent().get_node("BuildingFactory")
 onready var dock = get_parent().get_node("GuiLayer/MenuDock")
+var has_demanded = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,13 +29,14 @@ func apply_demand_to_dock():
 	var sizes = get_building_sizes_allowed_in_slot()
 	var slots_free = dock.get_free_slots()
 #	print("free slots: %s %s %s %s" % [slots_free[0], slots_free[1], slots_free[2], slots_free[3]])
-	for i in range(4):#slots_free.size()):
+	for i in range(slots_free.size()):
 		if slots_free[i]:
-			print("slot %d was free" % i)
+			print("[demand] slot %d was free" % i)
 			var type = get_next_building_type()
 #			print("sizes length %d, sizes[%d] length %d" % [sizes.size(), i, sizes[i].size()])
 			var size_to_use = sizes[i][randi() % (sizes[i].size())]
-			# generate a building of that type
+			print("[demand] placing a building of size ")
+			# TODO generate a building of that type
 			var def = factory.get_building_def()
 			var inst = factory.create_building(def)
 			# decrease demands by that much
@@ -66,7 +68,7 @@ func sizelayer_to_demand(layer):
 	return layer+1
 
 func reduce_demand(definition: BuildingBakedDefinition):
-	print("building of type %d had %d capacity, was size %d" % [definition.building_type, definition.person_capacity, definition.layer])
+	print("[demand] building of type %d had %d capacity, was size %d" % [definition.building_type, definition.person_capacity, definition.layer])
 	if definition.building_type & (1<<BUILDING.TYPE.HOUSE):
 		reduce_demand_for(BUILDING.TYPE.HOUSE, capacity_to_demand(definition.person_capacity))
 	if definition.building_type & (1<<BUILDING.TYPE.SCHOOL):
@@ -79,12 +81,14 @@ func reduce_demand(definition: BuildingBakedDefinition):
 		reduce_demand_for(BUILDING.TYPE.RETAIL, sizelayer_to_demand(definition.layer))
 	
 func reduce_demand_for(type, amount):
-	print("reducing demand for %d by %f" % [type, amount])
+	print("[demand] reducing demand for %d by %f" % [type, amount])
 	demand[type] -= amount
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+#	if not has_demanded:
 	apply_demand_to_dock()
+#		has_demanded = true
 	display_demand_info_text()
 #	pass
 
