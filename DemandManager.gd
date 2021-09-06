@@ -6,13 +6,17 @@ export (float) var starting_med_demand
 export (float) var starting_edu_demand
 export (float) var starting_work_demand
 
-var cap_ratio = 25 #a number
+export (float) var cap_ratio = 0.1 #a number
 var demand : PoolRealArray
 onready var factory = get_parent().get_node("BuildingFactory")
 onready var dock = get_parent().get_node("GuiLayer/MenuDock")
 onready var happiness_mgr = get_parent().get_node("HappinessManager")
 var has_demanded = false
+export (Array, float) var demand_reduction_for_size = [0.5, 1, 1.5, 3, 6]
+export (float) var decay_amount = 0.05
 
+var type_names = ["HOUSE", "FOOD", "RETAIL", "SCHOOL", "WORK"]
+var size_names = ["SMOL","MEDIUM","LARGE","HIGH_RISE","MONUMENT"]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize() # MAKE SURE THIS IS THE ONLY TIME WE CALL THIS, OR ONLY CALL IT ONCE SOMEWHERE ELSE
@@ -32,16 +36,21 @@ func apply_demand_to_dock():
 #	print("free slots: %s %s %s %s" % [slots_free[0], slots_free[1], slots_free[2], slots_free[3]])
 	for i in range(slots_free.size()):
 		if slots_free[i]:
-			print("[demand] slot %d was free" % i)
+			print("--\n[demand] slot %d was free" % i)
 			var type = get_next_building_type()
+			if type == -1:
+				break
+			print("[demand] had demand for %s, which has demand of %f" % [type_names[type], demand[type]])
 #			print("sizes length %d, sizes[%d] length %d" % [sizes.size(), i, sizes[i].size()])
 			var size_to_use = sizes[i][randi() % (sizes[i].size())]
-			print("[demand] placing a building of size ")
+			print("[demand] placing a building of size %s" % size_names[size_to_use])
 			# TODO generate a building of that type
+			print("[--] factory.get_building_def(%s, %s)" % [size_names[size_to_use], type_names[type]])
 			var def = factory.get_building_def(size_to_use,type)
+			print("[--] returned building: %s %d named %s" % [size_names[def.layer], def.building_type, def.building_name])
 			var inst = factory.create_building(def)
 			# decrease demands by that much
-			reduce_demand(def)
+#			reduce_demand(def)
 			# give it to the slot
 			dock.add_building_by_demand(i, inst)
 
@@ -52,39 +61,60 @@ func get_building_sizes_allowed_in_slot():
 	[BUILDING.LAYER.LARGE, BUILDING.LAYER.HIGH_RISE]]
 	
 func get_next_building_type():
-	var cumulative = [0] #dummy value
+	var cumulative = [0.0] #dummy value
 	for i in range(BUILDING.TYPE._COUNT):
-		cumulative.append(cumulative[i] + demand[i])
+		var positive_demand = demand[i]
+		if positive_demand < 0:
+			positive_demand = 0
+		cumulative.append(cumulative[i] + positive_demand)
 	cumulative.remove(0) #remove dummy
 	var r = randf() * cumulative[-1] #last emelent is total demand
+	var type_of_demand = -1
 	for i in range(BUILDING.TYPE._COUNT):
 		if r <= cumulative[i]:
-			return i
-	return BUILDING.TYPE.WORK #edge case for top end?
+			type_of_demand = i
+			break
+	var s = "[demand] [get_next_building_type] cumulative array: ["
+	for i in range(cumulative.size()):
+		s += str(cumulative[i]) + ","
+	s += "]"
+	print(s)
+	print("[demand] [get_next_building_type] r = %f, total demand %f, type chosen %d" % [r, cumulative[-1], type_of_demand])
+	if(type_of_demand == -1):
+		print("[demand] [get_next_building_type] type of demand never set?")
+	if(demand[type_of_demand] <= 0):
+		print("[demand] [get_next_building_type] desired type of demand was non-positive")
+		return -1
+	return type_of_demand
 
 func capacity_to_demand(capacity):
-	return 1#capacity / cap_ratio
+	return capacity * cap_ratio
 
 func sizelayer_to_demand(layer):
-	return layer+1
+	return demand_reduction_for_size[layer]
+
+func handle_demand_for_inst(inst):
+	reduce_demand(inst.definition)
 
 func reduce_demand(definition: BuildingBakedDefinition):
-	print("[demand] building of type %d had %d capacity, was size %d" % [definition.building_type, definition.person_capacity, definition.layer])
+	print("[demand] reducing demand building of type %d had %d capacity, was size %s, with name %s" % [definition.building_type, definition.person_capacity, size_names[definition.layer], definition.building_name])
 	if definition.building_type:
-		if definition.building_type == BUILDING.TYPE.HOUSE:
+		if definition.has_type(BUILDING.TYPE.HOUSE):
 			reduce_demand_for(BUILDING.TYPE.HOUSE, capacity_to_demand(definition.person_capacity))
-		if definition.building_type == BUILDING.TYPE.SCHOOL:
+		if definition.has_type(BUILDING.TYPE.SCHOOL):
 			reduce_demand_for(BUILDING.TYPE.SCHOOL, capacity_to_demand(definition.person_capacity))
-		if definition.building_type == BUILDING.TYPE.WORK:
+		if definition.has_type(BUILDING.TYPE.WORK):
 			reduce_demand_for(BUILDING.TYPE.WORK, capacity_to_demand(definition.person_capacity))
-		if definition.building_type == BUILDING.TYPE.FOOD:
+		if definition.has_type(BUILDING.TYPE.FOOD):
 			reduce_demand_for(BUILDING.TYPE.FOOD, sizelayer_to_demand(definition.layer))
-		if definition.building_type == BUILDING.TYPE.RETAIL:
+		if definition.has_type(BUILDING.TYPE.RETAIL):
 			reduce_demand_for(BUILDING.TYPE.RETAIL, sizelayer_to_demand(definition.layer))
 	
 func reduce_demand_for(type, amount):
-	print("[demand] reducing demand for %d by %f" % [type, amount])
+	print("[demand] reducing demand for %s by %f" % [type_names[type], amount])
 	demand[type] -= amount
+	if(demand[type] < 0):
+		demand[type] = 0
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -92,15 +122,22 @@ func _process(delta):
 	apply_demand_to_dock()
 #		has_demanded = true
 	display_demand_info_text()
+	decay_demand(delta)
 #	pass
 
 func display_demand_info_text():
 	var label = get_node("CanvasLayer/Panel/Label")
 	var text = ""
 	text += "HOUSING: " + str(demand[BUILDING.TYPE.HOUSE]) + "\n"
-	text += "FOOD:    " + str(demand[BUILDING.TYPE.FOOD]) + "\n"
+	text += "FOOD: " + str(demand[BUILDING.TYPE.FOOD]) + "\n"
 	text += "RETAIL: " + str(demand[BUILDING.TYPE.RETAIL]) + "\n"
-	text += "SCHOOL:  " + str(demand[BUILDING.TYPE.SCHOOL]) + "\n"
-	text += "WORK:    " + str(demand[BUILDING.TYPE.WORK]) + "\n"
+	text += "SCHOOL: " + str(demand[BUILDING.TYPE.SCHOOL]) + "\n"
+	text += "WORK: " + str(demand[BUILDING.TYPE.WORK]) + "\n"
 	text += "HAPPINESS: " + str(happiness_mgr.get_happiness_level())
 	label.text = text
+
+func decay_demand(delta):
+	demand[BUILDING.TYPE.FOOD] -= (demand[BUILDING.TYPE.FOOD] * decay_amount)
+	demand[BUILDING.TYPE.RETAIL] -= (demand[BUILDING.TYPE.RETAIL] * decay_amount)
+	demand[BUILDING.TYPE.WORK] -= (demand[BUILDING.TYPE.WORK] * decay_amount)
+	demand[BUILDING.TYPE.SCHOOL] -= (demand[BUILDING.TYPE.SCHOOL] * decay_amount)

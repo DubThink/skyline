@@ -15,5 +15,7 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 10.0
+margin_top = 8.0
+margin_right = 125.0
+margin_bottom = 112.0

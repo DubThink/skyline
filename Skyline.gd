@@ -90,6 +90,7 @@ func _process(delta):
 				# TODO replace with actual building stuff
 				if layers[layer_index].add_building(selected_building, mouse_pos.x):
 					emit_signal("placed_building", selected_building.position)
+					demand_manager.handle_demand_for_inst(selected_building)
 					selected_building = null#building_factory.create_building(null)
 					dock.free_selected_slot()
 					#add_child(selected_building)

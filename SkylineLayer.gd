@@ -62,7 +62,7 @@ func add_building(building_inst: BuildingInstance, x_position):
 	var s = ""
 	for i in range(0, building_list.size()):
 		s += "[" + str(building_list[i][1]) + "," + str(building_list[i][2]) + "],"
-	print(s)
+#	print(s)
 	return true
 
 func find_building_before(position, required_type=null):
