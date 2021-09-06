@@ -35,14 +35,14 @@ func get_building_def(var layer = null, var type = null):
 		if len(valid)>0:
 			return valid[randi()%len(valid)]
 		print("failed to find building matching layer ",layer, " with type ",type)
-		# only size
+		# only type
 		valid = []
 		for def in rid.building_definitions:
-			if def.layer == layer:
+			if def.has_type(type):
 				valid.append(def)
 		if len(valid)>0:
 			return valid[randi()%len(valid)]
-		print("failed to find building matching layer ",layer)
+		print("failed to find building matching type ",type)
 			
 	return rid.building_definitions[randi()%len(rid.building_definitions)]
 	
