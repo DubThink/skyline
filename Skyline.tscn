@@ -372,7 +372,6 @@ max_db = -6.039
 
 [node name="Startup" type="Node" parent="."]
 script = ExtResource( 14 )
-dev_mode = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Startup"]
 
