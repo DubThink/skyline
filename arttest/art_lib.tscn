@@ -1083,6 +1083,218 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Quiet Family Home" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -64, -24 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 16, 48, 16, -64, 9, -62, 8, -64, 64, -96, 120, -64, 119, -62, 112, -64, 112, -32, 160, -32, 160, -13, 156, -13, 156, 16, 168, 16, 168, 48 )
+script = ExtResource( 1 )
+building_type = 1
+person_capacity = 3
+
+[node name="ColorRect6" type="ColorRect" parent="Quiet Family Home"]
+material = SubResource( 3 )
+margin_left = 132.0
+margin_top = -8.0
+margin_right = 144.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Quiet Family Home/ColorRect6"]
+material = SubResource( 3 )
+margin_left = -20.0
+margin_right = -8.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Quiet Family Home"]
+material = SubResource( 3 )
+margin_left = 132.0
+margin_top = -8.0
+margin_right = 144.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Quiet Family Home/ColorRect7"]
+material = SubResource( 3 )
+margin_left = -20.0
+margin_right = -8.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Quiet Family Home"]
+material = SubResource( 3 )
+margin_left = 84.0
+margin_top = -56.0
+margin_right = 96.0
+margin_bottom = -40.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="Quiet Family Home"]
+material = SubResource( 3 )
+margin_left = 84.0
+margin_top = -12.0
+margin_right = 96.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="Quiet Family Home"]
+material = SubResource( 3 )
+margin_left = 32.0
+margin_top = -12.0
+margin_right = 44.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Quiet Family Home"]
+material = SubResource( 3 )
+margin_left = 60.0
+margin_top = -52.0
+margin_right = 68.0
+margin_bottom = -40.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Quiet Family Home"]
+material = SubResource( 3 )
+margin_left = 32.0
+margin_top = -56.0
+margin_right = 44.0
+margin_bottom = -40.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Old Family Home" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -64, -24 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 16, 48, 16, -64, 9, -62, 8, -64, 64, -96, 120, -64, 119, -62, 112, -64, 112, -32, 160, -32, 160, -13, 156, -13, 156, 16, 168, 16, 168, 48 )
+script = ExtResource( 1 )
+building_type = 1
+person_capacity = 3
+
+[node name="ColorRect6" type="ColorRect" parent="Old Family Home"]
+material = SubResource( 3 )
+margin_left = 132.0
+margin_top = -8.0
+margin_right = 144.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Old Family Home/ColorRect6"]
+material = SubResource( 3 )
+margin_left = -20.0
+margin_right = -8.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Old Family Home"]
+material = SubResource( 3 )
+margin_left = 132.0
+margin_top = -8.0
+margin_right = 144.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Old Family Home/ColorRect7"]
+material = SubResource( 3 )
+margin_left = -20.0
+margin_right = -8.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Old Family Home"]
+material = SubResource( 3 )
+margin_left = 84.0
+margin_top = -56.0
+margin_right = 96.0
+margin_bottom = -40.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="Old Family Home"]
+material = SubResource( 3 )
+margin_left = 84.0
+margin_top = -12.0
+margin_right = 96.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="Old Family Home"]
+material = SubResource( 3 )
+margin_left = 32.0
+margin_top = -12.0
+margin_right = 44.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Old Family Home"]
+material = SubResource( 3 )
+margin_left = 60.0
+margin_top = -52.0
+margin_right = 68.0
+margin_bottom = -40.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Old Family Home"]
+material = SubResource( 3 )
+margin_left = 32.0
+margin_top = -56.0
+margin_right = 44.0
+margin_bottom = -40.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Simple Home" type="Polygon2D" parent="."]
 visible = false
 position = Vector2( -60, -28 )
@@ -1124,6 +1336,56 @@ __meta__ = {
 }
 
 [node name="ColorRect5" type="ColorRect" parent="Simple Home"]
+material = SubResource( 2 )
+margin_left = 56.0
+margin_right = 64.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Beach Cottage" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -60, -28 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 32, -40, 64, -56, 96, -40, 95, -39, 88, -40, 88, -24, 120, -8, 119, -7, 112, -8, 112, 56, 40, 56, 40, -40, 33, -39 )
+script = ExtResource( 1 )
+building_type = 1
+person_capacity = 2
+
+[node name="ColorRect4" type="ColorRect" parent="Beach Cottage"]
+material = SubResource( 1 )
+margin_left = 56.0
+margin_top = -40.0
+margin_right = 72.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Beach Cottage"]
+material = SubResource( 3 )
+margin_left = 80.0
+margin_right = 88.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Beach Cottage"]
+material = SubResource( 3 )
+margin_left = 96.0
+margin_right = 104.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Beach Cottage"]
 material = SubResource( 2 )
 margin_left = 56.0
 margin_right = 64.0
@@ -1253,6 +1515,135 @@ __meta__ = {
 }
 
 [node name="ColorRect9" type="ColorRect" parent="Ranch with Garage/ColorRect8"]
+material = SubResource( 2 )
+margin_left = -20.0
+margin_right = -12.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tinkerer\'s Home" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( 12, -32 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 116, 56, 116, -8, 120, -8, 120, -24, -28, -24, -28, -8, -24, -8, -24, 28, -40, 28, -40, -8, -36, -8, -64, -20, -92, -8, -88, -8, -88, 28, -88, 56 )
+script = ExtResource( 1 )
+building_type = 1
+person_capacity = 2
+
+[node name="ColorRect4" type="ColorRect" parent="Tinkerer\'s Home"]
+material = SubResource( 1 )
+margin_left = -82.0
+margin_right = -78.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="Tinkerer\'s Home/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 8.0
+margin_right = 12.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Tinkerer\'s Home/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 32.0
+margin_right = 36.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Tinkerer\'s Home/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 24.0
+margin_right = 28.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Tinkerer\'s Home/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 16.0
+margin_right = 20.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Tinkerer\'s Home"]
+material = SubResource( 3 )
+margin_left = 88.0
+margin_right = 96.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Tinkerer\'s Home/ColorRect6"]
+material = SubResource( 3 )
+margin_left = 12.0
+margin_right = 16.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Tinkerer\'s Home/ColorRect6"]
+material = SubResource( 3 )
+margin_left = -8.0
+margin_right = -4.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Tinkerer\'s Home"]
+material = SubResource( 2 )
+margin_left = -16.0
+margin_right = -8.0
+margin_bottom = 8.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Tinkerer\'s Home"]
+material = SubResource( 2 )
+margin_left = 56.0
+margin_right = 64.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Tinkerer\'s Home"]
+material = SubResource( 2 )
+margin_left = 32.0
+margin_right = 40.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Tinkerer\'s Home/ColorRect8"]
 material = SubResource( 2 )
 margin_left = -20.0
 margin_right = -12.0
@@ -1564,6 +1955,142 @@ __meta__ = {
 }
 
 [node name="ColorRect9" type="ColorRect" parent="Corner Store/ColorRect5"]
+material = SubResource( 3 )
+margin_left = 64.0
+margin_right = 84.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mulberry\'s" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -56, -32 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -16, 64, 16, 32, 16, 28, 40, 28, 40, -11, 39, -11, 39, -12, 38, -12, 35, -37, 39, -37, 39, -38, 40, -38, 40, -41, 26, -41, 25, -40, 27, -39, 23, -36, 23, -39, 26, -42, 40, -42, 40, -59.8328, 36, -64, 32, -64, 32, -94, 30, -94, 30, -95, 40, -100, 40, -105, 39, -106, 39, -108, 140, -108, 140, 64 )
+script = ExtResource( 1 )
+building_type = 5
+layer = 1
+person_capacity = 2
+
+[node name="ColorRect4" type="ColorRect" parent="Mulberry\'s"]
+material = SubResource( 1 )
+margin_left = 60.0
+margin_top = -52.0
+margin_right = 72.0
+margin_bottom = -36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Mulberry\'s/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 24.0
+margin_right = 36.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Mulberry\'s"]
+material = SubResource( 1 )
+margin_left = 108.0
+margin_top = -52.0
+margin_right = 120.0
+margin_bottom = -36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Mulberry\'s"]
+material = SubResource( 1 )
+margin_left = 33.0
+margin_top = -92.0
+margin_right = 39.0
+margin_bottom = -76.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Mulberry\'s"]
+material = SubResource( 1 )
+margin_left = 84.0
+margin_top = -92.0
+margin_right = 96.0
+margin_bottom = -76.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Mulberry\'s/ColorRect6"]
+material = SubResource( 1 )
+margin_left = 24.0
+margin_right = 36.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Mulberry\'s"]
+material = SubResource( 1 )
+margin_left = 60.0
+margin_top = -92.0
+margin_right = 72.0
+margin_bottom = -76.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Mulberry\'s"]
+material = SubResource( 2 )
+margin_left = 52.0
+margin_top = -4.0
+margin_right = 60.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 4, 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Mulberry\'s/ColorRect5"]
+material = SubResource( 2 )
+margin_left = -8.0
+margin_right = -4.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 4, 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Mulberry\'s/ColorRect5"]
+material = SubResource( 3 )
+margin_left = 16.0
+margin_right = 36.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Mulberry\'s/ColorRect5"]
+material = SubResource( 3 )
+margin_left = 40.0
+margin_right = 60.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Mulberry\'s/ColorRect5"]
 material = SubResource( 3 )
 margin_left = 64.0
 margin_right = 84.0
@@ -1966,6 +2493,131 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Cafe Caufield" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -88, -32 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 40, 64, 40, -100, 40, -108, 68, -108, 68, -120, 72, -120, 92, -108, 140, -108, 140, 64 )
+script = ExtResource( 1 )
+building_type = 18
+layer = 1
+person_capacity = 2
+
+[node name="ColorRect4" type="ColorRect" parent="Cafe Caufield"]
+material = SubResource( 1 )
+margin_left = 60.0
+margin_top = -52.0
+margin_right = 72.0
+margin_bottom = -36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Cafe Caufield/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 24.0
+margin_right = 36.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Cafe Caufield"]
+material = SubResource( 1 )
+margin_left = 108.0
+margin_top = -52.0
+margin_right = 120.0
+margin_bottom = -36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Cafe Caufield"]
+material = SubResource( 1 )
+margin_left = 96.0
+margin_top = -92.0
+margin_right = 108.0
+margin_bottom = -76.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Cafe Caufield/ColorRect6"]
+material = SubResource( 1 )
+margin_left = 16.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Cafe Caufield/ColorRect6"]
+material = SubResource( 1 )
+margin_left = -8.0
+margin_right = -4.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Cafe Caufield"]
+material = SubResource( 1 )
+margin_left = 60.0
+margin_top = -92.0
+margin_right = 72.0
+margin_bottom = -76.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Cafe Caufield"]
+material = SubResource( 2 )
+margin_left = 48.0
+margin_top = -4.0
+margin_right = 60.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 4, 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Cafe Caufield/ColorRect5"]
+material = SubResource( 3 )
+margin_left = 24.0
+margin_right = 40.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Cafe Caufield/ColorRect5"]
+material = SubResource( 3 )
+margin_left = 44.0
+margin_right = 60.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Cafe Caufield/ColorRect5"]
+material = SubResource( 3 )
+margin_left = 64.0
+margin_right = 80.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Drug Store" type="Polygon2D" parent="."]
 visible = false
 position = Vector2( -88, -32 )
@@ -2091,6 +2743,131 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Emma\'s Tools" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -88, -32 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 40, 64, 40, -100, 40, -108, 140, -108, 140, 64 )
+script = ExtResource( 1 )
+building_type = 20
+layer = 1
+person_capacity = 3
+
+[node name="ColorRect4" type="ColorRect" parent="Emma\'s Tools"]
+material = SubResource( 1 )
+margin_left = 84.0
+margin_top = -92.0
+margin_right = 96.0
+margin_bottom = -76.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Emma\'s Tools/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 24.0
+margin_right = 36.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Emma\'s Tools"]
+material = SubResource( 1 )
+margin_left = 108.0
+margin_top = -52.0
+margin_right = 120.0
+margin_bottom = -36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Emma\'s Tools"]
+material = SubResource( 1 )
+margin_left = 72.0
+margin_top = -52.0
+margin_right = 84.0
+margin_bottom = -36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Emma\'s Tools/ColorRect6"]
+material = SubResource( 1 )
+margin_left = 16.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Emma\'s Tools/ColorRect6"]
+material = SubResource( 1 )
+margin_left = -8.0
+margin_right = -4.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Emma\'s Tools"]
+material = SubResource( 1 )
+margin_left = 60.0
+margin_top = -92.0
+margin_right = 72.0
+margin_bottom = -76.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Emma\'s Tools"]
+material = SubResource( 2 )
+margin_left = 48.0
+margin_top = -4.0
+margin_right = 60.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 4, 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Emma\'s Tools/ColorRect5"]
+material = SubResource( 3 )
+margin_left = 24.0
+margin_right = 40.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Emma\'s Tools/ColorRect5"]
+material = SubResource( 3 )
+margin_left = 44.0
+margin_right = 60.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Emma\'s Tools/ColorRect5"]
+material = SubResource( 3 )
+margin_left = 64.0
+margin_right = 80.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Teak" type="Polygon2D" parent="."]
 visible = false
 position = Vector2( -88, -32 )
@@ -2207,6 +2984,131 @@ __meta__ = {
 }
 
 [node name="ColorRect10" type="ColorRect" parent="Teak/ColorRect5"]
+material = SubResource( 2 )
+margin_left = 16.0
+margin_right = 28.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 4, 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="The Brickhouse Pub" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -88, -32 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 40, 64, 40, -100, 40, -108, 68, -108, 68, -120, 66, -120, 70, -123, 74, -120, 72, -120, 72, -108, 76, -108, 76, -118, 78, -118, 78, -108, 140, -108, 140, 64 )
+script = ExtResource( 1 )
+building_type = 18
+layer = 1
+person_capacity = 3
+
+[node name="ColorRect4" type="ColorRect" parent="The Brickhouse Pub"]
+material = SubResource( 1 )
+margin_left = 84.0
+margin_top = -92.0
+margin_right = 96.0
+margin_bottom = -76.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="The Brickhouse Pub/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 24.0
+margin_right = 36.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="The Brickhouse Pub"]
+material = SubResource( 1 )
+margin_left = 108.0
+margin_top = -52.0
+margin_right = 120.0
+margin_bottom = -36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="The Brickhouse Pub"]
+material = SubResource( 1 )
+margin_left = 72.0
+margin_top = -52.0
+margin_right = 84.0
+margin_bottom = -36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="The Brickhouse Pub/ColorRect6"]
+material = SubResource( 1 )
+margin_left = 16.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="The Brickhouse Pub/ColorRect6"]
+material = SubResource( 1 )
+margin_left = -8.0
+margin_right = -4.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="The Brickhouse Pub"]
+material = SubResource( 1 )
+margin_left = 60.0
+margin_top = -92.0
+margin_right = 72.0
+margin_bottom = -76.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="The Brickhouse Pub"]
+material = SubResource( 2 )
+margin_left = 76.0
+margin_top = -4.0
+margin_right = 88.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 4, 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="The Brickhouse Pub/ColorRect5"]
+material = SubResource( 3 )
+margin_left = -24.0
+margin_right = -8.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="The Brickhouse Pub/ColorRect5"]
+material = SubResource( 3 )
+margin_left = 36.0
+margin_right = 52.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="The Brickhouse Pub/ColorRect5"]
 material = SubResource( 2 )
 margin_left = 16.0
 margin_right = 28.0
@@ -2594,6 +3496,677 @@ material = SubResource( 1 )
 margin_left = -20.0
 margin_right = -8.0
 margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bridged Buildings" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -60, -48 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -72, 76, -72, 72, -60, 72, -60, -144, 12, -144, 12.0078, -36, 60.0078, -36, 60, -144, 124, -144, 124, 72, 136, 72, 136, 76, 156, 96, 40, 96, 40.0078, 72, 60.0078, 72, 60.0078, 4, 56.0078, 0, 16.0078, 0, 12.0078, 4, 12.0078, 72, 40.0078, 72, 40, 96, -92, 96 )
+script = ExtResource( 1 )
+building_type = 1
+layer = 1
+person_capacity = 12
+
+[node name="ColorRect4" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = -52.0
+margin_top = -136.0
+margin_right = -44.0
+margin_bottom = -120.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect4"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect4"]
+material = SubResource( 1 )
+margin_top = 20.0
+margin_right = 8.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = -52.0
+margin_top = -88.0
+margin_right = -44.0
+margin_bottom = -72.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect8"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect8"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect8"]
+material = SubResource( 1 )
+margin_top = 20.0
+margin_right = 8.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = -20.0
+margin_top = -88.0
+margin_right = -12.0
+margin_bottom = -72.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect9"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect9"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect9"]
+material = SubResource( 1 )
+margin_top = 20.0
+margin_right = 8.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = 64.0
+margin_top = -88.0
+margin_right = 72.0
+margin_bottom = -72.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect10"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect10"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect10"]
+material = SubResource( 1 )
+margin_top = 20.0
+margin_right = 8.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = 96.0
+margin_top = -88.0
+margin_right = 104.0
+margin_bottom = -72.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect11"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect11"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect11"]
+material = SubResource( 1 )
+margin_top = 20.0
+margin_right = 8.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = -52.0
+margin_top = -40.0
+margin_right = -44.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect12"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect12"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect12"]
+material = SubResource( 1 )
+margin_top = 20.0
+margin_right = 8.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect13" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = -20.0
+margin_top = -40.0
+margin_right = -12.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect13"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect13"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect13"]
+material = SubResource( 1 )
+margin_top = 20.0
+margin_right = 8.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect14" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = 64.0
+margin_top = -40.0
+margin_right = 72.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect14"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect14"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect14"]
+material = SubResource( 1 )
+margin_top = 20.0
+margin_right = 8.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect15" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = 96.0
+margin_top = -40.0
+margin_right = 104.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect15"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect15"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect15"]
+material = SubResource( 1 )
+margin_top = 20.0
+margin_right = 8.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect16" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = -52.0
+margin_top = 8.0
+margin_right = -40.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect17" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = 24.0078
+margin_top = -28.0
+margin_right = 28.0078
+margin_bottom = -16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect19" type="ColorRect" parent="Bridged Buildings/ColorRect17"]
+material = SubResource( 1 )
+margin_left = 8.0078
+margin_right = 16.0078
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect20" type="ColorRect" parent="Bridged Buildings/ColorRect17"]
+material = SubResource( 1 )
+margin_left = 20.0
+margin_right = 24.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect21" type="ColorRect" parent="Bridged Buildings/ColorRect17"]
+material = SubResource( 1 )
+margin_left = 28.0
+margin_right = 32.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect22" type="ColorRect" parent="Bridged Buildings/ColorRect17"]
+material = SubResource( 1 )
+margin_left = -8.0
+margin_right = -4.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect18" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = 108.0
+margin_top = 8.0
+margin_right = 120.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = -20.0
+margin_top = -136.0
+margin_right = -12.0
+margin_bottom = -120.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect5"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect5"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect5"]
+material = SubResource( 1 )
+margin_top = 20.0
+margin_right = 8.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = 64.0
+margin_top = -136.0
+margin_right = 72.0
+margin_bottom = -120.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect6"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect6"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect6"]
+material = SubResource( 1 )
+margin_top = 20.0
+margin_right = 8.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = 96.0
+margin_top = -136.0
+margin_right = 104.0
+margin_bottom = -120.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect7"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect7"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect7"]
+material = SubResource( 1 )
+margin_top = 20.0
+margin_right = 8.0
+margin_bottom = 36.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect24" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = -36.0
+margin_top = 44.0
+margin_right = -28.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect24"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect24"]
+material = SubResource( 1 )
+margin_top = -12.0
+margin_right = 8.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect24"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = -12.0
+margin_right = 20.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect25" type="ColorRect" parent="Bridged Buildings"]
+material = SubResource( 1 )
+margin_left = 84.0
+margin_top = 44.0
+margin_right = 92.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect25"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_right = 20.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect25"]
+material = SubResource( 1 )
+margin_top = -12.0
+margin_right = 8.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect25"]
+material = SubResource( 1 )
+margin_left = 12.0
+margin_top = -12.0
+margin_right = 20.0
+margin_bottom = -4.0
 rect_pivot_offset = Vector2( 8, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3987,1338 +5560,943 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Bridged Buildings" type="Polygon2D" parent="."]
-position = Vector2( -60.0078, -48 )
-color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( -72, 76, -72, 72, -60, 72, -60, -144, 12, -144, 12, 19.6484, 12.0234, 19.7734, 12.0703, 19.8438, 12.1719, 19.8828, 12.2938, 19.8531, 19.8438, 16.0781, 20.0078, 16.0234, 20.1875, 16, 51.8203, 16, 51.9922, 16.0156, 52.1531, 16.0766, 59.7297, 19.861, 59.8281, 19.8984, 59.9375, 19.8984, 59.9922, 19.8281, 60.0078, 19.6875, 60, -144, 124, -144, 124, 72, 136, 72, 136, 76, 184, 108, 40, 108, 40.0078, 72, 60.0078, 72, 60, 40.125, 59.8672, 40, 12.1484, 40, 12, 40.1484, 12.0078, 72, 40.0078, 72, 40, 108, -112, 108 )
-script = ExtResource( 1 )
-building_type = 1
-layer = 2
-person_capacity = 12
-
-[node name="ColorRect4" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = -52.0
-margin_top = -136.0
-margin_right = -44.0
-margin_bottom = -120.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect4"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect4"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect4"]
-material = SubResource( 1 )
-margin_top = 20.0
-margin_right = 8.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = -52.0
-margin_top = -88.0
-margin_right = -44.0
-margin_bottom = -72.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect8"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect8"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect8"]
-material = SubResource( 1 )
-margin_top = 20.0
-margin_right = 8.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = -20.0
-margin_top = -88.0
-margin_right = -12.0
-margin_bottom = -72.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect9"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect9"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect9"]
-material = SubResource( 1 )
-margin_top = 20.0
-margin_right = 8.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = 64.0
-margin_top = -88.0
-margin_right = 72.0
-margin_bottom = -72.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect10"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect10"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect10"]
-material = SubResource( 1 )
-margin_top = 20.0
-margin_right = 8.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect11" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = 96.0
-margin_top = -88.0
-margin_right = 104.0
-margin_bottom = -72.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect11"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect11"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect11"]
-material = SubResource( 1 )
-margin_top = 20.0
-margin_right = 8.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect12" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = -52.0
-margin_top = -40.0
-margin_right = -44.0
-margin_bottom = -24.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect12"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect12"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect12"]
-material = SubResource( 1 )
-margin_top = 20.0
-margin_right = 8.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect13" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = -20.0
-margin_top = -40.0
-margin_right = -12.0
-margin_bottom = -24.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect13"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect13"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect13"]
-material = SubResource( 1 )
-margin_top = 20.0
-margin_right = 8.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect14" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = 64.0
-margin_top = -40.0
-margin_right = 72.0
-margin_bottom = -24.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect14"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect14"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect14"]
-material = SubResource( 1 )
-margin_top = 20.0
-margin_right = 8.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect15" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = 96.0
-margin_top = -40.0
-margin_right = 104.0
-margin_bottom = -24.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect15"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect15"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect15"]
-material = SubResource( 1 )
-margin_top = 20.0
-margin_right = 8.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect16" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = -52.0
-margin_top = 8.0
-margin_right = -40.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect17" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = 24.0
-margin_top = 24.0
-margin_right = 28.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect19" type="ColorRect" parent="Bridged Buildings/ColorRect17"]
-material = SubResource( 1 )
-margin_left = 8.0
-margin_right = 16.0
-margin_bottom = 12.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect20" type="ColorRect" parent="Bridged Buildings/ColorRect17"]
-material = SubResource( 1 )
-margin_left = 20.0
-margin_right = 24.0
-margin_bottom = 12.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect21" type="ColorRect" parent="Bridged Buildings/ColorRect17"]
-material = SubResource( 1 )
-margin_left = 28.0
-margin_right = 32.0
-margin_bottom = 12.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect22" type="ColorRect" parent="Bridged Buildings/ColorRect17"]
-material = SubResource( 1 )
-margin_left = -8.0
-margin_right = -4.0
-margin_bottom = 12.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect18" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = 108.0
-margin_top = 8.0
-margin_right = 120.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect5" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = -20.0
-margin_top = -136.0
-margin_right = -12.0
-margin_bottom = -120.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect5"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect5"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect5"]
-material = SubResource( 1 )
-margin_top = 20.0
-margin_right = 8.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect6" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = 64.0
-margin_top = -136.0
-margin_right = 72.0
-margin_bottom = -120.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect6"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect6"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect6"]
-material = SubResource( 1 )
-margin_top = 20.0
-margin_right = 8.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect7" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = 96.0
-margin_top = -136.0
-margin_right = 104.0
-margin_bottom = -120.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect7"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = 20.0
-margin_right = 20.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect7"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect7"]
-material = SubResource( 1 )
-margin_top = 20.0
-margin_right = 8.0
-margin_bottom = 36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect24" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = -36.0
-margin_top = 44.0
-margin_right = -28.0
-margin_bottom = 68.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect24"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 24.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect24"]
-material = SubResource( 1 )
-margin_top = -12.0
-margin_right = 8.0
-margin_bottom = -4.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect24"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = -12.0
-margin_right = 20.0
-margin_bottom = -4.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect25" type="ColorRect" parent="Bridged Buildings"]
-material = SubResource( 1 )
-margin_left = 84.0
-margin_top = 44.0
-margin_right = 92.0
-margin_bottom = 68.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Bridged Buildings/ColorRect25"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_right = 20.0
-margin_bottom = 24.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Bridged Buildings/ColorRect25"]
-material = SubResource( 1 )
-margin_top = -12.0
-margin_right = 8.0
-margin_bottom = -4.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Bridged Buildings/ColorRect25"]
-material = SubResource( 1 )
-margin_left = 12.0
-margin_top = -12.0
-margin_right = 20.0
-margin_bottom = -4.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="--HIGHRISE--" type="Node" parent="."]
 
-[node name="Delta Tower" type="Polygon2D" parent="."]
-visible = false
-position = Vector2( -60, -28 )
+[node name="One Boylston Plaza" type="Polygon2D" parent="."]
+position = Vector2( -60, 0 )
 color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( 232, 76, 184, 28, 184, 24, 160, 24, 160, -388, 96, -388, 96, -432, 32, -432, 32, -476, 4, -476, 0, -536, 0, -540, 4, -540, 5, -536, 7, -536, 8, -540, 8, -544, 7, -580, 5, -580, 4, -544, -2, -544, -3, -580, -5, -580, -6, -544, -12, -544, -13, -580, -15, -580, -16, -544, -16, -540, -15, -536, -13, -536, -12, -540, -8, -540, -8, -536, -12, -476, -36, -476, -36, 24, -64, 24, -64, 28, -112, 76, 188, 76 )
+polygon = PoolVector2Array( 220, 96, 220, -708, 184, -708, 184, -772, 148, -772, 148, -836, 112, -836, 112, -900, 76, -900, 76, -964, 72, -968, 72, -984, 76, -984, 76, -988, 80, -992, 80, -996, 76, -1000, 72, -1000, 72, -1004, 68, -1004, 64, -1104, 60, -1112, 56, -1104, 52, -1004, 48, -1004, 48, -1000, 44, -1000, 40, -996, 40, -992, 44, -988, 44, -984, 48, -984, 48, -968, 44, -964, 44, -868, 8, -868, 8, -804, -28, -804, -28, -740, -64, -740, -64, -676, -100, -676, -100, -612, -100, 96 )
 script = ExtResource( 1 )
-building_type = 5
+building_type = 22
 layer = 3
-person_capacity = 20
+person_capacity = 50
 
-[node name="ColorRect15" type="ColorRect" parent="Delta Tower"]
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza"]
 material = SubResource( 1 )
-margin_left = -32.0
-margin_top = -376.0
-margin_right = -4.0
-margin_bottom = -344.0
+margin_left = 61.0
+margin_top = -91.0
+margin_right = 139.0
+margin_bottom = -57.0
 rect_pivot_offset = Vector2( 8, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect8" type="ColorRect" parent="Delta Tower/ColorRect15"]
-material = SubResource( 1 )
-margin_left = 160.0
-margin_right = 188.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Delta Tower/ColorRect15"]
-material = SubResource( 1 )
-margin_left = 128.0
-margin_right = 156.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Delta Tower/ColorRect15"]
-material = SubResource( 1 )
-margin_left = 64.0
-margin_right = 92.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect11" type="ColorRect" parent="Delta Tower/ColorRect15"]
-material = SubResource( 1 )
-margin_left = 96.0
-margin_right = 124.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect12" type="ColorRect" parent="Delta Tower/ColorRect15"]
-material = SubResource( 1 )
-margin_left = 32.0
-margin_right = 60.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect18" type="ColorRect" parent="Delta Tower"]
-material = SubResource( 1 )
-margin_left = -32.0
-margin_top = -332.0
-margin_right = -4.0
-margin_bottom = -300.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Delta Tower/ColorRect18"]
-material = SubResource( 1 )
-margin_left = 160.0
-margin_right = 188.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Delta Tower/ColorRect18"]
-material = SubResource( 1 )
-margin_left = 128.0
-margin_right = 156.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Delta Tower/ColorRect18"]
-material = SubResource( 1 )
-margin_left = 64.0
-margin_right = 92.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect11" type="ColorRect" parent="Delta Tower/ColorRect18"]
-material = SubResource( 1 )
-margin_left = 96.0
-margin_right = 124.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect12" type="ColorRect" parent="Delta Tower/ColorRect18"]
-material = SubResource( 1 )
-margin_left = 32.0
-margin_right = 60.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect19" type="ColorRect" parent="Delta Tower"]
-material = SubResource( 1 )
-margin_left = -32.0
-margin_top = -288.0
-margin_right = -4.0
-margin_bottom = -256.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Delta Tower/ColorRect19"]
-material = SubResource( 1 )
-margin_left = 160.0
-margin_right = 188.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Delta Tower/ColorRect19"]
-material = SubResource( 1 )
-margin_left = 128.0
-margin_right = 156.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Delta Tower/ColorRect19"]
-material = SubResource( 1 )
-margin_left = 64.0
-margin_right = 92.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect11" type="ColorRect" parent="Delta Tower/ColorRect19"]
-material = SubResource( 1 )
-margin_left = 96.0
-margin_right = 124.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect12" type="ColorRect" parent="Delta Tower/ColorRect19"]
-material = SubResource( 1 )
-margin_left = 32.0
-margin_right = 60.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect20" type="ColorRect" parent="Delta Tower"]
-material = SubResource( 1 )
-margin_left = -32.0
-margin_top = -244.0
-margin_right = -4.0
-margin_bottom = -212.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Delta Tower/ColorRect20"]
-material = SubResource( 1 )
-margin_left = 160.0
-margin_right = 188.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Delta Tower/ColorRect20"]
-material = SubResource( 1 )
-margin_left = 128.0
-margin_right = 156.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Delta Tower/ColorRect20"]
-material = SubResource( 1 )
-margin_left = 64.0
-margin_right = 92.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect11" type="ColorRect" parent="Delta Tower/ColorRect20"]
-material = SubResource( 1 )
-margin_left = 96.0
-margin_right = 124.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect12" type="ColorRect" parent="Delta Tower/ColorRect20"]
-material = SubResource( 1 )
-margin_left = 32.0
-margin_right = 60.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect21" type="ColorRect" parent="Delta Tower"]
-material = SubResource( 1 )
-margin_left = -32.0
-margin_top = -200.0
-margin_right = -4.0
-margin_bottom = -168.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Delta Tower/ColorRect21"]
-material = SubResource( 1 )
-margin_left = 160.0
-margin_right = 188.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Delta Tower/ColorRect21"]
-material = SubResource( 1 )
-margin_left = 128.0
-margin_right = 156.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Delta Tower/ColorRect21"]
-material = SubResource( 1 )
-margin_left = 64.0
-margin_right = 92.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect11" type="ColorRect" parent="Delta Tower/ColorRect21"]
-material = SubResource( 1 )
-margin_left = 96.0
-margin_right = 124.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect12" type="ColorRect" parent="Delta Tower/ColorRect21"]
-material = SubResource( 1 )
-margin_left = 32.0
-margin_right = 60.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect23" type="ColorRect" parent="Delta Tower"]
-material = SubResource( 1 )
-margin_left = -32.0
-margin_top = -156.0
-margin_right = -4.0
-margin_bottom = -124.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Delta Tower/ColorRect23"]
-material = SubResource( 1 )
-margin_left = 160.0
-margin_right = 188.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Delta Tower/ColorRect23"]
-material = SubResource( 1 )
-margin_left = 128.0
-margin_right = 156.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Delta Tower/ColorRect23"]
-material = SubResource( 1 )
-margin_left = 64.0
-margin_right = 92.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect11" type="ColorRect" parent="Delta Tower/ColorRect23"]
-material = SubResource( 1 )
-margin_left = 96.0
-margin_right = 124.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect12" type="ColorRect" parent="Delta Tower/ColorRect23"]
-material = SubResource( 1 )
-margin_left = 32.0
-margin_right = 60.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect24" type="ColorRect" parent="Delta Tower"]
-material = SubResource( 1 )
-margin_left = -32.0
-margin_top = -112.0
-margin_right = -4.0
-margin_bottom = -80.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Delta Tower/ColorRect24"]
-material = SubResource( 1 )
-margin_left = 160.0
-margin_right = 188.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Delta Tower/ColorRect24"]
-material = SubResource( 1 )
-margin_left = 128.0
-margin_right = 156.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Delta Tower/ColorRect24"]
-material = SubResource( 1 )
-margin_left = 64.0
-margin_right = 92.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect11" type="ColorRect" parent="Delta Tower/ColorRect24"]
-material = SubResource( 1 )
-margin_left = 96.0
-margin_right = 124.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect12" type="ColorRect" parent="Delta Tower/ColorRect24"]
-material = SubResource( 1 )
-margin_left = 32.0
-margin_right = 60.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect25" type="ColorRect" parent="Delta Tower"]
-material = SubResource( 1 )
-margin_left = -32.0
-margin_top = -68.0
-margin_right = -4.0
-margin_bottom = -36.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Delta Tower/ColorRect25"]
-material = SubResource( 1 )
-margin_left = 160.0
-margin_right = 188.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Delta Tower/ColorRect25"]
-material = SubResource( 1 )
-margin_left = 128.0
-margin_right = 156.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Delta Tower/ColorRect25"]
-material = SubResource( 1 )
-margin_left = 64.0
-margin_right = 92.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect11" type="ColorRect" parent="Delta Tower/ColorRect25"]
-material = SubResource( 1 )
-margin_left = 96.0
-margin_right = 124.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect12" type="ColorRect" parent="Delta Tower/ColorRect25"]
-material = SubResource( 1 )
-margin_left = 32.0
-margin_right = 60.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect26" type="ColorRect" parent="Delta Tower"]
-material = SubResource( 1 )
-margin_left = -32.0
-margin_top = -24.0
-margin_right = -4.0
-margin_bottom = 24.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="Delta Tower/ColorRect26"]
-material = SubResource( 1 )
-margin_left = 160.0
-margin_right = 188.0
-margin_bottom = 48.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="Delta Tower/ColorRect26"]
-material = SubResource( 1 )
-margin_left = 128.0
-margin_right = 156.0
-margin_bottom = 48.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="Delta Tower/ColorRect26"]
-material = SubResource( 1 )
-margin_left = 64.0
-margin_right = 92.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect11" type="ColorRect" parent="Delta Tower/ColorRect26"]
-material = SubResource( 1 )
-margin_left = 96.0
-margin_right = 124.0
-margin_bottom = 48.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect12" type="ColorRect" parent="Delta Tower/ColorRect26"]
-material = SubResource( 1 )
-margin_left = 32.0
-margin_right = 60.0
-margin_bottom = 16.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect13" type="ColorRect" parent="Delta Tower/ColorRect26"]
-material = SubResource( 1 )
-margin_left = 32.0
-margin_top = 20.0
-margin_right = 44.0
-margin_bottom = 48.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect14" type="ColorRect" parent="Delta Tower/ColorRect26"]
-material = SubResource( 1 )
-margin_left = 48.0
-margin_top = 20.0
-margin_right = 60.0
-margin_bottom = 48.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect15" type="ColorRect" parent="Delta Tower/ColorRect26"]
-material = SubResource( 1 )
-margin_left = 64.0
-margin_top = 20.0
-margin_right = 76.0
-margin_bottom = 48.0
-rect_pivot_offset = Vector2( 8, 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect16" type="ColorRect" parent="Delta Tower/ColorRect26"]
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect8"]
 material = SubResource( 1 )
 margin_left = 80.0
-margin_top = 20.0
-margin_right = 92.0
-margin_bottom = 48.0
+margin_right = 158.0
+margin_bottom = 34.0
 rect_pivot_offset = Vector2( 8, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect16" type="ColorRect" parent="Delta Tower"]
+[node name="ColorRect25" type="ColorRect" parent="One Boylston Plaza"]
 material = SubResource( 1 )
-margin_left = -32.0
-margin_top = -420.0
-margin_right = -4.0
-margin_bottom = -388.0
+margin_left = -99.0
+margin_top = -91.0
+margin_right = -21.0
+margin_bottom = -57.0
 rect_pivot_offset = Vector2( 8, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect10" type="ColorRect" parent="Delta Tower/ColorRect16"]
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect25"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect26" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -55.0
+margin_right = -21.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect26"]
+material = SubResource( 1 )
+margin_left = 127.0
+margin_right = 238.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect26"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect26"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 127.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="One Boylston Plaza/ColorRect26"]
+material = SubResource( 1 )
+margin_left = 128.0
+margin_right = 190.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect13" type="ColorRect" parent="One Boylston Plaza/ColorRect26"]
+material = SubResource( 1 )
+margin_left = 128.0
+margin_top = 16.0
+margin_right = 142.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect14" type="ColorRect" parent="One Boylston Plaza/ColorRect26"]
+material = SubResource( 1 )
+margin_left = 176.0
+margin_top = 16.0
+margin_right = 190.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect15" type="ColorRect" parent="One Boylston Plaza/ColorRect26"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_top = 16.0
+margin_right = 174.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect16" type="ColorRect" parent="One Boylston Plaza/ColorRect26"]
+material = SubResource( 1 )
+margin_left = 144.0
+margin_top = 16.0
+margin_right = 158.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect27" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -127.0
+margin_right = -21.0
+margin_bottom = -93.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect27"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect27"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect27"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect28" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -163.0
+margin_right = -21.0
+margin_bottom = -129.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect28"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect28"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect28"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = 141.0
+margin_top = -235.0
+margin_right = 219.0
+margin_bottom = -201.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect12"]
+material = SubResource( 1 )
+margin_left = -160.0
+margin_right = -82.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect29" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -199.0
+margin_right = -21.0
+margin_bottom = -165.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect29"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect29"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect29"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect30" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -235.0
+margin_right = -21.0
+margin_bottom = -201.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect30"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect31" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -271.0
+margin_right = -21.0
+margin_bottom = -237.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect31"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect31"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect31"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect32" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -307.0
+margin_right = -21.0
+margin_bottom = -273.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect32"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect32"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect32"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect33" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -343.0
+margin_right = -21.0
+margin_bottom = -309.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect33"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect33"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect33"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect34" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -379.0
+margin_right = -21.0
+margin_bottom = -345.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect34"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect34"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect34"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect35" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -415.0
+margin_right = -21.0
+margin_bottom = -381.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect35"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect35"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect35"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = 141.0
+margin_top = -451.0
+margin_right = 219.0
+margin_bottom = -417.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect10"]
+material = SubResource( 1 )
+margin_left = -160.0
+margin_right = -82.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect36" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -451.0
+margin_right = -21.0
+margin_bottom = -417.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect36"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect37" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -487.0
+margin_right = -21.0
+margin_bottom = -453.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect37"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect37"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect37"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect38" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -523.0
+margin_right = -21.0
+margin_bottom = -489.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect38"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect38"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect38"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect39" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -559.0
+margin_right = -21.0
+margin_bottom = -525.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect39"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect39"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect39"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect40" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -595.0
+margin_right = -21.0
+margin_bottom = -561.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect40"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect40"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect40"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect41" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -631.0
+margin_right = -21.0
+margin_bottom = -597.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect41"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect41"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect41"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect24" type="ColorRect" parent="One Boylston Plaza"]
 material = SubResource( 1 )
 margin_left = 64.0
-margin_right = 92.0
-margin_bottom = 32.0
+margin_top = -864.0
+margin_right = 108.0
+margin_bottom = -836.0
 rect_pivot_offset = Vector2( 8, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect11" type="ColorRect" parent="Delta Tower/ColorRect16"]
+[node name="ColorRect23" type="ColorRect" parent="One Boylston Plaza/ColorRect24"]
 material = SubResource( 1 )
-margin_left = 96.0
-margin_right = 124.0
-margin_bottom = 32.0
+margin_left = -52.0
+margin_right = -8.0
+margin_bottom = 28.0
 rect_pivot_offset = Vector2( 8, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect12" type="ColorRect" parent="Delta Tower/ColorRect16"]
+[node name="ColorRect22" type="ColorRect" parent="One Boylston Plaza/ColorRect24"]
 material = SubResource( 1 )
-margin_left = 32.0
-margin_right = 60.0
-margin_bottom = 32.0
+margin_left = -52.0
+margin_right = -8.0
+margin_bottom = 28.0
 rect_pivot_offset = Vector2( 8, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect17" type="ColorRect" parent="Delta Tower"]
+[node name="ColorRect21" type="ColorRect" parent="One Boylston Plaza/ColorRect24"]
 material = SubResource( 1 )
-margin_left = -32.0
-margin_top = -464.0
-margin_right = -4.0
-margin_bottom = -432.0
+margin_left = -52.0
+margin_top = 32.0
+margin_right = -8.0
+margin_bottom = 60.0
 rect_pivot_offset = Vector2( 8, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect12" type="ColorRect" parent="Delta Tower/ColorRect17"]
+[node name="ColorRect20" type="ColorRect" parent="One Boylston Plaza/ColorRect24"]
 material = SubResource( 1 )
-margin_left = 32.0
-margin_right = 60.0
-margin_bottom = 32.0
+margin_top = 32.0
+margin_right = 80.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect19" type="ColorRect" parent="One Boylston Plaza/ColorRect24"]
+material = SubResource( 1 )
+margin_top = 64.0
+margin_right = 80.0
+margin_bottom = 92.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect18" type="ColorRect" parent="One Boylston Plaza/ColorRect24"]
+material = SubResource( 1 )
+margin_left = -88.0
+margin_top = 64.0
+margin_right = -8.0
+margin_bottom = 92.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect17" type="ColorRect" parent="One Boylston Plaza/ColorRect24"]
+material = SubResource( 1 )
+margin_left = -88.0
+margin_top = 96.0
+margin_right = -8.0
+margin_bottom = 124.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect16" type="ColorRect" parent="One Boylston Plaza/ColorRect24"]
+material = SubResource( 1 )
+margin_top = 96.0
+margin_right = 116.0
+margin_bottom = 124.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect15" type="ColorRect" parent="One Boylston Plaza/ColorRect24"]
+material = SubResource( 1 )
+margin_top = 128.0
+margin_right = 116.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect14" type="ColorRect" parent="One Boylston Plaza/ColorRect24"]
+material = SubResource( 1 )
+margin_left = -124.0
+margin_top = 128.0
+margin_right = -8.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect13" type="ColorRect" parent="One Boylston Plaza/ColorRect24"]
+material = SubResource( 1 )
+margin_left = -124.0
+margin_top = 160.0
+margin_right = -8.0
+margin_bottom = 188.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="One Boylston Plaza/ColorRect24"]
+material = SubResource( 1 )
+margin_top = 160.0
+margin_right = 154.0
+margin_bottom = 188.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect42" type="ColorRect" parent="One Boylston Plaza"]
+material = SubResource( 1 )
+margin_left = -99.0
+margin_top = -667.0
+margin_right = -21.0
+margin_bottom = -633.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza/ColorRect42"]
+material = SubResource( 1 )
+margin_left = 160.0
+margin_right = 238.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="One Boylston Plaza/ColorRect42"]
+material = SubResource( 1 )
+margin_left = 240.0
+margin_right = 318.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="One Boylston Plaza/ColorRect42"]
+material = SubResource( 1 )
+margin_left = 80.0
+margin_right = 158.0
+margin_bottom = 34.0
 rect_pivot_offset = Vector2( 8, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -6106,7 +7284,7 @@ position = Vector2( -60, -28 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 188, 76, 124, 28, 124, 24, 96, 24, 96, -584, -36, -516, -36, 24, -64, 24, -64, 28, -112, 76, 188, 76 )
 script = ExtResource( 1 )
-building_type = 5
+building_type = 7
 layer = 3
 person_capacity = 20
 
