@@ -26,7 +26,7 @@ func create_building(definition: BuildingBakedDefinition):
 	
 func get_building_def(var layer = null, var type = null):
 	#expensive
-	if layer:
+	if layer != null:
 		# size and type
 		var valid = []
 		for def in rid.building_definitions:
