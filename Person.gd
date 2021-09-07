@@ -73,6 +73,10 @@ var occupation = 0
 var shopping = 0
 
 func tick_needs(delta):
+	if current_happiness <= 0:
+		current_happiness = 0
+	elif current_happiness >= 1:
+		current_happiness = 1
 	if hunger <= 1:
 		hunger += delta * per_tick_hunger
 	else:
@@ -144,6 +148,7 @@ func try_to_find_work():
 		goal_pos = work_target.get_left()
 	else:
 		demand_manager.add_demand(BUILDING.TYPE.WORK, 0.1)
+		current_happiness *= 0.95
 		goal_pos = home.get_left()
 
 func decide_next_goal():
@@ -182,11 +187,15 @@ func walk_step(delta):
 			self.visible = false
 			print(name + " found goal: ", GOAL_NAMES[current_goal], " at ",offset)
 			goal_timer.start()
+		# TODO: make it if they find work they get assigned to the work and stuff
 		else:
 			if current_goal == GOAL.FOOD:
 				demand_manager.add_demand(BUILDING.TYPE.FOOD, 0.03)
+				current_happiness *= 0.97
 			elif current_goal == GOAL.RETAIL:
 				demand_manager.add_demand(BUILDING.TYPE.RETAIL, 0.06)
+		update_happiness(10)
+		current_happiness *= 0.9995
 
 func _unhide_person():
 	print("unhiding")
@@ -194,6 +203,7 @@ func _unhide_person():
 		hunger = 0
 	if current_goal == GOAL.RETAIL:
 		shopping = 0
+	current_happiness *= 2
 	decide_next_goal()
 	self.visible = true
 
