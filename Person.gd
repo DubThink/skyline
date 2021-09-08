@@ -21,7 +21,7 @@ onready var skyrm: SkyRenderManager = game_manager.get_node("SkyRenderManager")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng.randomize()
-	print(name, " added")
+	#print(name, " added")
 	goal_timer = Timer.new()
 	goal_timer.one_shot = true
 	goal_timer.wait_time = 30
@@ -119,8 +119,8 @@ func find_next_goal():
 			if len(foodlist) == 0:
 				demand_manager.add_demand(BUILDING.TYPE.FOOD, 0.5)
 			else:
-				for f in foodlist:
-					print("  ",f.definition.building_name)
+				#for f in foodlist:
+					#print("  ",f.definition.building_name)
 				var rand_index: int = randi() % len(foodlist)
 				goal_pos = foodlist[rand_index].get_left()
 		GOAL.RETAIL:
@@ -133,8 +133,8 @@ func find_next_goal():
 				var rand_index: int = randi() % len(retaillist)
 				goal_pos = retaillist[rand_index].get_left()
 	goal_pos = top_layer.get_offset_value_at(goal_pos)
-	print(name + " found goal at loc: ", goal_pos)
-	print(name + " current pos: ", offset)
+	#print(name + " found goal at loc: ", goal_pos)
+	#print(name + " current pos: ", offset)
 	
 func try_to_find_work():
 	worklist = []
@@ -169,7 +169,7 @@ func decide_next_goal():
 	if time_of_day < 0.25 or time_of_day > .75:
 		current_goal = GOAL.HOME
 		current_goal_strength = 1.1
-	print(name + " decided goal: ", GOAL_NAMES[current_goal])
+	#print(name + " decided goal: ", GOAL_NAMES[current_goal])
 	find_next_goal()
 
 func walk_step(delta):
@@ -185,7 +185,7 @@ func walk_step(delta):
 		set_offset(offset+dist)
 		if abs( goal_pos - offset ) < 10:
 			self.visible = false
-			print(name + " found goal: ", GOAL_NAMES[current_goal], " at ",offset)
+			#print(name + " found goal: ", GOAL_NAMES[current_goal], " at ",offset)
 			goal_timer.start()
 		# TODO: make it if they find work they get assigned to the work and stuff
 		else:
@@ -198,7 +198,7 @@ func walk_step(delta):
 		current_happiness *= 0.9995
 
 func _unhide_person():
-	print("unhiding")
+	#print("unhiding")
 	if current_goal == GOAL.FOOD:
 		hunger = 0
 	if current_goal == GOAL.RETAIL:

@@ -1661,6 +1661,7 @@ polygon = PoolVector2Array( 92, 56, 92, 0, 112, 0, 112, -8, 96, -8, 96, -44, 100
 script = ExtResource( 1 )
 building_type = 1
 person_capacity = 4
+no_export = true
 
 [node name="ColorRect4" type="ColorRect" parent="Stilt House"]
 material = SubResource( 1 )
@@ -2752,6 +2753,7 @@ script = ExtResource( 1 )
 building_type = 20
 layer = 1
 person_capacity = 3
+no_export = true
 
 [node name="ColorRect4" type="ColorRect" parent="Emma\'s Tools"]
 material = SubResource( 1 )
@@ -3501,6 +3503,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="--CITY--" type="Node" parent="."]
+
 [node name="Bridged Buildings" type="Polygon2D" parent="."]
 visible = false
 position = Vector2( -60, -48 )
@@ -4171,8 +4175,6 @@ rect_pivot_offset = Vector2( 8, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="--CITY--" type="Node" parent="."]
 
 [node name="Park Place" type="Polygon2D" parent="."]
 visible = false
@@ -5563,6 +5565,7 @@ __meta__ = {
 [node name="--HIGHRISE--" type="Node" parent="."]
 
 [node name="One Boylston Plaza" type="Polygon2D" parent="."]
+visible = false
 position = Vector2( -60, 0 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 220, 96, 220, -708, 184, -708, 184, -772, 148, -772, 148, -836, 112, -836, 112, -900, 76, -900, 76, -964, 72, -968, 72, -984, 76, -984, 76, -988, 80, -992, 80, -996, 76, -1000, 72, -1000, 72, -1004, 68, -1004, 64, -1104, 60, -1112, 56, -1104, 52, -1004, 48, -1004, 48, -1000, 44, -1000, 40, -996, 40, -992, 44, -988, 44, -984, 48, -984, 48, -968, 44, -964, 44, -868, 8, -868, 8, -804, -28, -804, -28, -740, -64, -740, -64, -676, -100, -676, -100, -612, -100, 96 )
@@ -5570,6 +5573,7 @@ script = ExtResource( 1 )
 building_type = 22
 layer = 3
 person_capacity = 50
+no_export = true
 
 [node name="ColorRect8" type="ColorRect" parent="One Boylston Plaza"]
 material = SubResource( 1 )

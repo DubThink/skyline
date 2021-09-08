@@ -36,7 +36,21 @@ var state = 0
 var screenshot_fade = 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-		
+	# HACK
+	if Input.is_action_pressed("space"):
+		print("foawefofwoaefo")
+		elapsed_time = 0
+		skyrm.do_daynight_cycle=false
+		cache_spd = skyrm.SECONDS_PER_DAY
+		skyrm.world_time = 0
+		# we need shit faster to start up nicely
+		skyrm.SECONDS_PER_DAY = 30
+		title.modulate = Color(1,1,1,0)
+		uidock.modulate = Color(1,1,1,0)
+		uilabels.modulate = Color(1,1,1,0)
+		status.modulate = Color(1,1,1,0)
+		state = 0
+		title.visible=true
 	
 	elapsed_time += delta
 	if state == 0:
@@ -56,7 +70,7 @@ func _process(delta):
 		state = 2
 	elif state == 2:
 		if elapsed_time > 15:
-			title.visible=false
+#			title.visible=false
 			skyrm.SECONDS_PER_DAY = cache_spd
 		if elapsed_time > 11:
 			var ttime = elapsed_time - 11
