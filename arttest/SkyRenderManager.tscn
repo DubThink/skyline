@@ -11,6 +11,7 @@ shader = ExtResource( 1 )
 shader_param/window_color = Color( 1, 0.8, 0.7, 1 )
 shader_param/FIXED_TIME_OF_DAY = null
 shader_param/residentialness = 1.0
+shader_param/layer = 0.0
 shader_param/WINDOW_OFFSET = null
 shader_param/override_tint_color = Color( 0, 0, 0, 0 )
 
@@ -38,9 +39,9 @@ margin_bottom = 512.0
 [node name="Background" type="ColorRect" parent="."]
 material = ExtResource( 4 )
 margin_left = -11404.0
-margin_top = -2830.0
+margin_top = -4736.0
 margin_right = 18024.0
-margin_bottom = 4579.0
+margin_bottom = 5214.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
